@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Login</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="https://www.creativefuel.io/dashboard/couponbazi/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://www.creativefuel.io/dashboard/couponbazi/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://www.creativefuel.io/dashboard/couponbazi/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://www.creativefuel.io/dashboard/couponbazi/vendor/animate/animate.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://www.creativefuel.io/dashboard/couponbazi/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://www.creativefuel.io/dashboard/couponbazi/vendor/select2/select2.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="https://www.creativefuel.io/dashboard/couponbazi/css/util.css">
+	<link rel="stylesheet" type="text/css" href="https://www.creativefuel.io/dashboard/couponbazi/css/main.css">
+	<link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+<!--===============================================================================================-->
+</head>
+<body>
+
+	<div class="limiter">
+		<div class="container-login100" style="    background: linear-gradient(-135deg, #50c89b, #4158d0);">
+			<div class="wrap-login100">
+				<div class="login100-pic js-tilt" data-tilt>
+					<img src="https://indinnovate.in/img/gallery/EDC1.png" alt="IMG">
+				</div>
+
+				<div class="login100-form validate-form">
+					<span class="login100-form-title">
+						Welcome Back !
+					</span>
+
+
+					<hr width="100%" >
+
+					<br>
+
+
+
+					<form method="POST" action="login" class="login100-form validate-form">
+
+						{%csrf_token%}
+                        <input type="text" class="input100" name="username" placeholder="Username" required="required"><br>
+						<input type="password" class="input100" name="password" placeholder="Password" required="required"><br>
+							<input type="submit" name="name" value="Login" class="login100-form-btn" >
+
+						</form>
+
+
+
+
+
+
+
+
+					</div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+<!--===============================================================================================-->
+	<script src="https://www.creativefuel.io/dashboard/couponbazi/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+	<script src="https://www.creativefuel.io/dashboard/couponbazi/vendor/bootstrap/js/popper.js"></script>
+	<script src="https://www.creativefuel.io/dashboard/couponbazi/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+	<script src="https://www.creativefuel.io/dashboard/couponbazi/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+	<script src="https://www.creativefuel.io/dashboard/couponbazi/vendor/tilt/tilt.jquery.min.js"></script>
+	<script >
+		$('.js-tilt').tilt({
+			scale: 1.1
+		})
+	</script>
+<!--===============================================================================================-->
+	<script src="https://www.creativefuel.io/dashboard/couponbazi/js/main.js"></script>
+
+</body>
+</html>

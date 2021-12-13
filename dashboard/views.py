@@ -60,7 +60,7 @@ def add_link(request):
         if request.method=='POST' and 'checker' in request.POST:
             key=request.POST.get('test_char')
             try:
-                object=models.Storage.objects.get(key=key)
+                object=models.LinkStorage.objects.get(key=key)
                 return render(request,'add_link.html',{'char_status':False,'char':key})
             except:
                 return render(request, 'add_link.html', {'char_status': True,'char':key,'char_true':key})
@@ -72,9 +72,9 @@ def add_link(request):
                 key = request.POST.get('key',None)
                 domain = request.build_absolute_uri('/')
                 converted_link = domain + f'l/{key}'
-                sc, created = models.Storage.objects.get_or_create(name=link_name,link=original_link, key=key,
+                sc, created = models.LinkStorage.objects.get_or_create(name=link_name,link=original_link, key=key,
                                                                    converted_link=converted_link,
-                                                                   entry=datetime.datetime.now())
+                                                                   date_time=datetime.datetime.now())
                 sc.save()
                 return redirect('link_table')
             else:
@@ -86,7 +86,7 @@ def add_link(request):
 
 
 def link_table(request):
-    objects = models.Storage.objects.all()
+    objects = models.LinkStorage.objects.all()
 
     return render(request,'link_tables.html',{'objects':objects})
 
@@ -95,7 +95,7 @@ def l(request,**kwargs):
 
     key=kwargs.get('key',None)
     try:
-        object=models.Storage.objects.get(key=key)
+        object=models.LinkStorage.objects.get(key=key)
         object.count += 1
         object.save()
     except:

@@ -21,7 +21,8 @@ from django.db import transaction
 
 
 def index(request):
-    return render(request,'index.html')
+    events=models.Event.objects.all()
+    return render(request,'index.html',{'events':events})
 
 
 def login(request):

@@ -94,12 +94,13 @@
         </div>
 
         <div class="row">
+            {% for event in events %}
           <div class="col-lg-4 col-md-6">
             <div class="speaker">
-              <img src="{% static 'index/img/speakers/1.png' %}" alt="Speaker 1" class="img-fluid">
+              <img src="{% static event.cover_image.URL %}" alt="Speaker 1" class="img-fluid">
               <div class="details">
-                <h3><a href="https://www.linkedin.com/in/tushar-p-325b5869/">Tushar Pal</a></h3>
-                <p>Co Founder</p>
+                <h3><a href="{{ event.registration_link }}">{{ event.title }}</a></h3>
+                <p>{{ event.short_description}}</p>
                <p> Protons Hub Technology<br>
                   Indore M.P.</p>
                 <div class="social">
@@ -107,35 +108,9 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker">
-              <img src="{% static 'index/img/speakers/2.png' %}" alt="Speaker 2" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://www.linkedin.com/in/saurabh-mantri-28a4a569/">Saurabh Mantri</a></h3>
-                <p>Co-Founder</p>
-               <p>Loadmee Logistics<br>
-                  Indore M.P.</p>
-                <div class="social">
+          {% endfor %}
 
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-4 col-md-6">
-            <div class="speaker">
-              <img src="{% static 'index/img/speakers/3.png' %}" alt="Speaker 6" class="img-fluid">
-              <div class="details">
-                <h3><a href="https://www.linkedin.com/in/dr-radhika-meenakshi-shankar">Radhika Meenakshi Shankar</a></h3>
-                <p>Founder</p>
-               <p>Wise Owl Consulting<br>
-                  Andhrapradesh</p>
-                <div class="social">
-
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 

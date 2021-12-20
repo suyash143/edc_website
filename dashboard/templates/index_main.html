@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>EDC Acropolis</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="{% static 'index/assets/img/favicon.png'%}" rel="icon" />
+    <link href="{% static 'index/assets/img/apple-touch-icon.png'%}" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link href="{% static 'index/assets/vendor/aos/aos.css'%}" rel="stylesheet" />
+    <link
+      href="{% static 'index/assets/vendor/bootstrap/css/bootstrap.min.css'%}"
+      rel="stylesheet"
+    />
+    <link
+      href="{% static 'index/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'index/assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet" />
+    <link
+      href="{% static 'index/assets/vendor/glightbox/css/glightbox.min.css'%}"
+      rel="stylesheet"
+    />
+    <link href="{% static 'index/assets/vendor/remixicon/remixicon.css'%}" rel="stylesheet" />
+    <link href="{% static 'index/assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="{% static 'index/assets/css/style.css'%}" rel="stylesheet" />
+    <link href="{% static 'index/assets/css/style2.css'%}" rel="stylesheet"/>
+
+    <!-- Carousel  Deoendencies -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet"id="bootstrap-css"/>
+
+
+  </head>
+
+  <body>
+    <!-- ======= Header ======= -->
+    <header id="header" class="fixed-top d-flex align-items-center">
+      <div class="container d-flex align-items-center justify-content-between">
+        <div class="logo">
+          <!-- Uncomment below if you prefer to use an image logo -->
+           <a href="index.html"><img src="{% static 'index/img/EDC LOGO-01 (3) (1).png'%}" alt="" class="img-fluid"></a>
+        </div>
+
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+            <li><a class="nav-link scrollto" href="#about">About</a></li>
+            <li><a class="nav-link scrollto" href="#services">Services</a></li>
+            <li>
+              <a class="nav-link scrollto" href="#events">Events</a>
+            </li>
+            <li><a class="nav-link scrollto" href="#team">Team</a></li>
+                        <li class="dropdown">
+              <a href="#"
+                ><span>Drop Down</span> <i class="bi bi-chevron-down"></i
+              ></a>
+              <ul>
+                <li><a href="#">Drop Down 1</a></li>
+                <li class="dropdown">
+                  <a href="#"
+                    ><span>Deep Drop Down</span>
+                    <i class="bi bi-chevron-right"></i
+                  ></a>
+                  <ul>
+                    <li><a href="#">Deep Drop Down 1</a></li>
+                    <li><a href="#">Deep Drop Down 2</a></li>
+                    <li><a href="#">Deep Drop Down 3</a></li>
+                    <li><a href="#">Deep Drop Down 4</a></li>
+                    <li><a href="#">Deep Drop Down 5</a></li>
+                  </ul>
+                </li>
+                <li><a href="#">Drop Down 2</a></li>
+                <li><a href="#">Drop Down 3</a></li>
+                <li><a href="#">Drop Down 4</a></li>
+              </ul>
+            </li>
+            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+            <li>
+              <a class="getstarted scrollto" href="#about">Get Started</a>
+            </li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <!-- .navbar -->
+      </div>
+    </header>
+    <!-- End Header -->
+{% block content %}
+
+  {% endblock content %}
+
+     <footer class="py-3">
+          <div class="text-center icon_1 py-4">
+            <a href="https://www.instagram.com/edc_acropolis/?hl=en" target="_blank"><i class="fa fa-instagram"></i></a>
+            <a href="https://www.facebook.com/EDCAcropolis" target="_blank"><i class="fa fa-facebook"></i></a>
+            <a href="https://twitter.com/edc_acropolis" target="_blank"><i class="fa fa-twitter"></i></a>
+            <a href="https://www.linkedin.com/in/edc-acropolis/" target="_blank"><i class="fa fa-linkedin"></i></a>
+          </div>
+          <div class="py-1 company">
+            <p class="text-center">@EDC_Acropolis</p>
+          </div>
+          <div class="text-center px-2 py-3 link">
+            <a href="index.html">Home</a>
+            <a href="terms and conditions.html">Terms and conditions</a>
+            <a href="privacy.html" class="border-0">Privacy and Policy</a>
+          </div>
+     </footer>
+
+
+  <!-- javascript -->
+  <script src="{% static 'index/assets/index.js'%}"></script>
+
+      </section>
+      <!-- End Contact Section -->
+    </main>
+    <!-- End #main -->
+
+
+    <a
+      href="#"
+      class="back-to-top d-flex align-items-center justify-content-center"
+      ><i class="bi bi-arrow-up-short"></i
+    ></a>
+    <!-- Vendor JS Files -->
+    <script src="{% static 'index/assets/vendor/purecounter/purecounter.js'%}"></script>
+    <script src="{% static 'index/assets/vendor/aos/aos.js'%}"></script>
+    <script src="{% static 'index/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+    <script src="{% static 'index/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+    <script src="{% static 'index/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+    <script src="{% static 'index/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+    <script src="{% static 'index/assets/vendor/php-email-form/validate.js'%}"></script>
+
+    <!--Carousel Indicator Styling-->
+
+    <style>
+      .blog .carousel-indicators {
+        left: 0;
+        top: auto;
+        bottom: -40px;
+      }
+
+      /* The colour of the carousel-indicators */
+      .blog .carousel-indicators li {
+        width: 12px;
+        height: 12px;
+        background-color: #fff;
+        opacity: 1;
+        border: 1px solid #3498db;
+        border-radius: 50%;
+      }
+
+      .blog .carousel-indicators .active {
+        background: #3498db;
+      }
+    </style>
+
+    <!-- Carousel Dependencies -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!-- Template Main JS File -->
+    <script src="{% static 'index/assets/js/main.js'%}"></script>
+  </body>
+</html>
+

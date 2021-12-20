@@ -22,7 +22,14 @@ from django.db import transaction
 
 def index(request):
     events=models.Event.objects.all()
-    return render(request,'index.html',{'events':events})
+    index=models.Index.objects.all().latest('pk')
+    skill=models.Skill.objects.all()
+    vertical=models.Vertical.objects.all()
+    testimonial=models.Testimonial.objects.all()
+    gallery=models.Gallery.objects.all()
+    team=models.Team.objects.all()
+    return render(request,'index.html',{'events':events,'index':index,'skill':skill,'vertical':vertical,
+                                        'testimonial':testimonial,'gallery':gallery,'team':team})
 
 
 def login(request):

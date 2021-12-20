@@ -19,6 +19,7 @@ class Event(models.Model):
     registration_link=models.URLField(null=True,blank=True)
     last_date=models.DateField(null=True,blank=True)
     cover_image=models.ImageField(upload_to='index/event',null=True,blank=True)
+    completed=models.BooleanField(blank=True,null=True)
 
 
 class Index(models.Model):
@@ -46,7 +47,7 @@ class Vertical(models.Model):
 
 class Testimonial(models.Model):
     title=models.CharField(null=True,blank=True,max_length=400)
-    image=models.ImageField(upload_to='index/vertical',null=True,blank=True)
+    image=models.ImageField(upload_to='index/testimonial',null=True,blank=True)
     name=models.CharField(max_length=300,null=True,blank=True)
     post=models.CharField(max_length=300,null=True,blank=True)
     quote=models.TextField(null=True,blank=True)
@@ -55,5 +56,15 @@ class Testimonial(models.Model):
 class Gallery(models.Model):
     title = models.CharField(null=True, blank=True,max_length=400)
     image = models.ImageField(upload_to='index/gallery', null=True, blank=True)
+
+
+class Team(models.Model):
+    name=models.CharField(null=True,blank=True,max_length=200)
+    title=models.CharField(null=True,blank=True,max_length=200)
+    image=models.ImageField(upload_to='index/team',null=True,blank=True)
+    facebook_url=models.URLField(null=True,blank=True)
+    instagram_url=models.URLField(null=True,blank=True)
+    linkedin_url=models.URLField(null=True,blank=True)
+    number=models.PositiveIntegerField(null=True,blank=True)
 
 

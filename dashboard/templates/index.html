@@ -78,14 +78,16 @@
       <!-- ======= About Us Section ======= -->
       <section id="about" class="about">
         <div class="container">
-
-
+      
           <div class="row">
-            <div class="col-lg-6">
-              <img src="{% static 'index/img/SuccessBlock.jpg'%}" class="img-fluid" alt="">
+            <div class="col-lg-4">
+             
+              <img src="{% static 'index/img/SuccessBlock.png'%}" class="img-fluid" alt="" height="10">
+            
             </div>
-            <div class="col-lg-6 pt-4 pt-lg-0 content">
-              <h3>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+          
+            <div class="col-lg-5 pt-4 pt-lg-0 content">
+              <h3><br>Voluptatem dignissimos provident quasi corporis voluptates</h3>
               <p class="fst-italic">
                 {{ index.about_us_1 }}
               </p>
@@ -235,9 +237,7 @@
             {% for event in events %}
             <div class="col-md-6 d-flex align-items-stretch">
               <div class="card" style="background-image: url('{% static event.cover_image.URL %}')" data-aos="fade-up"
-                data-aos-delay="100">
-
-                style="background-image: url('{% static event.cover_image %}')" data-aos="fade-up" data-aos-delay="100">
+                data-aos-delay="100" style="background-image: url('{% static event.cover_image %}')" data-aos="fade-up" data-aos-delay="100">
 
                 <div class="card-body">
                   <h5 class="card-title"><a href="">{{ event.title }}</a></h5>

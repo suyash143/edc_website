@@ -36,6 +36,7 @@ def index(request):
         sc, created = models.Contact.objects.get_or_create(name=name,subject=subject,message=message,number=number,
                                                                created=datetime.datetime.now())
         sc.save()
+        print('save')
     return render(request,'index.html',{'events':events,'index':index,'skill':skill,'vertical':vertical,
                                         'testimonial':testimonial,'gallery':gallery,'team':team})
 

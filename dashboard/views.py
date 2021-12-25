@@ -24,8 +24,8 @@ def index(request):
     events=models.Event.objects.all()
     index=models.Index.objects.all().latest('pk')
     skill=models.Skill.objects.all()
-    vertical=models.Vertical.objects.all()
-    testimonial=models.Testimonial.objects.all()
+    verticals=models.Vertical.objects.all()
+    testimonials=models.Testimonial.objects.all()
     gallery=models.Gallery.objects.all()
     team=models.Team.objects.all()
     if request.method=="POST":
@@ -37,8 +37,8 @@ def index(request):
                                                                created=datetime.datetime.now())
         sc.save()
         print('save')
-    return render(request,'index.html',{'events':events,'index':index,'skill':skill,'vertical':vertical,
-                                        'testimonial':testimonial,'gallery':gallery,'team':team})
+    return render(request,'index.html',{'events':events,'index':index,'skill':skill,'verticals':verticals,
+                                        'testimonials':testimonials,'gallery':gallery,'team':team})
 
 
 def events(request,**kwargs):

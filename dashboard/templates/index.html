@@ -242,7 +242,7 @@
                   <h5 class="card-title"><a href="{% url 'events' pk=event.pk %}">{{ event.title }}</a></h5>
                   <p class="card-text">
                     {{ event.short_description }}
-                <img src="{{event.cover_image.url }}">
+
                     {% static event.cover_image.url %}
 
 
@@ -344,7 +344,7 @@
           </div>
 
           <div class="row events-container" data-aos="fade-up" data-aos-delay="400">
-{% for iamges in gallery %}
+{% for images in gallery %}
             <div class="col-lg-4 col-md-6 events-item filter-app">
               <div class="events-wrap">
                 <img src="{% static images.image.url %}" class="img-fluid" alt="">

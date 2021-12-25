@@ -28,8 +28,22 @@ def index(request):
     testimonial=models.Testimonial.objects.all()
     gallery=models.Gallery.objects.all()
     team=models.Team.objects.all()
+    if request.method=="POST":
+        name=request.POST.get('name')
+        subject = request.POST.get('subject')
+        message = request.POST.get('message')
+        number = request.POST.get('number')
+        sc, created = models.Contact.objects.get_or_create(name=name,subject=subject,message=message,number=number,
+                                                               created=datetime.datetime.now())
+        sc.save()
     return render(request,'index.html',{'events':events,'index':index,'skill':skill,'vertical':vertical,
                                         'testimonial':testimonial,'gallery':gallery,'team':team})
+
+
+def events(request,**kwargs):
+    print(kwargs)
+
+    return render(request,'event_detail.html')
 
 
 def login(request):

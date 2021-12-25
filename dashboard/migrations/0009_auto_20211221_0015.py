@@ -10,19 +10,7 @@ class Migration(migrations.Migration):
     ]
 
     operations = [
-        migrations.CreateModel(
-            name='Team',
-            fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(blank=True, max_length=200, null=True)),
-                ('title', models.CharField(blank=True, max_length=200, null=True)),
-                ('image', models.ImageField(blank=True, null=True, upload_to='index/team')),
-                ('facebook_url', models.URLField(blank=True, null=True)),
-                ('instagram_url', models.URLField(blank=True, null=True)),
-                ('linkedin_url', models.URLField(blank=True, null=True)),
-                ('number', models.PositiveIntegerField(blank=True, null=True)),
-            ],
-        ),
+
         migrations.AddField(
             model_name='event',
             name='completed',

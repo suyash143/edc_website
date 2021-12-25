@@ -232,25 +232,26 @@
         <div class="container">
           <div class="section-title" data-aos="fade-up">
             <h2>Events</h2>
+              <p>{{ index.event_heading }}</p>
+
           </div>
           <div class="row">
             {% for event in events %}
             <div class="col-md-6 d-flex align-items-stretch">
-              <div class="card" style="background-image: url('{% static event.cover_image.URL %}')" data-aos="fade-up"
-                data-aos-delay="100" style="background-image: url('{% static event.cover_image %}')" data-aos="fade-up" data-aos-delay="100">
+              <div class="card" style="background-image: url('{% static event.cover_image.url %}')" data-aos="fade-up"
+                data-aos-delay="100" >
 
                 <div class="card-body">
-                  <h5 class="card-title"><a href="">{{ event.title }}</a></h5>
+                  <h5 class="card-title"><a href="{% url 'events' pk=event.pk %}">{{ event.title }}</a></h5>
                   <p class="card-text">
                     {{ event.short_description }}
+                <img src="{{event.cover_image.url }}">
+                    {% static event.cover_image.url %}
 
-                    {% static event.cover_image.URL %}
-
-                    {% static event.cover_image %}
 
                   </p>
                   <div class="read-more">
-                    <a href="#"><i class="bi bi-arrow-right"></i> Read More</a>
+                    <a href="{% url 'events' pk=event.pk %}"><i class="bi bi-arrow-right"></i> Read More</a>
                   </div>
                 </div>
               </div>
@@ -270,81 +271,20 @@
         <div class="container">
           <div class="section-title" data-aos="fade-up">
             <h2>Verticals</h2>
+              <p>{{ index.vertical_heading }}</p>
           </div>
 
           <div class="row no-gutters supporters-wrap clearfix">
-
+{% for vertical in verticals %}
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="img/Acrobizz (1) (1).png" class="img-fluid" alt="">
+                <img src="{% static vertical.image.url %}')" class="img-fluid" alt="{{ vertical.title }}">
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/clix.png" class="img-fluid" alt="">
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/digicro.png" class="img-fluid" alt="">
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/fbc.png" class="img-fluid" alt="">
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/genesis.png" class="img-fluid" alt="">
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/idealabs.png" class="img-fluid" alt="">
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/acrospaces.png" class="img-fluid" alt="">
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/yuvaacro.png" class="img-fluid" alt="">
-              </div>
-            </div>
-
-
-
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/ien_logo.png" class="img-fluid" alt="">
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/ippc.png" class="img-fluid" alt="">
-              </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/litmus.png" class="img-fluid" alt="">
-              </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="img/srijan.png" class="img-fluid" alt="">
-              </div>
-            </div>
-
+{% endfor %}
           </div>
+        </div>
 
       </section>
       <!-- End Features Section -->
@@ -354,103 +294,29 @@
         <div class="container">
           <div class="section-title" data-aos="fade-up">
             <h2>Testimonials</h2>
-            <p>Magnam dolores commodi suscipit eum quidem consectetur velit</p>
+            <p>{{ index.testimonial_heading }}</p>
           </div>
 
           <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
             <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-1.jpg" class="testimonial-img" alt="" />
-                    <h3>Saul Goodman</h3>
-                    <h4>Ceo &amp; Founder</h4>
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Proin iaculis purus consequat sem cure digni ssim donec
-                      porttitora entum suscipit rhoncus. Accusantium quam,
-                      ultricies eget id, aliquam eget nibh et. Maecen aliquam,
-                      risus at semper.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- End testimonial item -->
 
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-2.jpg" class="testimonial-img" alt="" />
-                    <h3>Sara Wilsson</h3>
-                    <h4>Designer</h4>
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Export tempor illum tamen malis malis eram quae irure esse
-                      labore quem cillum quid cillum eram malis quorum velit
-                      fore eram velit sunt aliqua noster fugiat irure amet legam
-                      anim culpa.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
               <!-- End testimonial item -->
-
+{% for testimonial in testimonials %}
               <div class="swiper-slide">
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-3.jpg" class="testimonial-img" alt="" />
-                    <h3>Jena Karlis</h3>
-                    <h4>Store Owner</h4>
+                    <img src="{% static testimonial.image.url %}" class="testimonial-img" alt="{{ testimonial.name }}" />
+                    <h3>{{ testimonial.name }}</h3>
+                    <h4>{{ testimonial.post }}</h4>
                     <p>
                       <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Enim nisi quem export duis labore cillum quae magna enim
-                      sint quorum nulla quem veniam duis minim tempor labore
-                      quem eram duis noster aute amet eram fore quis sint minim.
+                      {{ testimonial.quote }}
                       <i class="bx bxs-quote-alt-right quote-icon-right"></i>
                     </p>
                   </div>
                 </div>
               </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-4.jpg" class="testimonial-img" alt="" />
-                    <h3>Matt Brandon</h3>
-                    <h4>Freelancer</h4>
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Fugiat enim eram quae cillum dolore dolor amet nulla culpa
-                      multos export minim fugiat minim velit minim dolor enim
-                      duis veniam ipsum anim magna sunt elit fore quem dolore
-                      labore illum veniam.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <!-- End testimonial item -->
-
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="assets/img/testimonials/testimonials-5.jpg" class="testimonial-img" alt="" />
-                    <h3>John Larson</h3>
-                    <h4>Entrepreneur</h4>
-                    <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      Quis quorum aliqua sint quem legam fore sunt eram irure
-                      aliqua veniam tempor noster veniam enim culpa labore duis
-                      sunt culpa nulla illum cillum fugiat legam esse veniam
-                      culpa fore nisi cillum quid.
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                    </p>
-                  </div>
-                </div>
-              </div>
+{% endfor %}
               <!-- End testimonial item -->
             </div>
             <div class="swiper-pagination"></div>
@@ -464,157 +330,42 @@
         <div class="container">
 
           <div class="section-title" data-aos="fade-up">
-            <h2>Events</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+            <h2>Gallery</h2>
+            <p>{{ index.gallery_heading }}</p>
           </div>
 
           <div class="row" data-aos="fade-up" data-aos-delay="200">
             <div class="col-lg-12 d-flex justify-content-center">
-              <ul id="events-flters">
-                <li data-filter="*" class="filter-active">All</li>
-                <li data-filter=".filter-app">App</li>
-                <li data-filter=".filter-card">Card</li>
-                <li data-filter=".filter-web">Web</li>
-              </ul>
+
+{#              <ul id="events-flters">#}
+{#                <li data-filter="*" class="filter-active">All</li>#}
+{#                <li data-filter=".filter-app">App</li>#}
+{#                <li data-filter=".filter-card">Card</li>#}
+{#                <li data-filter=".filter-web">Web</li>#}
+{#              </ul>#}
             </div>
           </div>
 
           <div class="row events-container" data-aos="fade-up" data-aos-delay="400">
-
+{% for iamges in gallery %}
             <div class="col-lg-4 col-md-6 events-item filter-app">
               <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+                <img src="{% static images.image.url %}" class="img-fluid" alt="">
                 <div class="events-info">
                   <h4>App 1</h4>
                   <p>App</p>
                   <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery"
+                    <a href="{% static images.image.url %}" data-gallery="portfolioGallery"
                       class="events-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
+                      {% if images.event %}
+                    <a href="{% url 'events' pk=images.event.pk %}" title="More Details"><i class="bx bx-link"></i></a>
+                      {% endif %}
                   </div>
                 </div>
               </div>
             </div>
+{% endfor %}
 
-            <div class="col-lg-4 col-md-6 events-item filter-web">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>Web 3</h4>
-                  <p>Web</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 events-item filter-app">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>App 2</h4>
-                  <p>App</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 events-item filter-card">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>Card 2</h4>
-                  <p>Card</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery"
-                      class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 events-item filter-web">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>Web 2</h4>
-                  <p>Web</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 events-item filter-app">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>App 3</h4>
-                  <p>App</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 events-item filter-card">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>Card 1</h4>
-                  <p>Card</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 events-item filter-card">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>Card 3</h4>
-                  <p>Card</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="col-lg-4 col-md-6 events-item filter-web">
-              <div class="events-wrap">
-                <img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>Web 3</h4>
-                  <p>Web</p>
-                  <div class="events-links">
-                    <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
-                    <a href="event-details.html" title="More Details"><i class="bx bx-link"></i></a>
-                  </div>
-                </div>
-              </div>
-            </div>
 
           </div>
 
@@ -627,7 +378,7 @@
         <div class="container">
           <div class="section-title" data-aos="fade-up">
             <h2>Team</h2>
-            <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem</p>
+            <p>{{ index.team_heading }}</p>
           </div>
 
           <div class="container">
@@ -638,196 +389,35 @@
                     <div class="row blog">
                       <div class="col-md-12">
                         <div id="blogCarousel" class="carousel slide" data-ride="carousel">
-                          <ol class="carousel-indicators">
-                            <li data-target="#blogCarousel" data-slide-to="0" class="active"></li>
-                            <li data-target="#blogCarousel" data-slide-to="1"></li>
-                          </ol>
-
                           <!-- Carousel items -->
+
                           <div class="carousel-inner">
                             <div class="carousel-item active">
                               <div class="row">
-                                <div class="
+                                {% for member in team %}
+                                  <div class="
                                     col-lg-3 col-md-6
                                     d-flex
                                     align-items-stretch
                                   ">
                                   <div class="member" data-aos="fade-up" data-aos-delay="100">
                                     <div class="member-img">
-                                      <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
+                                      <img src="{% static member.image.url %}" class="img-fluid" alt="{{ member.name }}" />
                                       <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>Walter White</h4>
-                                      <span>Chief Executive Officer</span>
-                                    </div>
-                                  </div>
-                                </div>
 
-                                <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="member-img">
-                                      <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
-                                      <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
+                                        <a href="{{ member.facebook_url }}"><i class="bi bi-facebook"></i></a>
+                                        <a href="{{ member.instagram_url }}"><i class="bi bi-instagram"></i></a>
+                                        <a href="{{ member.linkedin_url }}"><i class="bi bi-linkedin"></i></a>
                                       </div>
                                     </div>
                                     <div class="member-info">
-                                      <h4>Sarah Jhonson</h4>
-                                      <span>Product Manager</span>
+                                      <h4>{{ member.name }}</h4>
+                                      <span>{{ member.post }}</span>
                                     </div>
                                   </div>
                                 </div>
+                                  {% endfor %}
 
-                                <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="member-img">
-                                      <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
-                                      <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>William Anderson</h4>
-                                      <span>CTO</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="member-img">
-                                      <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
-                                      <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>Amanda Jepson</h4>
-                                      <span>Accountant</span>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <!--.row-->
-                            </div>
-                            <!--.item-->
-
-                            <div class="carousel-item">
-                              <div class="row">
-                                <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="member-img">
-                                      <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="" />
-                                      <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>Walter White</h4>
-                                      <span>Chief Executive Officer</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="200">
-                                    <div class="member-img">
-                                      <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="" />
-                                      <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>Sarah Jhonson</h4>
-                                      <span>Product Manager</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="300">
-                                    <div class="member-img">
-                                      <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="" />
-                                      <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>William Anderson</h4>
-                                      <span>CTO</span>
-                                    </div>
-                                  </div>
-                                </div>
-
-                                <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="400">
-                                    <div class="member-img">
-                                      <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="" />
-                                      <div class="social">
-                                        <a href=""><i class="bi bi-twitter"></i></a>
-                                        <a href=""><i class="bi bi-facebook"></i></a>
-                                        <a href=""><i class="bi bi-instagram"></i></a>
-                                        <a href=""><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>Amanda Jepson</h4>
-                                      <span>Accountant</span>
-                                    </div>
-                                  </div>
-                                </div>
                               </div>
                               <!--.row-->
                             </div>
@@ -851,141 +441,105 @@
 
 
       <!-- ======= Contact Section ======= -->
-      <section id="contact" class="contact">
+      <section id="contact" class="">
         <div class="container">
-          <div class="contact-form">
-            <div class="first-container">
-              <div class="info-container">
-                <div>
-                  <h3>Address</h3>
-                  <p>H-block, Street no-17, New Delhi- 110001, India</p>
-                </div>
-                <div>
-                  <h3>Lets Talk</h3>
-                  <p>+1 800 1236879</p>
-                </div>
-                <div>
-                  <h3>General Support</h3>
-                  <p>contact@example.com</p>
-                </div>
-              </div>
-            </div>
-            <div class="second-container">
-              <h2>Send Us A Message</h2>
-              <form action="https://formsubmit.co/connect@creativefuel.io" method="POST" accept-charset="utf-8">
-                <input type="hidden" name="_captcha" value="false">
-                <input type="hidden" name="_template" value="table">
-                <input type="hidden" name="_next" value="https://creativefuel.io/thankyou.html">
 
-                <div class="row py-4">
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <input type="text" name="name" id="name" required placeholder="Full Name" class="form-control">
-                    </div>
-                  </div>
-                  <div class="col-md-6">
-                    <div class="form-group">
-                      <select name="type" id="type" class="form-control" style="background-color:white"
-                        onchange="company_field(this.value)">
-                        <option value="ACROPOLIAN">ACROPOLIAN</option>
-                        <option value="NON-ACROPOLIAN">NON-ACROPOLIAN</option>
-                      </select>
-
-                    </div>
-                  </div>
-                </div>
-
-                <script>
-                  function company_field(val) {
-
-
-                    if (val === "NON-ACROPOLIAN") {
-
-
-
-                      document.getElementById('Section1').style.display = 'none';
-                      document.getElementById('Enrollment1').placeholder = 'Name of the Company';
-                      document.getElementById('Class1').placeholder = 'Designation in the company';
-                    }
-                    else {
-                      document.getElementById('Section1').style.display = 'block';
-                      document.getElementById('Enrollment1').placeholder = 'Enrollment Number';
-                      document.getElementById('Class1').placeholder = 'Class';
-                    }
-
-                  }
-
-
-
-                </script>
-                <div class="row py-4" style="display:block" id="company_name">
-                  <div class="col-md-12">
-                    <div class="form-group">
-                      <input type="Text" name="Enrollment Number" id="Enrollment1" placeholder="Enrollment Number"
-                        class="form-control" required=false><br>
-                      <input type="Text" name="Class" id="Class1" placeholder="Class" class="form-control"
-                        required=false><br>
-                      <input type="Text" name="Section" id="Section1" placeholder="Section" class="form-control"
-                        style="display:block" required=false>
-                    </div>
-
-                  </div>
-
-                  <script>
-                    var expanded = false;
-
-                    function showCheckboxes() {
-                      var checkboxes = document.getElementById("checkboxes");
-                      if (!expanded) {
-                        checkboxes.style.display = "block";
-                        expanded = true;
-                      } else {
-                        checkboxes.style.display = "none";
-                        expanded = false;
-                      }
-                    }
-                  </script>
-                  <div class="row py-4">
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input type="number" name="contact" id="telephone" required placeholder="Contact Number"
-                          class="form-control">
-                      </div>
-                    </div>
-                    <div class="col-md-6">
-                      <div class="form-group">
-                        <input type="email" name="email" id="email" required placeholder="Email" class="form-control">
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row py-4">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <textarea name="Comment" id="message" required="" placeholder="Enquiry" class="form-control"
-                          class="py-3" rows="3"></textarea>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row py-4">
-                    <div class="col-md-12">
-                      <div class="form-group">
-                        <span class="policy">* Your personal details are safe with us. For more info, read our privacy
-                          policy.</span>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="row">
-                    <div class="col-md-12 text-center">
-                      <button type="submit" class="btn">Submit</button>
-                    </div>
-                  </div>
-
-              </form>
-            </div>
-          </div>
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row no-gutters mb-5">
+							<div class="col-md-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">Contact Us</h3>
+									<div id="form-message-warning" class="mb-4"></div>
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div>
+									<form method="POST" id="contactForm" onsubmit="  alert('The response was submitted');" name="contactForm" class="contactForm">
+                                        {% csrf_token %}
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name">Full Name</label>
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="email">Contact Number</label>
+													<input type="number" class="form-control" name="number" id="number" placeholder="Contact Number">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Subject</label>
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="#">Message</label>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" value="Send Message" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-5 d-flex align-items-stretch">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.5321687096603!2d75.94209581464068!3d22.821192076193892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e1!3m2!1sen!2sin!4v1640429057686!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-map-marker"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Address:</span> {{ index.address }}</p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-phone"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Phone:</span> <a href="tel://{{ index.number }}">{{ index.number }}</a></p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-paper-plane"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Email:</span> <a href="mailto:{{ index.email }}">{{ index.email }}</a></p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-globe"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Website</span> <a href="#">edc.acropolis.in</a></p>
+				          </div>
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
         </div>
       </section>
 </main>

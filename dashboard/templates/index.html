@@ -69,27 +69,22 @@
   <!-- End Clients Section -->
 
 
-  <!-- ======= About Us Section ======= -->
-  <section id="about" class="about">
-    <div class="container">
-
-
 
       <!-- ======= About Us Section ======= -->
       <section id="about" class="about">
         <div class="container">
-      
+
           <div class="row">
             <div class="col-lg-4">
-             
+
               <img src="{% static 'index/img/SuccessBlock.png'%}" class="img-fluid" alt="" height="10">
-            
+
             </div>
-          
+
             <div class="col-lg-8 pt-4 pt-lg-0 content">
-              <h3><br>Voluptatem dignissimos provident quasi corporis voluptates</h3>
+       <h3><br>What is Entrepreneurship Developement Cell?</h3>
               <p class="fst-italic">
-                  Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
                 {{ index.about_us_1 }}
               </p>
             </div>
@@ -243,13 +238,11 @@
                   <p class="card-text">
                     {{ event.short_description }}
 
-                    {% static event.cover_image.url %}
+
 
 
                   </p>
-                  <div class="read-more">
-                    <a href="{% url 'events' pk=event.pk %}"><i class="bi bi-arrow-right"></i> Read More</a>
-                  </div>
+
                 </div>
               </div>
             </div>
@@ -275,7 +268,7 @@
 {% for vertical in verticals %}
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="{% static vertical.image.url %}')" class="img-fluid" alt="{{ vertical.title }}">
+                <img src="{% static vertical.image.url %}" class="img-fluid" alt="{{ vertical.title }}">
               </div>
             </div>
 
@@ -345,15 +338,15 @@
 
           <div class="row events-container" data-aos="fade-up" data-aos-delay="400">
 {% for images in gallery %}
-            <div class="col-lg-4 col-md-6 events-item filter-app">
+           <div class="col-lg-4 col-md-6 events-item filter-app">
               <div class="events-wrap">
-                <img src="{% static images.image.url %}" class="img-fluid" alt="">
+                <img src="{% static images.image.url %}" style="object-fit: contain;" class="img-fluid" alt="">
                 <div class="events-info">
-                  <h4>App 1</h4>
-                  <p>App</p>
+                  <h4>{{ images.event.title }}</h4>
+
                   <div class="events-links">
                     <a href="{% static images.image.url %}" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                      class="events-lightbox" title="{{ images.event.title }}"><i class="bx bx-plus"></i></a>
                       {% if images.event %}
                     <a href="{% url 'events' pk=images.event.pk %}" title="More Details"><i class="bx bx-link"></i></a>
                       {% endif %}

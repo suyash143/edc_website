@@ -28,6 +28,7 @@ class Event(models.Model):
 class Index(models.Model):
     heading_bold=models.TextField(null=True,blank=True)
     heading_sub=models.TextField(null=True,blank=True)
+    about_us_heading=models.TextField(null=True,blank=True)
     about_us_1=models.TextField(null=True,blank=True)
     about_us_2=models.TextField(null=True,blank=True)
     event_heading = models.TextField(null=True, blank=True)

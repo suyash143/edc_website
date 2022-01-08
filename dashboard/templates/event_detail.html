@@ -1,6 +1,6 @@
 {% extends 'index_main.html' %}
 {% block content %}
-
+{% load static %}
   <main id="main">
 
     <!-- ======= Breadcrumbs ======= -->
@@ -8,7 +8,7 @@
       <div class="container">
 
         <div class="d-flex justify-content-between align-items-center">
-          <h2>Portfolio Details</h2>
+          <h2>{{ event.title }}</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
             <li>Portfolio Details</li>
@@ -30,7 +30,7 @@
 
 
                 <div class="swiper-slide">
-                  <img src="assets/img/portfolio/portfolio-details-1.jpg" alt="">
+                  <img src="{% static event.imageURL %}" alt="{{ event.title }}">
                 </div>
 
 

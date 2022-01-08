@@ -230,7 +230,7 @@
           <div class="row">
             {% for event in events %}
             <div class="col-md-6 d-flex align-items-stretch">
-              <div class="card" style="background-image: url('{% static event.cover_image.url %}')" data-aos="fade-up"
+              <div class="card" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
                 data-aos-delay="100" >
 
                 <div class="card-body">
@@ -268,7 +268,7 @@
 {% for vertical in verticals %}
             <div class="col-lg-3 col-md-4 col-xs-6">
               <div class="supporter-logo">
-                <img src="{% static vertical.image.url %}" class="img-fluid" alt="{{ vertical.title }}">
+                <img src="{% static vertical.imageURL %}" class="img-fluid" alt="{{ vertical.title }}">
               </div>
             </div>
 
@@ -295,7 +295,7 @@
               <div class="swiper-slide">
                 <div class="testimonial-wrap">
                   <div class="testimonial-item">
-                    <img src="{% static testimonial.image.url %}" class="testimonial-img" alt="{{ testimonial.name }}" />
+                    <img src="{% static testimonial.imageURL %}" class="testimonial-img" alt="{{ testimonial.name }}" />
                     <h3>{{ testimonial.name }}</h3>
                     <h4>{{ testimonial.post }}</h4>
                     <p>
@@ -340,12 +340,12 @@
 {% for images in gallery %}
            <div class="col-lg-4 col-md-6 events-item filter-app">
               <div class="events-wrap">
-                <img src="{% static images.image.url %}" style="object-fit: contain;" class="img-fluid" alt="">
+                <img src="{% static images.imageURL %}" style="object-fit: contain;" class="img-fluid" alt="">
                 <div class="events-info">
                   <h4>{{ images.event.title }}</h4>
 
                   <div class="events-links">
-                    <a href="{% static images.image.url %}" data-gallery="portfolioGallery"
+                    <a href="{% static images.imageURL %}" data-gallery="portfolioGallery"
                       class="events-lightbox" title="{{ images.event.title }}"><i class="bx bx-plus"></i></a>
                       {% if images.event %}
                     <a href="{% url 'events' pk=images.event.pk %}" title="More Details"><i class="bx bx-link"></i></a>
@@ -392,7 +392,7 @@
                                   ">
                                   <div class="member" data-aos="fade-up" data-aos-delay="100">
                                     <div class="member-img">
-                                      <img src="{% static member.image.url %}" class="img-fluid" alt="{{ member.name }}" />
+                                      <img src="{% static member.imageURL %}" class="img-fluid" alt="{{ member.name }}" />
                                       <div class="social">
 
                                         <a href="{{ member.facebook_url }}"><i class="bi bi-facebook"></i></a>

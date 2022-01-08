@@ -24,6 +24,14 @@ class Event(models.Model):
     def __str__(self):
         return f'{self.title} {self.created}'
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.cover_image.url
+        except:
+            url = ''
+        return url
+
 
 class Index(models.Model):
     heading_bold=models.TextField(null=True,blank=True)
@@ -53,6 +61,14 @@ class Vertical(models.Model):
     title=models.CharField(max_length=400,null=True,blank=True)
     image=models.ImageField(upload_to='vertical',null=True,blank=True)
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 
 class Testimonial(models.Model):
     title=models.CharField(null=True,blank=True,max_length=400)
@@ -61,12 +77,28 @@ class Testimonial(models.Model):
     post=models.CharField(max_length=300,null=True,blank=True)
     quote=models.TextField(null=True,blank=True)
 
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
 
 class Gallery(models.Model):
     title = models.CharField(null=True, blank=True,max_length=400)
     year=models.IntegerField(null=True,blank=True)
     event=models.ForeignKey(Event,on_delete=models.SET_NULL,null=True,blank=True)
     image = models.ImageField(upload_to='gallery', null=True, blank=True)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 
 class Team(models.Model):
@@ -77,6 +109,14 @@ class Team(models.Model):
     instagram_url=models.URLField(null=True,blank=True)
     linkedin_url=models.URLField(null=True,blank=True)
     number=models.PositiveIntegerField(null=True,blank=True)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 
 class Contact(models.Model):

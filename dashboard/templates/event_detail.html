@@ -11,7 +11,7 @@
           <h2>{{ event.title }}</h2>
           <ol>
             <li><a href="index.html">Home</a></li>
-            <li>Portfolio Details</li>
+            <li>Event Details</li>
           </ol>
         </div>
 
@@ -29,9 +29,9 @@
               <div class="swiper-wrapper align-items-center">
 
 
-                <div class="swiper-slide">
-                  <img src="{% static event.imageURL %}" alt="{{ event.title }}">
-                </div>
+                <!--div class="swiper-slide"-->
+                  <img src="{% static event.imageURL %}" alt="{{ event.title }}" >
+                <!--/div-->
 
 
 
@@ -42,18 +42,18 @@
 
           <div class="col-lg-4">
             <div class="portfolio-info">
-              <h3>Project information</h3>
+              <h3>Event Information</h3>
               <ul>
-                <li><strong>Category</strong>: Web design</li>
-                <li><strong>Client</strong>: ASU Company</li>
-                <li><strong>Project date</strong>: 01 March, 2020</li>
-                <li><strong>Project URL</strong>: <a href="#">www.example.com</a></li>
+                <li><strong>Event Vertical</strong>: {{ event.vertical }}</li>
+                <li><strong>Date</strong>: {{ event.date }}</li>
+                <li><strong>Registration link</strong>: <a href="#">{{ event.registration_link }}</a></li>
+                <li><strong>Last Date</strong>: {{ event.last_date }}</li>
               </ul>
             </div>
             <div class="portfolio-description">
-              <h2>This is an example of portfolio detail</h2>
+              <h2>Description</h2>
               <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
+                {{ event.description }}
               </p>
             </div>
           </div>

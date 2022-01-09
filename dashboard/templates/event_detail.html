@@ -45,8 +45,8 @@
               <h3>Event Information</h3>
               <ul>
                 <li><strong>Event Vertical</strong>: {{ event.vertical }}</li>
-                <li><strong>Date</strong>: {{ event.date }}</li>
-                <li><strong>Registration link</strong>: <a href="#">{{ event.registration_link }}</a></li>
+                <li><strong>Event Date</strong>: {{ event.date }}</li>
+                <li><strong>Registration link</strong>: <a href="{{ event.registration_link }}">{{ event.registration_link|truncatechars:25 }}</a></li>
                 <li><strong>Last Date</strong>: {{ event.last_date }}</li>
               </ul>
             </div>

@@ -94,75 +94,7 @@
       </section>
       <!-- End About Us Section -->
 
-      <!-- ======= Counts Section ======= -->
-      <section id="counts" class="counts">
-        <div class="container">
-          <div class="row">
-            <div class="
-                image
-                col-xl-5
-                d-flex
-                align-items-stretch
-                justify-content-center justify-content-xl-start
-              " data-aos="fade-right" data-aos-delay="150">
-              <img src="{% static 'index/assets/img/counts-img.svg'%}" alt="" class="img-fluid" />
-            </div>
 
-            <div class="col-xl-7 d-flex align-items-stretch pt-4 pt-xl-0" data-aos="fade-left" data-aos-delay="300">
-              <div class="content d-flex flex-column justify-content-center">
-                <div class="row">
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="bi bi-emoji-smile"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="900" data-purecounter-duration="1"
-                        class="purecounter"></span>
-
-                      <p>
-                        <strong>Members</strong>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="bi bi-journal-richtext"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="50" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                      <p>
-                        <strong>Skills</strong>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="bi bi-clock"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="5" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                      <p>
-                        <strong>Years of experience</strong>
-                      </p>
-                    </div>
-                  </div>
-
-                  <div class="col-md-6 d-md-flex align-items-md-stretch">
-                    <div class="count-box">
-                      <i class="bi bi-award"></i>
-                      <span data-purecounter-start="0" data-purecounter-end="8" data-purecounter-duration="1"
-                        class="purecounter"></span>
-                      <p>
-                        <strong>Awards</strong>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End .content-->
-            </div>
-          </div>
-        </div>
-      </section>
-      <!-- End Counts Section -->
 
       <!-- ======= Services Section ======= -->
       <section id="services" class="services">
@@ -315,52 +247,45 @@
       </section>
       <!-- End Testimonials Section -->
 
-      <!-- ======= Events Section ======= -->
-      <section id="events" class="events">
-        <div class="container">
 
-          <div class="section-title" data-aos="fade-up">
-            <h2>Gallery</h2>
-            <p>{{ index.gallery_heading }}</p>
+
+
+ <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title" data-aos="fade-up">
+          <h2>Gallery</h2>
+          <p>{{ index.gallery_heading }}</p>
+        </div>
+
+        <div class="row" data-aos="fade-up" data-aos-delay="200">
+          <div class="col-lg-12 d-flex justify-content-center">
+
           </div>
+        </div>
 
-          <div class="row" data-aos="fade-up" data-aos-delay="200">
-            <div class="col-lg-12 d-flex justify-content-center">
-
-{#              <ul id="events-flters">#}
-{#                <li data-filter="*" class="filter-active">All</li>#}
-{#                <li data-filter=".filter-app">App</li>#}
-{#                <li data-filter=".filter-card">Card</li>#}
-{#                <li data-filter=".filter-web">Web</li>#}
-{#              </ul>#}
-            </div>
-          </div>
-
-          <div class="row events-container" data-aos="fade-up" data-aos-delay="400">
+        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
 {% for images in gallery %}
-           <div class="col-lg-4 col-md-6 events-item filter-app">
-              <div class="events-wrap">
-                <img src="{% static images.imageURL %}" style="object-fit: contain;" class="img-fluid" alt="">
-                <div class="events-info">
-                  <h4>{{ images.event.title }}</h4>
+          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+            <div class="portfolio-wrap">
+              <img src="{% static images.imageURL %}" style="object-fit: contain;" class="img-fluid" alt="">
+              <div class="portfolio-info">
+                <h4>{{ images.event.title }}</h4>
 
-                  <div class="events-links">
-                    <a href="{% static images.imageURL %}" data-gallery="portfolioGallery"
-                      class="events-lightbox" title="{{ images.event.title }}"><i class="bx bx-plus"></i></a>
-                      {% if images.event %}
-                    <a href="{% url 'events' pk=images.event.pk %}" title="More Details"><i class="bx bx-link"></i></a>
-                      {% endif %}
-                  </div>
+                <div class="portfolio-links">
+                  <a href="{% static images.imageURL %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ images.event.title }}"><i class="bx bx-plus"></i></a>
+                  <a href="{% url 'events' pk=images.event.pk %}" title="{{ images.event.title }}"><i class="bx bx-link"></i></a>
                 </div>
               </div>
             </div>
-{% endfor %}
-
-
           </div>
+            {% endfor %}
+
 
         </div>
-      </section><!-- End events Section -->
+
+      </div>
+    </section><!-- End Portfolio Section -->
 
 
       <!-- ======= Team Section ======= -->

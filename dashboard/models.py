@@ -10,11 +10,28 @@ class LinkStorage(models.Model):
     count=models.IntegerField(null=True,blank=True,default=0)
 
 
+class Vertical(models.Model):
+    title=models.CharField(max_length=400,null=True,blank=True)
+    image=models.ImageField(upload_to='vertical',null=True,blank=True)
+
+    def __str__(self):
+        return str(self.title)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
+
+
 class Event(models.Model):
     created=models.DateTimeField(null=True,blank=True)
     title=models.CharField(null=True,blank=True,max_length=300)
     short_description=models.TextField(null=True,blank=True)
     description=models.TextField(null=True,blank=True)
+    vertical=models.ForeignKey(Vertical,null=True,blank=True,related_name='verticals',on_delete=models.SET_NULL)
     date=models.DateField(null=True,blank=True)
     registration_link=models.URLField(null=True,blank=True)
     last_date=models.DateField(null=True,blank=True)
@@ -55,19 +72,6 @@ class Skill(models.Model):
     title=models.TextField(null=True,blank=True)
     description=models.TextField(null=True,blank=True)
     svg=models.TextField(null=True,blank=True)
-
-
-class Vertical(models.Model):
-    title=models.CharField(max_length=400,null=True,blank=True)
-    image=models.ImageField(upload_to='vertical',null=True,blank=True)
-
-    @property
-    def imageURL(self):
-        try:
-            url = self.image.url
-        except:
-            url = ''
-        return url
 
 
 class Testimonial(models.Model):

@@ -6,6 +6,9 @@ import pytz
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
+from django.conf import settings
+from django.core.mail import send_mail
+
 from django.template.loader import render_to_string
 from django.utils.html import strip_tags
 from django.contrib.sessions.models import Session
@@ -21,31 +24,64 @@ from django.db import transaction
 
 
 def index(request):
-    events=models.Event.objects.all()
-    index=models.Index.objects.all().latest('pk')
-    skill=models.Skill.objects.all()
-    verticals=models.Vertical.objects.all()
-    testimonials=models.Testimonial.objects.all()
-    gallery=models.Gallery.objects.all()
-    team=models.Team.objects.all()
-    if request.method=="POST":
-        name=request.POST.get('name')
+    events = models.Event.objects.all()
+    index = models.Index.objects.all().latest('pk')
+    skill = models.Skill.objects.all()
+    verticals = models.Vertical.objects.all()
+    testimonials = models.Testimonial.objects.all()
+    gallery = models.Gallery.objects.all()
+    team = models.Team.objects.all()
+    company=models.Company.objects.all()
+    if request.method == "POST":
+        name = request.POST.get('name')
         subject = request.POST.get('subject')
         message = request.POST.get('message')
         number = request.POST.get('number')
-        sc, created = models.Contact.objects.get_or_create(name=name,subject=subject,message=message,number=number,
-                                                               created=datetime.datetime.now())
+        email = request.POST.get('email')
+        sc, created = models.Contact.objects.get_or_create(name=name, subject=subject, message=message, number=number,
+                                                           email=email,
+                                                           created=datetime.datetime.now())
         sc.save()
-        print('save')
-    return render(request,'index.html',{'events':events,'index':index,'skill':skill,'verticals':verticals,
-                                        'testimonials':testimonials,'gallery':gallery,'team':team})
 
 
-def events(request,**kwargs):
+        try:
+            email_subject = 'Greetings from Entrepreneurship Development Cell'
+            html_message = render_to_string('email_requester.html',
+                                            {'name': name})
+            plain_message = strip_tags(html_message)
+            from_email = settings.EMAIL_HOST_USER
+            to = str(email)
+
+            mail.send_mail(email_subject, plain_message, from_email, [to], html_message=html_message)
+
+            print('requester email sent')
+        except:
+            pass
+
+        try:
+            email_subject = '----New Response received on EDC----'
+            html_message = render_to_string('email_details.html',
+                                            {'name': name, 'subject': subject, 'email': email, 'number': number,
+                                             'message': message,'submitted':datetime.datetime.now()})
+            plain_message = strip_tags(html_message)
+            from_email = settings.EMAIL_HOST_USER
+            user_list = User.objects.filter(is_superuser=1)
+            to = [x.email for x in user_list]
+            print(to)
+            mail.send_mail(email_subject, plain_message, from_email, to, html_message=html_message)
+        except:
+            pass
+
+    return render(request, 'index.html', {'events': events, 'index': index, 'skill': skill, 'verticals': verticals,
+                                          'testimonials': testimonials, 'gallery': gallery,
+                                          'team': team,'company':company})
+
+
+def events(request, **kwargs):
     print(kwargs)
-    event=models.Event.objects.get(pk=kwargs.get('pk'))
+    event = models.Event.objects.get(pk=kwargs.get('pk'))
 
-    return render(request,'event_detail.html',{'event':event})
+    return render(request, 'event_detail.html', {'event': event})
 
 
 def login(request):
@@ -81,30 +117,30 @@ def dashboard(request):
 
 def add_link(request):
     if request.user.is_staff:
-        if request.method=='POST' and 'checker' in request.POST:
-            key=request.POST.get('test_char')
+        if request.method == 'POST' and 'checker' in request.POST:
+            key = request.POST.get('test_char')
             try:
-                object=models.LinkStorage.objects.get(key=key)
-                return render(request,'add_link.html',{'char_status':False,'char':key})
+                object = models.LinkStorage.objects.get(key=key)
+                return render(request, 'add_link.html', {'char_status': False, 'char': key})
             except:
-                return render(request, 'add_link.html', {'char_status': True,'char':key,'char_true':key})
+                return render(request, 'add_link.html', {'char_status': True, 'char': key, 'char_true': key})
 
-        if request.method=="POST" and 'link_submit' in request.POST:
+        if request.method == "POST" and 'link_submit' in request.POST:
             if 'key' in request.POST:
-                original_link=request.POST.get('original_link',None)
-                link_name = request.POST.get('link_name',None)
-                key = request.POST.get('key',None)
+                original_link = request.POST.get('original_link', None)
+                link_name = request.POST.get('link_name', None)
+                key = request.POST.get('key', None)
                 domain = request.build_absolute_uri('/')
                 converted_link = domain + f'l/{key}'
-                sc, created = models.LinkStorage.objects.get_or_create(name=link_name,link=original_link, key=key,
-                                                                   converted_link=converted_link,
-                                                                   date_time=datetime.datetime.now())
+                sc, created = models.LinkStorage.objects.get_or_create(name=link_name, link=original_link, key=key,
+                                                                       converted_link=converted_link,
+                                                                       date_time=datetime.datetime.now())
                 sc.save()
                 return redirect('link_table')
             else:
                 return redirect('add_link')
 
-        return render(request,'add_link.html')
+        return render(request, 'add_link.html')
     else:
         return render(request, '403.html')
 
@@ -112,17 +148,16 @@ def add_link(request):
 def link_table(request):
     objects = models.LinkStorage.objects.all()
 
-    return render(request,'link_tables.html',{'objects':objects})
+    return render(request, 'link_tables.html', {'objects': objects})
 
 
-def l(request,**kwargs):
-
-    key=kwargs.get('key',None)
+def l(request, **kwargs):
+    key = kwargs.get('key', None)
     try:
-        object=models.LinkStorage.objects.get(key=key)
+        object = models.LinkStorage.objects.get(key=key)
         object.count += 1
         object.save()
     except:
         return HttpResponse('sorry Bad request')
-    
+
     return redirect(f'{object.link}')

@@ -126,6 +126,7 @@ class Team(models.Model):
 class Contact(models.Model):
     name=models.CharField(null=True,blank=True,max_length=200)
     number=models.PositiveIntegerField(null=True,blank=True)
+    email=models.EmailField(null=True,blank=True)
     subject=models.TextField(null=True,blank=True)
     message=models.TextField(null=True,blank=True)
     created=models.DateTimeField(null=True,blank=True)

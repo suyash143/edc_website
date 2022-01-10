@@ -370,7 +370,7 @@
 				      		<div id="form-message-success" class="mb-4">
 				            Your message was sent, thank you!
 				      		</div>
-									<form method="POST" id="contactForm" onsubmit="  alert('The response was submitted');" name="contactForm" class="contactForm">
+									<form method="POST" id="contactForm" onsubmit="document.getElementById('submit_button').disabled=true;alert('Your Response Has been recorded, You will receive a conformation email shortly')" name="contactForm" class="contactForm">
                                         {% csrf_token %}
 										<div class="row">
 											<div class="col-md-6">
@@ -383,6 +383,12 @@
 												<div class="form-group">
 													<label class="label" for="email">Contact Number</label>
 													<input type="number" class="form-control" name="number" id="number" placeholder="Contact Number">
+												</div>
+											</div>
+                                            <div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Email Address</label>
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email address">
 												</div>
 											</div>
 											<div class="col-md-12">
@@ -399,7 +405,7 @@
 											</div>
 											<div class="col-md-12">
 												<div class="form-group">
-													<input type="submit" value="Send Message" class="btn btn-primary">
+													<input type="submit" id="submit_button" value="Send Message" class="btn btn-primary">
 													<div class="submitting"></div>
 												</div>
 											</div>

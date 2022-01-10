@@ -131,3 +131,19 @@ class Contact(models.Model):
     message=models.TextField(null=True,blank=True)
     created=models.DateTimeField(null=True,blank=True)
     status=models.CharField(max_length=300,null=True,blank=True)
+
+
+class Company(models.Model):
+    name=models.CharField(null=True,blank=True,max_length=200)
+    image=models.ImageField(upload_to='company',null=True,blank=True)
+
+    def __str__(self):
+        return str(self.name)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url

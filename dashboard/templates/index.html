@@ -35,34 +35,12 @@
   <section id="clients" class="clients clients">
     <div class="container">
       <div class="row">
+          {% for obj in company %}
         <div class="col-lg-2 col-md-4 col-6">
-          <img src="{% static 'index/assets/img/clients/client-1.png'%}" class="img-fluid" alt="" data-aos="zoom-in" />
+          <img src="{% static obj.imageURL%}" class="img-fluid" alt="{{ obj.name }}" data-aos="zoom-in" />
         </div>
 
-        <div class="col-lg-2 col-md-4 col-6">
-          <img src="{% static 'index/assets/img/clients/client-2.png'%}" class="img-fluid" alt="" data-aos="zoom-in"
-            data-aos-delay="100" />
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-          <img src="{% static 'index/assets/img/clients/client-3.png'%}" class="img-fluid" alt="" data-aos="zoom-in"
-            data-aos-delay="200" />
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-          <img src="{% static 'index/assets/img/clients/client-4.png'%}" class="img-fluid" alt="" data-aos="zoom-in"
-            data-aos-delay="300" />
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-          <img src="{% static 'index/assets/img/clients/client-5.png'%}" class="img-fluid" alt="" data-aos="zoom-in"
-            data-aos-delay="400" />
-        </div>
-
-        <div class="col-lg-2 col-md-4 col-6">
-          <img src="{% static 'index/assets/img/clients/client-6.png'%}" class="img-fluid" alt="" data-aos="zoom-in"
-            data-aos-delay="500" />
-        </div>
+        {% endfor %}
       </div>
     </div>
   </section>
@@ -414,7 +392,8 @@
 								</div>
 							</div>
 							<div class="col-md-5 d-flex align-items-stretch">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.5321687096603!2d75.94209581464068!3d22.821192076193892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e1!3m2!1sen!2sin!4v1640429057686!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>							</div>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.5321687096603!2d75.94209581464068!3d22.821192076193892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e1!3m2!1sen!2sin!4v1640429057686!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
 						</div>
 						<div class="row">
 							<div class="col-md-3">

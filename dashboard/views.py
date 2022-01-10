@@ -31,6 +31,7 @@ def index(request):
     testimonials = models.Testimonial.objects.all()
     gallery = models.Gallery.objects.all()
     team = models.Team.objects.all()
+    company=models.Company.objects.all()
     if request.method == "POST":
         name = request.POST.get('name')
         subject = request.POST.get('subject')
@@ -72,7 +73,8 @@ def index(request):
             pass
 
     return render(request, 'index.html', {'events': events, 'index': index, 'skill': skill, 'verticals': verticals,
-                                          'testimonials': testimonials, 'gallery': gallery, 'team': team})
+                                          'testimonials': testimonials, 'gallery': gallery,
+                                          'team': team,'company':company})
 
 
 def events(request, **kwargs):

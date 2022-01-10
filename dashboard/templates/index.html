@@ -1,43 +1,47 @@
-{% extends 'index_main.html' %}
-{% load static %}
-{% block content %}
-
+{% extends 'index_main.html' %} {% load static %} {% block content %}
 
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
   <div class="container">
     <div class="row">
-      <div class="col-lg-6
-              pt-5 pt-lg-0
-              order-2 order-lg-1
-              d-flex
-              flex-column
-              justify-content-center">
+      <div
+        class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
+      >
         <h1 data-aos="fade-up">{{ index.heading_bold }}</h1>
-        <h2 data-aos="fade-up" data-aos-delay="400">
-          {{ index.heading_sub }}
-        </h2>
+        <h2 data-aos="fade-up" data-aos-delay="400">{{ index.heading_sub }}</h2>
         <div data-aos="fade-up" data-aos-delay="800">
           <a href="#about" class="btn-get-started scrollto">Get Started</a>
         </div>
       </div>
-      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
-        <img src="{% static 'index/img/rocket edc-01.png'%}" class="img-fluid animated" alt="" />
+      <div
+        class="col-lg-6 order-1 order-lg-2 hero-img"
+        data-aos="fade-left"
+        data-aos-delay="200"
+      >
+        <img
+          src="{% static 'index/img/rocket edc-01.png'%}"
+          class="img-fluid animated"
+          alt=""
+        />
       </div>
     </div>
   </div>
 </section>
 <!-- End Hero -->
 
-
 <main id="main">
   <!-- ======= Clients Section ======= -->
   <section id="clients" class="clients clients">
     <div class="container">
       <div class="row">
-          {% for obj in company %}
+        {% for obj in company %}
         <div class="col-lg-2 col-md-4 col-6">
-          <img src="{% static obj.imageURL%}" class="img-fluid" alt="{{ obj.name }}" data-aos="zoom-in" />
+          <img
+            src="{% static obj.imageURL%}"
+            class="img-fluid"
+            alt="{{ obj.name }}"
+            data-aos="zoom-in"
+          />
         </div>
 
         {% endfor %}
@@ -46,402 +50,495 @@
   </section>
   <!-- End Clients Section -->
 
-
-
-      <!-- ======= About Us Section ======= -->
-      <section id="about" class="about">
-        <div class="container">
-
-          <div class="row">
-            <div class="col-lg-4">
-
-              <img src="{% static 'index/img/SuccessBlock.jpg'%}" style="height:50%" class="img-fluid" alt="" height="10">
-
-            </div>
-
-            <div class="col-lg-8 pt-4 pt-lg-0 content">
-       <h3><br>What is Entrepreneurship Developement Cell?</h3>
-              <p class="fst-italic">
-
-                {{ index.about_us_1 }}
-              </p>
-            </div>
-          </div>
-
+  <!-- ======= About Us Section ======= -->
+  <section id="about" class="about">
+    <div class="about-container container">
+      <div class="about-sub-container">
+        <div class="about-img">
+          <img
+            src="{% static 'index/img/SuccessBlock.jpg'%}"
+            style="height: auto; max-width: 280px"
+            class=""
+            alt=""
+          />
         </div>
-      </section>
-      <!-- End About Us Section -->
+        <div class="about-content">
+          <h3><br />What is Entrepreneurship Developement Cell?</h3>
+          <p class="fst-italic">{{ index.about_us_1 }}</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End About Us Section -->
 
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Services/Skills Taught</h2>
+        <p>We can include skills provided or Services provided .</p>
+      </div>
 
-
-      <!-- ======= Services Section ======= -->
-      <section id="services" class="services">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Services/Skills Taught</h2>
-            <p>
-              We can include skills provided or Services provided .
+      <div class="row">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
+            <div class="icon"><i class="bx bxl-dribbble"></i></div>
+            <h4 class="title"><a href="">communication Skills</a></h4>
+            <p class="description">
+              Teaching the students how to communicate properly by enhancing
             </p>
           </div>
+        </div>
 
-          <div class="row">
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
-                <div class="icon"><i class="bx bxl-dribbble"></i></div>
-                <h4 class="title"><a href="">communication Skills</a></h4>
-                <p class="description">
-                  Teaching the students how to communicate properly by enhancing
-                </p>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
-                <div class="icon"><i class="bx bx-file"></i></div>
-                <h4 class="title"><a href="">Professionalism</a></h4>
-                <p class="description">
-                    Creating a professional atmosphere and making them expose to this hence developing their personality
-                </p>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
-                <div class="icon"><i class="bx bx-tachometer"></i></div>
-                <h4 class="title"><a href="">Networking</a></h4>
-                <p class="description">
-                 Professionally building their network with other professionals
-                </p>
-              </div>
-            </div>
-
-            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-              <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
-                <div class="icon"><i class="bx bx-world"></i></div>
-                <h4 class="title"><a href="">Overall Skill</a></h4>
-                <p class="description">
-                  By practical exposure to the real life situations
-                </p>
-              </div>
-            </div>
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+            <div class="icon"><i class="bx bx-file"></i></div>
+            <h4 class="title"><a href="">Professionalism</a></h4>
+            <p class="description">
+              Creating a professional atmosphere and making them expose to this
+              hence developing their personality
+            </p>
           </div>
         </div>
-      </section>
-      <!-- End Services Section -->
 
-      <!-- ======= More Services Section ======= -->
-      <section id="more-services" class="more-services">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Events</h2>
-              <p>{{ index.event_heading }}</p>
-
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+            <div class="icon"><i class="bx bx-tachometer"></i></div>
+            <h4 class="title"><a href="">Networking</a></h4>
+            <p class="description">
+              Professionally building their network with other professionals
+            </p>
           </div>
-          <div class="row">
-            {% for event in events %}
-            <div class="col-md-6 d-flex align-items-stretch">
-              <div class="card" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
-                data-aos-delay="100" >
+        </div>
 
-                <div class="card-body">
-                  <h5 class="card-title"><a href="{% url 'events' pk=event.pk %}">{{ event.title }}</a></h5>
-                  <!--p class="card-text">
+        <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+          <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+            <div class="icon"><i class="bx bx-world"></i></div>
+            <h4 class="title"><a href="">Overall Skill</a></h4>
+            <p class="description">
+              By practical exposure to the real life situations
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- End Services Section -->
+
+  <!-- ======= More Services Section ======= -->
+  <section id="more-services" class="more-services">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Events</h2>
+        <p>{{ index.event_heading }}</p>
+      </div>
+      <div class="row">
+        {% for event in events %}
+        <div class="col-md-6 d-flex align-items-stretch">
+          <div
+            class="card"
+            style="background-image: url('{% static event.imageURL %}')"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <div class="card-body">
+              <h5 class="card-title">
+                <a href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+              </h5>
+              <!--p class="card-text">
                     {{ event.short_description }}
 
 
 
 
                   </p-->
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End More Services Section -->
 
+  <!-- ======= Features Section ======= -->
+  <!-- ======= Verticals Section ======= -->
+  <section id="supporters" class="section-with-bg wow fadeInUp">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Verticals</h2>
+        <p>{{ index.vertical_heading }}</p>
+      </div>
+
+      <div class="row no-gutters supporters-wrap clearfix">
+        {% for vertical in verticals %}
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="supporter-logo">
+            <img
+              src="{% static vertical.imageURL %}"
+              class="img-fluid"
+              alt="{{ vertical.title }}"
+            />
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End Features Section -->
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>{{ index.testimonial_heading }}</p>
+      </div>
+
+      <div
+        class="testimonials-slider swiper"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <div class="swiper-wrapper">
+          <!-- End testimonial item -->
+          {% for testimonial in testimonials %}
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img
+                  src="{% static testimonial.imageURL %}"
+                  class="testimonial-img"
+                  alt="{{ testimonial.name }}"
+                />
+                <h3>{{ testimonial.name }}</h3>
+                <h4>{{ testimonial.post }}</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{ testimonial.quote }}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- End testimonial item -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!-- End Testimonials Section -->
+
+  <section id="portfolio" class="portfolio">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Gallery</h2>
+        <p>{{ index.gallery_heading }}</p>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-12 d-flex justify-content-center"></div>
+      </div>
+
+      <div
+        class="row portfolio-container"
+        data-aos="fade-up"
+        data-aos-delay="400"
+      >
+        {% for images in gallery %}
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img
+              src="{% static images.imageURL %}"
+              style="object-fit: contain"
+              class="img-fluid"
+              alt=""
+            />
+            <div class="portfolio-info">
+              <h4>{{ images.event.title }}</h4>
+
+              <div class="portfolio-links">
+                <a
+                  href="{% static images.imageURL %}"
+                  data-gallery="portfolioGallery"
+                  class="portfolio-lightbox"
+                  title="{{ images.event.title }}"
+                  ><i class="bx bx-plus"></i
+                ></a>
+                <a
+                  href="{% url 'events' pk=images.event.pk %}"
+                  title="{{ images.event.title }}"
+                  ><i class="bx bx-link"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End Portfolio Section -->
+
+  <!-- ======= Team Section ======= -->
+  <section id="team" class="team section-bg">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Team</h2>
+        <p>{{ index.team_heading }}</p>
+      </div>
+
+      <div class="container">
+        <div class="row">
+          <div
+            class="MultiCarousel"
+            data-items="1,3,5,6"
+            data-slide="1"
+            id="MultiCarousel"
+            data-interval="1000"
+          >
+            <div class="MultiCarousel-inner">
+              <div class="container">
+                <div class="row blog">
+                  <div class="col-md-12">
+                    <div
+                      id="blogCarousel"
+                      class="carousel slide"
+                      data-ride="carousel"
+                    >
+                      <!-- Carousel items -->
+
+                      <div class="carousel-inner">
+                        <div class="carousel-item active">
+                          <div class="row">
+                            {% for member in team %}
+                            <div
+                              class="col-lg-3 col-md-6 d-flex align-items-stretch"
+                            >
+                              <div
+                                class="member"
+                                data-aos="fade-up"
+                                data-aos-delay="100"
+                              >
+                                <div class="member-img">
+                                  <img
+                                    src="{% static member.imageURL %}"
+                                    class="img-fluid"
+                                    alt="{{ member.name }}"
+                                  />
+                                  <div class="social">
+                                    <a href="{{ member.facebook_url }}"
+                                      ><i class="bi bi-facebook"></i
+                                    ></a>
+                                    <a href="{{ member.instagram_url }}"
+                                      ><i class="bi bi-instagram"></i
+                                    ></a>
+                                    <a href="{{ member.linkedin_url }}"
+                                      ><i class="bi bi-linkedin"></i
+                                    ></a>
+                                  </div>
+                                </div>
+                                <div class="member-info">
+                                  <h4>{{ member.name }}</h4>
+                                  <span>{{ member.post }}</span>
+                                </div>
+                              </div>
+                            </div>
+                            {% endfor %}
+                          </div>
+                          <!--.row-->
+                        </div>
+                        <!--.item-->
+                      </div>
+                      <!--.carousel-inner-->
+                    </div>
+                    <!--.Carousel-->
+                  </div>
                 </div>
               </div>
             </div>
-            {% endfor %}
-
-
           </div>
         </div>
-      </section>
-      <!-- End More Services Section -->
+      </div>
+    </div>
+  </section>
+  <!-- End Team Section -->
 
-      <!-- ======= Features Section ======= -->
-      <!-- ======= Verticals Section ======= -->
-      <section id="supporters" class="section-with-bg wow fadeInUp">
-
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Verticals</h2>
-              <p>{{ index.vertical_heading }}</p>
-          </div>
-
-          <div class="row no-gutters supporters-wrap clearfix">
-{% for vertical in verticals %}
-            <div class="col-lg-3 col-md-4 col-xs-6">
-              <div class="supporter-logo">
-                <img src="{% static vertical.imageURL %}" class="img-fluid" alt="{{ vertical.title }}">
+  <!-- ======= Contact Section ======= -->
+  <section id="contact" class="">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-12">
+          <div class="wrapper">
+            <div class="row no-gutters mb-5">
+              <div class="col-md-7">
+                <div class="contact-wrap w-100 p-md-5 p-4">
+                  <h3 class="mb-4">Contact Us</h3>
+                  <div id="form-message-warning" class="mb-4"></div>
+                  <div id="form-message-success" class="mb-4">
+                    Your message was sent, thank you!
+                  </div>
+                  <form
+                    method="POST"
+                    id="contactForm"
+                    onsubmit="document.getElementById('submit_button').disabled=true;alert('Your Response Has been recorded, You will receive a conformation email shortly')"
+                    name="contactForm"
+                    class="contactForm"
+                  >
+                    {% csrf_token %}
+                    <div class="row">
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label" for="name">Full Name</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="name"
+                            id="name"
+                            placeholder="Name"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-6">
+                        <div class="form-group">
+                          <label class="label" for="email"
+                            >Contact Number</label
+                          >
+                          <input
+                            type="number"
+                            class="form-control"
+                            name="number"
+                            id="number"
+                            placeholder="Contact Number"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="label" for="subject"
+                            >Email Address</label
+                          >
+                          <input
+                            type="email"
+                            class="form-control"
+                            name="email"
+                            id="email"
+                            placeholder="Email address"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="label" for="subject">Subject</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            name="subject"
+                            id="subject"
+                            placeholder="Subject"
+                          />
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <label class="label" for="#">Message</label>
+                          <textarea
+                            name="message"
+                            class="form-control"
+                            id="message"
+                            cols="30"
+                            rows="4"
+                            placeholder="Message"
+                          ></textarea>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="form-group">
+                          <input
+                            type="submit"
+                            id="submit_button"
+                            value="Send Message"
+                            class="btn btn-primary"
+                          />
+                          <div class="submitting"></div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+              <div class="col-md-5 d-flex align-items-stretch">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.5321687096603!2d75.94209581464068!3d22.821192076193892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e1!3m2!1sen!2sin!4v1640429057686!5m2!1sen!2sin"
+                  style="border: 0"
+                  allowfullscreen=""
+                  loading="lazy"
+                ></iframe>
               </div>
             </div>
-
-{% endfor %}
-          </div>
-        </div>
-
-      </section>
-      <!-- End Features Section -->
-
-      <!-- ======= Testimonials Section ======= -->
-      <section id="testimonials" class="testimonials section-bg">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Testimonials</h2>
-            <p>{{ index.testimonial_heading }}</p>
-          </div>
-
-          <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-            <div class="swiper-wrapper">
-
-              <!-- End testimonial item -->
-{% for testimonial in testimonials %}
-              <div class="swiper-slide">
-                <div class="testimonial-wrap">
-                  <div class="testimonial-item">
-                    <img src="{% static testimonial.imageURL %}" class="testimonial-img" alt="{{ testimonial.name }}" />
-                    <h3>{{ testimonial.name }}</h3>
-                    <h4>{{ testimonial.post }}</h4>
+            <div class="row">
+              <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                  <div
+                    class="icon d-flex align-items-center justify-content-center"
+                  >
+                    <span class="fa fa-map-marker"></span>
+                  </div>
+                  <div class="text">
+                    <p><span>Address:</span> {{ index.address }}</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                  <div
+                    class="icon d-flex align-items-center justify-content-center"
+                  >
+                    <span class="fa fa-phone"></span>
+                  </div>
+                  <div class="text">
                     <p>
-                      <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                      {{ testimonial.quote }}
-                      <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                      <span>Phone:</span>
+                      <a href="tel://{{ index.number }}">{{ index.number }}</a>
                     </p>
                   </div>
                 </div>
               </div>
-{% endfor %}
-              <!-- End testimonial item -->
-            </div>
-            <div class="swiper-pagination"></div>
-          </div>
-        </div>
-      </section>
-      <!-- End Testimonials Section -->
-
-
-
-
- <section id="portfolio" class="portfolio">
-      <div class="container">
-
-        <div class="section-title" data-aos="fade-up">
-          <h2>Gallery</h2>
-          <p>{{ index.gallery_heading }}</p>
-        </div>
-
-        <div class="row" data-aos="fade-up" data-aos-delay="200">
-          <div class="col-lg-12 d-flex justify-content-center">
-
-          </div>
-        </div>
-
-        <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
-{% for images in gallery %}
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-wrap">
-              <img src="{% static images.imageURL %}" style="object-fit: contain;" class="img-fluid" alt="">
-              <div class="portfolio-info">
-                <h4>{{ images.event.title }}</h4>
-
-                <div class="portfolio-links">
-                  <a href="{% static images.imageURL %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="{{ images.event.title }}"><i class="bx bx-plus"></i></a>
-                  <a href="{% url 'events' pk=images.event.pk %}" title="{{ images.event.title }}"><i class="bx bx-link"></i></a>
+              <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                  <div
+                    class="icon d-flex align-items-center justify-content-center"
+                  >
+                    <span class="fa fa-paper-plane"></span>
+                  </div>
+                  <div class="text">
+                    <p>
+                      <span>Email:</span>
+                      <a href="mailto:{{ index.email }}">{{ index.email }}</a>
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </div>
-            {% endfor %}
-
-
-        </div>
-
-      </div>
-    </section><!-- End Portfolio Section -->
-
-
-      <!-- ======= Team Section ======= -->
-      <section id="team" class="team section-bg">
-        <div class="container">
-          <div class="section-title" data-aos="fade-up">
-            <h2>Team</h2>
-            <p>{{ index.team_heading }}</p>
-          </div>
-
-          <div class="container">
-            <div class="row">
-              <div class="MultiCarousel" data-items="1,3,5,6" data-slide="1" id="MultiCarousel" data-interval="1000">
-                <div class="MultiCarousel-inner">
-                  <div class="container">
-                    <div class="row blog">
-                      <div class="col-md-12">
-                        <div id="blogCarousel" class="carousel slide" data-ride="carousel">
-                          <!-- Carousel items -->
-
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <div class="row">
-                                {% for member in team %}
-                                  <div class="
-                                    col-lg-3 col-md-6
-                                    d-flex
-                                    align-items-stretch
-                                  ">
-                                  <div class="member" data-aos="fade-up" data-aos-delay="100">
-                                    <div class="member-img">
-                                      <img src="{% static member.imageURL %}" class="img-fluid" alt="{{ member.name }}" />
-                                      <div class="social">
-
-                                        <a href="{{ member.facebook_url }}"><i class="bi bi-facebook"></i></a>
-                                        <a href="{{ member.instagram_url }}"><i class="bi bi-instagram"></i></a>
-                                        <a href="{{ member.linkedin_url }}"><i class="bi bi-linkedin"></i></a>
-                                      </div>
-                                    </div>
-                                    <div class="member-info">
-                                      <h4>{{ member.name }}</h4>
-                                      <span>{{ member.post }}</span>
-                                    </div>
-                                  </div>
-                                </div>
-                                  {% endfor %}
-
-                              </div>
-                              <!--.row-->
-                            </div>
-                            <!--.item-->
-                          </div>
-                          <!--.carousel-inner-->
-                        </div>
-                        <!--.Carousel-->
-                      </div>
-                    </div>
+              <div class="col-md-3">
+                <div class="dbox w-100 text-center">
+                  <div
+                    class="icon d-flex align-items-center justify-content-center"
+                  >
+                    <span class="fa fa-globe"></span>
+                  </div>
+                  <div class="text">
+                    <p><span>Website</span> <a href="#">edc.acropolis.in</a></p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </section>
-      <!-- End Team Section -->
-
-
-
-
-      <!-- ======= Contact Section ======= -->
-      <section id="contact" class="">
-        <div class="container">
-
-			<div class="row justify-content-center">
-				<div class="col-md-12">
-					<div class="wrapper">
-						<div class="row no-gutters mb-5">
-							<div class="col-md-7">
-								<div class="contact-wrap w-100 p-md-5 p-4">
-									<h3 class="mb-4">Contact Us</h3>
-									<div id="form-message-warning" class="mb-4"></div>
-				      		<div id="form-message-success" class="mb-4">
-				            Your message was sent, thank you!
-				      		</div>
-									<form method="POST" id="contactForm" onsubmit="document.getElementById('submit_button').disabled=true;alert('Your Response Has been recorded, You will receive a conformation email shortly')" name="contactForm" class="contactForm">
-                                        {% csrf_token %}
-										<div class="row">
-											<div class="col-md-6">
-												<div class="form-group">
-													<label class="label" for="name">Full Name</label>
-													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
-												</div>
-											</div>
-											<div class="col-md-6">
-												<div class="form-group">
-													<label class="label" for="email">Contact Number</label>
-													<input type="number" class="form-control" name="number" id="number" placeholder="Contact Number">
-												</div>
-											</div>
-                                            <div class="col-md-12">
-												<div class="form-group">
-													<label class="label" for="subject">Email Address</label>
-													<input type="email" class="form-control" name="email" id="email" placeholder="Email address">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<label class="label" for="subject">Subject</label>
-													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<label class="label" for="#">Message</label>
-													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
-												</div>
-											</div>
-											<div class="col-md-12">
-												<div class="form-group">
-													<input type="submit" id="submit_button" value="Send Message" class="btn btn-primary">
-													<div class="submitting"></div>
-												</div>
-											</div>
-										</div>
-									</form>
-								</div>
-							</div>
-							<div class="col-md-5 d-flex align-items-stretch">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2952.5321687096603!2d75.94209581464068!3d22.821192076193892!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e1!3m2!1sen!2sin!4v1640429057686!5m2!1sen!2sin" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                            </div>
-						</div>
-						<div class="row">
-							<div class="col-md-3">
-								<div class="dbox w-100 text-center">
-			        		<div class="icon d-flex align-items-center justify-content-center">
-			        			<span class="fa fa-map-marker"></span>
-			        		</div>
-			        		<div class="text">
-				            <p><span>Address:</span> {{ index.address }}</p>
-				          </div>
-			          </div>
-							</div>
-							<div class="col-md-3">
-								<div class="dbox w-100 text-center">
-			        		<div class="icon d-flex align-items-center justify-content-center">
-			        			<span class="fa fa-phone"></span>
-			        		</div>
-			        		<div class="text">
-				            <p><span>Phone:</span> <a href="tel://{{ index.number }}">{{ index.number }}</a></p>
-				          </div>
-			          </div>
-							</div>
-							<div class="col-md-3">
-								<div class="dbox w-100 text-center">
-			        		<div class="icon d-flex align-items-center justify-content-center">
-			        			<span class="fa fa-paper-plane"></span>
-			        		</div>
-			        		<div class="text">
-				            <p><span>Email:</span> <a href="mailto:{{ index.email }}">{{ index.email }}</a></p>
-				          </div>
-			          </div>
-							</div>
-							<div class="col-md-3">
-								<div class="dbox w-100 text-center">
-			        		<div class="icon d-flex align-items-center justify-content-center">
-			        			<span class="fa fa-globe"></span>
-			        		</div>
-			        		<div class="text">
-				            <p><span>Website</span> <a href="#">edc.acropolis.in</a></p>
-				          </div>
-			          </div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-        </div>
-      </section>
+      </div>
+    </div>
+  </section>
 </main>
 
 {% endblock content %}

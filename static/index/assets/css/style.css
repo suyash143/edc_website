@@ -552,77 +552,10 @@ about-container{
   }
 }
 
-/*--------------------------------------------------------------
-# Counts
---------------------------------------------------------------*/
-.counts {
-  padding-top: 0;
-}
-.counts .content {
-  padding: 0;
-}
-.counts .content h3 {
-  font-weight: 700;
-  font-size: 34px;
-  color: #222222;
-}
-.counts .content p {
-  margin-bottom: 0;
-}
-.counts .content .count-box {
-  padding: 20px 0;
-  width: 100%;
-}
-.counts .content .count-box i {
-  display: block;
-  font-size: 36px;
-  color: #C0202F;
-  float: left;
-  line-height: 0;
-}
-.counts .content .count-box span {
-  font-size: 36px;
-  line-height: 30px;
-  display: block;
-  font-weight: 700;
-  color: #222222;
-  margin-left: 50px;
-}
-.counts .content .count-box p {
-  padding: 15px 0 0 0;
-  margin: 0 0 0 50px;
-  font-family: "Raleway", sans-serif;
-  font-size: 14px;
-  color: #484848;
-}
-.counts .content .count-box a {
-  font-weight: 600;
-  display: block;
-  margin-top: 20px;
-  color: #484848;
-  font-size: 15px;
-  font-family: "Poppins", sans-serif;
-  transition: ease-in-out 0.3s;
-}
-.counts .content .count-box a:hover {
-  color: #6f6f6f;
-}
-@media (max-width: 1024px) {
-  .counts .image {
-    text-align: center;
-  }
-  .counts .image img {
-    max-width: 70%;
-  }
-}
-@media (max-width: 667px) {
-  .counts .image img {
-    max-width: 100%;
-  }
-}
+
 
 /*--------------------------------------------------------------
-# Services
+# Skills part
 --------------------------------------------------------------*/
 .services .icon-box {
   padding: 30px;

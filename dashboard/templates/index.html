@@ -288,34 +288,13 @@
       </div>
 
       <div class="container">
-        <div class="row">
-          <div
-            class="MultiCarousel"
-            data-items="1,3,5,6"
-            data-slide="1"
-            id="MultiCarousel"
-            data-interval="1000"
-          >
-            <div class="MultiCarousel-inner">
-              <div class="container">
-                <div class="row blog">
-                  <div class="col-md-12">
-                    <div
-                      id="blogCarousel"
-                      class="carousel slide"
-                      data-ride="carousel"
-                    >
-                      <!-- Carousel items -->
-
-                      <div class="carousel-inner">
-                        <div class="carousel-item active">
-                          <div class="row">
-                            {% for member in team %}
+        <div class="row slider">
+          {% for member in team %}
                             <div
-                              class="col-lg-3 col-md-6 d-flex align-items-stretch"
+                              class="col-md-12"
                             >
                               <div
-                                class="member"
+                                class="member mx-2"
                                 data-aos="fade-up"
                                 data-aos-delay="100"
                               >
@@ -344,19 +323,6 @@
                               </div>
                             </div>
                             {% endfor %}
-                          </div>
-                          <!--.row-->
-                        </div>
-                        <!--.item-->
-                      </div>
-                      <!--.carousel-inner-->
-                    </div>
-                    <!--.Carousel-->
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>

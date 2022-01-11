@@ -468,6 +468,10 @@ section {
 /*--------------------------------------------------------------
 # About Us
 --------------------------------------------------------------*/
+.about{
+  padding: 60px 0 15px 0;
+}
+
 .about .content h3 {
   font-weight: 600;
   font-size: 26px;
@@ -514,6 +518,38 @@ section {
   background: #C0202F;
   color: #fff;
   text-decoration: none;
+}
+
+about-container{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 5rem;
+}
+.about-sub-container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1300px;
+  /* margin: 0 5rem; */
+}
+
+.about-img{
+  margin: 0 3rem 0 0;
+}
+
+@media (max-width: 990px){
+  .about-sub-container{
+    flex-direction: column;
+  }
+  .about-img img{
+    width: 11rem;
+  }
+}
+@media (max-width: 776px){
+  .about-img img{
+    width: 9rem;
+  }
 }
 
 /*--------------------------------------------------------------

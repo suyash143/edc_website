@@ -79,6 +79,16 @@
         <p>We can include skills provided or Services provided .</p>
       </div>
 
+<<<<<<< HEAD
+
+      <!-- ======= Services Section ======= -->
+      <section id="services" class="services">
+        <div class="container">
+          <div class="section-title" data-aos="fade-up">
+            <h2>Services/Skills Taught</h2>
+            <p>
+              Nurture your skills with us:
+=======
       <div class="row">
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
@@ -86,6 +96,7 @@
             <h4 class="title"><a href="">communication Skills</a></h4>
             <p class="description">
               Teaching the students how to communicate properly by enhancing
+>>>>>>> dd65339487982a41fe0eaa6aa7f71a329c69543e
             </p>
           </div>
         </div>
@@ -536,9 +547,127 @@
             </div>
           </div>
         </div>
+<<<<<<< HEAD
+      </section>
+      <!-- End Team Section -->
+
+
+
+
+      <!-- ======= Contact Section ======= -->
+      <section id="contact" class="">
+        <div class="container">
+
+			<div class="row justify-content-center">
+				<div class="col-md-12">
+					<div class="wrapper">
+						<div class="row no-gutters mb-5">
+							<div class="col-md-7">
+								<div class="contact-wrap w-100 p-md-5 p-4">
+									<h3 class="mb-4">Contact Us</h3>
+									<div id="form-message-warning" class="mb-4"></div>
+				      		<div id="form-message-success" class="mb-4">
+				            Your message was sent, thank you!
+				      		</div>
+									<form method="POST" id="contactForm" onsubmit="document.getElementById('submit_button').disabled=true;alert('Your Response Has been recorded, You will receive a conformation email shortly')" name="contactForm" class="contactForm">
+                                        {% csrf_token %}
+										<div class="row">
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="name">Full Name</label>
+													<input type="text" class="form-control" name="name" id="name" placeholder="Name">
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="form-group">
+													<label class="label" for="email">Contact Number</label>
+													<input type="number" class="form-control" name="number" id="number" placeholder="Contact Number">
+												</div>
+											</div>
+                                            <div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Email Address</label>
+													<input type="email" class="form-control" name="email" id="email" placeholder="Email address">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="subject">Subject</label>
+													<input type="text" class="form-control" name="subject" id="subject" placeholder="Subject">
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<label class="label" for="#">Message</label>
+													<textarea name="message" class="form-control" id="message" cols="30" rows="4" placeholder="Message"></textarea>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="form-group">
+													<input type="submit" id="submit_button" value="Send Message" class="btn btn-primary">
+													<div class="submitting"></div>
+												</div>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+							<div class="col-md-5 d-flex align-items-stretch">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.4916603324777!2d75.94096541491544!3d22.821292585055414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e0!3m2!1sen!2sin!4v1641879910671!5m2!1sen!2sin" width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+              </div>
+						</div>
+						<div class="row">
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-map-marker"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Address:</span> {{ index.address }}</p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-phone"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Phone:</span> <a href="tel://{{ index.number }}">{{ index.number }}</a></p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-paper-plane"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Email:</span> <a href="mailto:{{ index.email }}">{{ index.email }}</a></p>
+				          </div>
+			          </div>
+							</div>
+							<div class="col-md-3">
+								<div class="dbox w-100 text-center">
+			        		<div class="icon d-flex align-items-center justify-content-center">
+			        			<span class="fa fa-globe"></span>
+			        		</div>
+			        		<div class="text">
+				            <p><span>Website</span> <a href="#">edc.acropolis.in</a></p>
+				          </div>
+			          </div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+        </div>
+      </section>
+=======
       </div>
     </div>
   </section>
+>>>>>>> dd65339487982a41fe0eaa6aa7f71a329c69543e
 </main>
 
 {% endblock content %}

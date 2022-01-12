@@ -2,6 +2,9 @@
 {% load static %} 
 {% block content %}
 
+<!-- ======= Loader ======= -->
+<div id="loader"></div>
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
   <div class="container">
@@ -58,7 +61,7 @@
       <div class="about-sub-container">
         <div class="about-img">
           <img
-            src="{% static 'index/img/SuccessBlock.jpg'%}"
+            src="{% static 'index/img/SuccessBlock.jpg'%}" 
             style="height: auto; max-width: 280px"
             class=""
             alt=""/>
@@ -165,7 +168,7 @@
         <p>{{ index.vertical_heading }}</p>
       </div>
 
-      <div class="row no-gutters supporters-wrap clearfix">
+      <div style="display:flex; justify-content: center; align-items: center;" class="row no-gutters clearfix"> 
         {% for vertical in verticals %}
         <div class="col-lg-3 col-md-4 col-xs-6">
           <div class="supporter-logo">
@@ -446,7 +449,7 @@
                     <span class="fa fa-map-marker"></span>
                   </div>
                   <div class="text">
-                    <p><span>Address:</span> {{ index.address }}</p>
+                    <p>{{ index.address }}</p>
                   </div>
                 </div>
               </div>
@@ -458,10 +461,7 @@
                     <span class="fa fa-phone"></span>
                   </div>
                   <div class="text">
-                    <p>
-                      <span>Phone:</span>
-                      <a href="tel://{{ index.number }}">{{ index.number }}</a>
-                    </p>
+                      <p><a href="tel://{{ index.number }}">{{ index.number }}</a></p>
                   </div>
                 </div>
               </div>
@@ -470,13 +470,10 @@
                   <div
                     class="icon d-flex align-items-center justify-content-center"
                   >
-                    <span class="fa fa-paper-plane"></span>
+                    <span class="bi bi-envelope"></span>
                   </div>
                   <div class="text">
-                    <p>
-                      <span>Email:</span>
                       <a href="mailto:{{ index.email }}">{{ index.email }}</a>
-                    </p>
                   </div>
                 </div>
               </div>
@@ -488,7 +485,7 @@
                     <span class="fa fa-globe"></span>
                   </div>
                   <div class="text">
-                    <p><span>Parent Website:</span> <a href="https://aitr.ac.in/sidebar/entrepreneurship-cell/">aitr.ac.in/EDC</a></p>
+                  <a href="https://aitr.ac.in/sidebar/entrepreneurship-cell/">aitr.ac.in/EDC</a></p>
                   </div>
                 </div>
               </div>

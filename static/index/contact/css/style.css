@@ -88,8 +88,9 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #2553b8; }
+ }
   a:hover, a:focus {
+    color: #C0202F;
     text-decoration: none !important;
     outline: none !important;
     -webkit-box-shadow: none;

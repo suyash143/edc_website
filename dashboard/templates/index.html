@@ -136,7 +136,7 @@
         {% for event in events %}
         <div class="col-md-6 d-flex align-items-stretch">
           <div
-            class="card"
+            class="card m-3"
             style="background-image: url('{% static event.imageURL %}')"
             data-aos="fade-up"
             data-aos-delay="100"
@@ -373,10 +373,12 @@
                           >
                           <input
                             type="number"
+                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                             class="form-control"
                             name="number"
                             id="number"
                             placeholder="Contact Number"
+                            maxlength="10"
                           />
                         </div>
                       </div>

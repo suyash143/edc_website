@@ -719,6 +719,15 @@ about-container{
 #supporters img {
   transition: all 0.4s ease-in-out;
 }
+
+/* Supporter-logo media query */
+@media(max-width:769px){
+  .supporter-logo img{
+    width:35vw;
+    height: auto;
+  }
+}
+
 /*--------------------------------------------------------------
 # Testimonials
 --------------------------------------------------------------*/

@@ -48,7 +48,7 @@
       <div class="container d-flex align-items-center justify-content-between">
         <div class="logo">
           <!-- Uncomment below if you prefer to use an image logo -->
-           <a href="index.html"><img src="{% static 'index/img/EDC LOGO-01 (3) (1).png'%}" alt="" class="img-fluid"></a>
+           <a href="{% url 'index' %}"><img src="{% static 'index/img/EDC LOGO-01 (3) (1).png'%}" alt="" class="img-fluid"></a>
         </div>
 
         <nav id="navbar" class="navbar">
@@ -60,9 +60,8 @@
               <a class="nav-link scrollto" href="#events">Events</a>
             </li>
             <li><a class="nav-link scrollto" href="#team">Team</a></li>
-            <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
             <li>
-              <a class="getstarted scrollto" href="#about">Get Started</a>
+              <a class="getstarted scrollto" href="#contact">Contact</a>
             </li>
           </ul>
           <i class="bi bi-list mobile-nav-toggle"></i>

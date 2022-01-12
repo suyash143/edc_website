@@ -41,7 +41,7 @@
 
   </head>
 
-  <body>
+  <body onload="stopLoading()">
     <!-- ======= Header ======= -->
     <header id="header" class="fixed-top d-flex align-items-center">
       <div class="container d-flex align-items-center justify-content-between">
@@ -185,6 +185,13 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Template Main JS File -->
     <script src="{% static 'index/assets/js/main.js'%}"></script>
+
+    <!-- Loader Script -->
+    <script>
+      setInterval(function stopLoading(){
+        document.getElementById("loader").style.display = 'none';
+      })
+    </script>
 
   </body>
 

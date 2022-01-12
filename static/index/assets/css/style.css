@@ -640,6 +640,7 @@ about-container{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
+  margin-bottom: 20px;
 }
 .more-services .card-body {
   z-index: 10;

@@ -46,8 +46,10 @@ def index(request):
 
         try:
             email_subject = 'Greetings from Entrepreneurship Development Cell'
+            add = models.Index.objects.latest('pk').address
+            print(add)
             html_message = render_to_string('email_requester.html',
-                                            {'name': name})
+                                            {'name': name,'address':add})
             plain_message = strip_tags(html_message)
             from_email = settings.EMAIL_HOST_USER
             to = str(email)

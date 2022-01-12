@@ -143,14 +143,10 @@
           >
             <div class="card-body" style="padding-bottom:10px">
               <h5 class="card-title">
-                <a href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+                <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
               </h5>
               <!--p class="card-text">
                     {{ event.short_description }}
-
-
-
-
                   </p-->
             </div>
           </div>
@@ -256,7 +252,7 @@
               alt=""
             />
             <div class="portfolio-info">
-              <h4>{{ images.event.title }}</h4>
+              <h4><a style="color: white; " href="{% url 'events' pk=images.event.pk %}">{{ images.event.title }}</a></h4>
 
               <div class="portfolio-links">
                 <a
@@ -490,7 +486,7 @@
                     <span class="fa fa-globe"></span>
                   </div>
                   <div class="text">
-                    <p><span>Website</span> <a href="#">edc.acropolis.in</a></p>
+                    <p><span>Parent Website:</span> <a href="https://aitr.ac.in/sidebar/entrepreneurship-cell/">aitr.ac.in/EDC</a></p>
                   </div>
                 </div>
               </div>

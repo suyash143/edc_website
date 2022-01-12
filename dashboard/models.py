@@ -123,6 +123,8 @@ class Team(models.Model):
     linkedin_url=models.URLField(null=True,blank=True)
     number=models.PositiveIntegerField(null=True,blank=True)
 
+
+
     @property
     def imageURL(self):
         try:

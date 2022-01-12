@@ -139,7 +139,7 @@
             data-aos="fade-up"
             data-aos-delay="100"
           >
-            <div class="card-body">
+            <div class="card-body" style="padding-bottom:10px">
               <h5 class="card-title">
                 <a href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
               </h5>
@@ -380,7 +380,7 @@
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="label" for="subject"
+                          <label class="label" for="email"
                             >Email Address</label
                           >
                           <input

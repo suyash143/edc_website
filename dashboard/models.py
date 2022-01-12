@@ -36,6 +36,7 @@ class Event(models.Model):
     registration_link=models.URLField(null=True,blank=True)
     last_date=models.DateField(null=True,blank=True)
     cover_image=models.ImageField(upload_to='event',null=True,blank=True)
+    cover_image_2=models.ImageField(upload_to='event',null=True,blank=True)
     completed=models.BooleanField(blank=True,null=True)
 
     def __str__(self):
@@ -45,6 +46,14 @@ class Event(models.Model):
     def imageURL(self):
         try:
             url = self.cover_image.url
+        except:
+            url = ''
+        return url
+
+
+    def imageURL_2(self):
+        try:
+            url = self.cover_image_2.url
         except:
             url = ''
         return url

@@ -72,6 +72,8 @@ def index(request):
         except:
             pass
 
+        return redirect('index')
+
     return render(request, 'index.html', {'events': events, 'index': index, 'skill': skill, 'verticals': verticals,
                                           'testimonials': testimonials, 'gallery': gallery,
                                           'team': team,'company':company})

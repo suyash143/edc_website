@@ -29,6 +29,7 @@ def index(request):
     skill = models.Skill.objects.all()
     verticals = models.Vertical.objects.all()
     testimonials = models.Testimonial.objects.all()
+    startups = models.Startup.objects.all()
     gallery = models.Gallery.objects.all()
     team = models.Team.objects.all()
     company=models.Company.objects.all()
@@ -77,7 +78,7 @@ def index(request):
         return redirect('index')
 
     return render(request, 'index.html', {'events': events, 'index': index, 'skill': skill, 'verticals': verticals,
-                                          'testimonials': testimonials, 'gallery': gallery,
+                                          'testimonials': testimonials,'startups': startups, 'gallery': gallery,
                                           'team': team,'company':company})
 
 

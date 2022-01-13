@@ -67,6 +67,7 @@ class Index(models.Model):
     about_us_2=models.TextField(null=True,blank=True)
     event_heading = models.TextField(null=True, blank=True)
     vertical_heading = models.TextField(null=True, blank=True)
+    startup_heading=models.TextField(null=True,blank=True)
     testimonial_heading=models.TextField(null=True,blank=True)
     gallery_heading=models.TextField(null=True,blank=True)
     team_heading = models.TextField(null=True, blank=True)
@@ -82,6 +83,20 @@ class Skill(models.Model):
     description=models.TextField(null=True,blank=True)
     svg=models.TextField(null=True,blank=True)
 
+
+class Startup(models.Model):
+    title=models.CharField(null=True,blank=True,max_length=400)
+    image=models.ImageField(upload_to='startup',null=True,blank=True)
+    name=models.CharField(max_length=300,null=True,blank=True)
+    about=models.TextField(null=True,blank=True)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 class Testimonial(models.Model):
     title=models.CharField(null=True,blank=True,max_length=400)

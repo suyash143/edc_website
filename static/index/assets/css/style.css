@@ -146,6 +146,7 @@ h1, h2, h3, h4, h5, h6 {
   white-space: nowrap;
   transition: 0.3s;
 }
+
 .navbar a i, .navbar a:focus i {
   font-size: 12px;
   line-height: 0;
@@ -682,7 +683,7 @@ about-container{
 .more-services .card-title {
   font-weight: 700;
   text-align: center;
-  /* margin-bottom: 15px; */
+  margin-bottom: 0;
 }
 .more-services .card-title a {
   color: #222222;

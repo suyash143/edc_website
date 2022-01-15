@@ -292,3 +292,38 @@ $('.slider').slick({
     }
   ]
 });
+
+
+// Dark Mode
+let darkMode = localStorage.getItem('darkMode'); 
+
+const darkModeToggle = document.querySelector('#darkToggle');
+
+const enableDarkMode = () => {
+  document.body.classList.add('darkmode');
+  darkModeToggle.classList.remove('bi-moon-fill');
+  darkModeToggle.classList.add('bi-sun-fill');
+  localStorage.setItem('darkMode', 'enabled');
+}
+
+const disableDarkMode = () => {
+  document.body.classList.remove('darkmode');
+  darkModeToggle.classList.remove('bi-sun-fill');
+  darkModeToggle.classList.add('bi-moon-fill');
+  localStorage.setItem('darkMode', null);
+}
+ 
+if (darkMode === 'enabled') {
+  enableDarkMode();
+}
+
+darkModeToggle.addEventListener('click', () => {
+  darkMode = localStorage.getItem('darkMode'); 
+  
+  if (darkMode !== 'enabled') {
+    enableDarkMode();
+  } else {  
+    disableDarkMode(); 
+  }
+
+});

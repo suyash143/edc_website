@@ -14,6 +14,14 @@
   --bg-color : #fff; /*fff*/
   --text-color: #444444; /*444444*/
   --heading-color: #222222;
+  --section-bg: #f7fbfe;
+  --contact-bg: #e8edf0;
+  --border-color: #e0e0e0;
+  --card-bg: var(--bg-color);
+  --box-shadow: rgba(68, 88, 144, 0.12);
+  --accordion-button-bg: var(--bg-color);
+  --accordion-button-not-bg: #f5e1e3;
+  --reachus-border: transparent;
 }
 
 body {
@@ -27,7 +35,15 @@ body {
   --red : #C0202F;
   --bg-color : #2b2b2b; /*fff*/
   --text-color: #818181; /*444444*/
-  --heading-color: #acacac;/*#222222*/
+  --heading-color: #b9b9b9;/*#222222*/
+  --section-bg: #2e2e2e;
+  --contact-bg: #505253c0;
+  --border-color: #373737;
+  --card-bg: #383838;
+  --box-shadow: rgba(71, 77, 95, 0.12);
+  --accordion-button-bg: var(--bg-color);
+  --accordion-button-not-bg: #b3989b;
+  --reachus-border: var(--text-color);
 }
 
 /* dark mode */
@@ -42,6 +58,11 @@ body {
 #darkToggle{
   margin: 1rem;
   cursor: pointer;
+  transition: transform .5s ease-out;
+}
+
+#darkToggle:hover{
+  color: var(--red);
 }
 
 a {
@@ -135,7 +156,7 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 #header .logo h1 a, #header .logo h1 a:hover {
-  color: #222222;
+  color: var(--heading-color);
   text-decoration: none;
 }
 #header .logo img {
@@ -172,7 +193,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 10px 30px 10px 0;
   font-size: 15px;
   font-weight: 400;
-  color: #555555;
+  color:var(--text-color);
   white-space: nowrap;
   transition: 0.3s;
 }
@@ -199,7 +220,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .getstarted{
-  transition: transform .2s ease-in-out;
+  transition: all .2s ease-in-out;
 }
 .getstarted:hover{
   transform: scale(1.15);
@@ -263,7 +284,7 @@ h1, h2, h3, h4, h5, h6 {
 * Mobile Navigation 
 */
 .mobile-nav-toggle {
-  color: #222222;
+  color: var(--text-color);
   font-size: 28px;
   cursor: pointer;
   display: none;
@@ -271,7 +292,7 @@ h1, h2, h3, h4, h5, h6 {
   transition: 0.5s;
 }
 .mobile-nav-toggle.bi-x {
-  color: var(--bg-color);
+  color: var(--text-color);
 }
 
 @media (max-width: 991px) {
@@ -315,7 +336,7 @@ h1, h2, h3, h4, h5, h6 {
 .navbar-mobile a, .navbar-mobile a:focus {
   padding: 10px 20px;
   font-size: 15px;
-  color: #222222;
+  color: var(--text-color);
 }
 .navbar-mobile a:hover, .navbar-mobile .active, .navbar-mobile li:hover > a {
   color: var(--red);
@@ -350,6 +371,10 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
+.bi-x, .bi-li{
+  color: var(--text-color);
+}
+
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
@@ -363,7 +388,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
-  color: black;
+  color: var(--heading-color);
 }
 #hero h2 {
   color: var(--text-color);
@@ -458,7 +483,7 @@ section {
 }
 
 .section-bg {
-  background-color: var(--bg-color);
+  background-color: var(--section-bg);
 }
 
 .section-title {
@@ -470,7 +495,7 @@ section {
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
-  color: #222222;
+  color: var(--heading-color);
 }
 .section-title h2::before, .section-title h2::after {
   content: "";
@@ -620,7 +645,7 @@ about-container{
   position: relative;
   overflow: hidden;
   background: var(--bg-color);
-  box-shadow: 0 0 29px 0 rgba(68, 88, 144, 0.12);
+  box-shadow: 0 0 29px 0 var(--box-shadow);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;
   z-index: 1;
@@ -628,7 +653,7 @@ about-container{
 .services .icon-box::before {
   content: "";
   position: absolute;
-  background: #e1f0fa;
+  background: var(--contact-bg);
   right: -60px;
   top: -40px;
   width: 100px;
@@ -667,7 +692,7 @@ about-container{
   font-size: 18px;
 }
 .services .title a {
-  color: #111;
+  color: var(--heading-color);
 }
 .services .description {
   font-size: 15px;
@@ -702,7 +727,7 @@ about-container{
 }
 .more-services .card-body {
   z-index: 10;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--bg-color);
   padding: 15px 30px;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
   transition: 0.3s;
@@ -715,7 +740,7 @@ about-container{
   margin-bottom: 0;
 }
 .more-services .card-title a {
-  color: #222222;
+  color: var(--heading-color);
 }
 .more-services .card-text {
   color: #5e5e5e;
@@ -737,6 +762,10 @@ about-container{
   color: var(--bg-color);
 }
 
+
+
+
+
 /*--------------------------------------------------------------
 # supporters Section
 --------------------------------------------------------------*/
@@ -746,8 +775,8 @@ about-container{
 }
 
 #supporters .supporters-wrap {
-  border-top: 1px solid #e0e5fa;
-  border-left: 1px solid #e0e5fa;
+  border-top: 1px solid var(--text-color);
+  border-left: 1px solid var(--text-color);
   margin-bottom: 30px;
 }
 
@@ -762,10 +791,10 @@ about-container{
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  border: 1px solid #e0e5fa;
+  border: 1px solid var(--border-color);
   margin-bottom: .5rem;
   overflow: hidden;
-  background: rgba(255, 255, 255, 0.5);
+  background: var(--bg-color);
   height: 160px;
 }
 
@@ -815,7 +844,7 @@ about-container{
   font-size: 18px;
   font-weight: bold;
   margin: 10px 0 5px 0;
-  color: #111;
+  /* color: #111; */
 }
 .testimonials .testimonial-item h4 {
   font-size: 14px;
@@ -871,6 +900,16 @@ about-container{
     left: auto;
   }
 }
+
+/* Startups */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 0.35rem;
+}
+
+
+
 
 /*--------------------------------------------------------------
 # Portfolio
@@ -1085,7 +1124,7 @@ about-container{
   font-weight: 700;
   margin-bottom: 5px;
   font-size: 18px;
-  color: #222222;
+  /* color: #222222; */
 }
 .team .member .member-info span {
   display: block;
@@ -1117,6 +1156,19 @@ about-container{
   transform: rotate(
 -180deg
 );
+}
+
+.accordion-item{
+  background-color: var(--card-bg);
+}
+
+.accordion-button{
+  color: var(--text-color);
+  background-color: var(--accordion-button-bg);
+}
+
+.accordion-button:not(.collapsed){
+  background-color: var(--accordion-button-not-bg);
 }
 
 /* Teamcarousel next,prev button styling */
@@ -1252,7 +1304,7 @@ about-container{
 --------------------------------------------------------------*/
 .breadcrumbs {
   padding: 15px 0;
-  background: #f8f8f8;
+  background: var(--bg-color);
   min-height: 40px;
   margin-top: 86px;
 }
@@ -1381,7 +1433,7 @@ about-container{
 .contact-form .second-container h2{
   font-size:30px;
   font-weight:400;
-  color:#333;
+  color: var(--heading-color);
   line-height: 1.2;
   text-align: center;
   margin-bottom:20px;
@@ -1470,7 +1522,7 @@ html {
   padding: 30px 30px 20px 30px;
   color: #2f2f2f;
   background-color: var(--bg-color);
-  border-top: 1px solid #e5e5e5;
+  border-top: 1px solid var(--border-color);
   font-family: acumin-pro, system-ui, sans-serif;
 }
 
@@ -1513,13 +1565,14 @@ html {
   height: 36px;
   max-width: max-content;
   background-color: rgb(33, 33, 33, 0.07);
+  border: 1px solid var(--reachus-border);
   border-radius: 100px;
-  color: #2f2f2f;
+  color: var(--text-color);
   line-height: 0;
   margin: 0.6em 0;
   font-size: 1rem;
   padding: 0 1.3em;
-  transition: transform .3s;
+  transition: all .3s;
 }
 
 .footer__btn:hover{

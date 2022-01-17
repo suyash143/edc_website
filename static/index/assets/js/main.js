@@ -260,33 +260,80 @@
 $('.slider').slick({
   slidesToShow: 4,
   slidesToScroll: 1,
-  autoplay: true,
-  autoplaySpeed: 2000,dots: false,
-  prevArrow: false,
-  nextArrow: false,
+  autoplay: false,
+  autoplaySpeed: 1800,
+  dots: false,
+  infinite:false,
   responsive: [
     {
       breakpoint: 1024,
       settings: {
+        autoplay: false,
         slidesToShow: 3,
-        slidesToScroll: 3,
-        infinite: true,
-        dots: false
+        slidesToScroll: 1,
       }
     },
     {
       breakpoint: 600,
       settings: {
+        autoplay: false,
         slidesToShow: 2,
-        slidesToScroll: 2
+        slidesToScroll: 1,
       }
     },
     {
       breakpoint: 480,
       settings: {
+        autoplay: false,
         slidesToShow: 1,
-        slidesToScroll: 1
+        slidesToScroll: 1,
+
       }
     }
   ]
+});
+
+
+// Dark Mode
+let darkMode = localStorage.getItem('darkMode'); 
+let edcImg = document.querySelector("#edc-img");
+let successImg = document.querySelector("#success-img");
+
+
+const darkModeToggle = document.querySelector('#darkToggle');
+
+const enableDarkMode = () => {
+  document.body.classList.add('darkmode');
+  darkModeToggle.classList.remove('bi-moon-fill');
+  darkModeToggle.classList.add('bi-sun-fill');
+  edcImg.setAttribute("src", "static/index/img/rocket edc-01_grey.png");
+  successImg.setAttribute("src", "static/index/img/SuccessBlock_grey.png");
+  localStorage.setItem('darkMode', 'enabled');
+}
+
+const disableDarkMode = () => {
+  document.body.classList.remove('darkmode');
+  darkModeToggle.classList.remove('bi-sun-fill');
+  darkModeToggle.classList.add('bi-moon-fill');
+  edcImg.setAttribute("src", "static/index/img/rocket edc-01.png");
+  successImg.setAttribute("src", "static/index/img/SuccessBlock.png");
+  localStorage.setItem('darkMode', null);
+}
+ 
+if (darkMode === 'enabled') {
+  enableDarkMode();
+}
+else{
+  disableDarkMode();
+}
+
+darkModeToggle.addEventListener('click', () => {
+  darkMode = localStorage.getItem('darkMode'); 
+  
+  if (darkMode !== 'enabled') {
+    enableDarkMode();
+  } else {  
+    disableDarkMode(); 
+  }
+
 });

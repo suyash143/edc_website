@@ -24,8 +24,9 @@
         data-aos-delay="200"
       >
         <img
-          src="{% static 'index/img/rocket edc-01.png'%}"
           class="img-fluid animated"
+          id="edc-img"
+          src=""
           alt=""
         />
       </div>
@@ -36,7 +37,7 @@
 
 <main id="main">
   <!-- ======= Clients Section ======= -->
-  <section id="clients" class="clients clients">
+  <section id="clients" class="clients section-bg">
     <div class="container">
       <div class="row">
         {% for obj in company %}
@@ -61,14 +62,15 @@
       <div class="about-sub-container">
         <div class="about-img">
           <img
-            src="{% static 'index/img/SuccessBlock.jpg'%}" 
+            data-aos="fade-up"
             style="height: auto; max-width: 280px"
-            class=""
+            id="success-img"
+            src=""
             alt=""/>
         </div>
         <div class="about-content">
-          <h3><br />What is Entrepreneurship Developement Cell?</h3>
-          <p class="fst-italic">{{ index.about_us_1 }}</p>
+          <h3 data-aos="fade-up"><br />What is Entrepreneurship Developement Cell?</h3>
+          <p data-aos="fade-up" class="fst-italic">{{ index.about_us_1 }}</p>
         </div>
       </div>
     </div>
@@ -135,29 +137,79 @@
         <h2>Events</h2>
         <p>{{ index.event_heading }}</p>
       </div>
-      <div class="section-title" data-aos="fade-up">
-        <h3>Past Events</h3>
-      </div>
-      <div class="row mb-4">
-        {% for event in events %}
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div
-            class="card m-3"
-            style="background-image: url('{% static event.imageURL %}')"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="card-body" style="padding-bottom:10px">
-              <h5 class="card-title">
-                <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-              </h5>
-              <!--p class="card-text">
-                    {{ event.short_description }}
-                  </p-->
-            </div>
+      
+      <div data-aos="fade-up" class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Current Events
+            </button>
+          </h2>
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="row mb-4">
+                  {% for event in events %}
+                  <div class="col-md-6 d-flex align-items-stretch">
+                    <div
+                      class="card m-3"
+                      style="background-image: url('{% static event.imageURL %}')"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <div class="card-body" style="padding-bottom:10px">
+                        <h5 class="card-title">
+                          <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+                        </h5>
+                        <!--p class="card-text">
+                              {{ event.short_description }}
+                            </p-->
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>    
+          </div>
           </div>
         </div>
+<<<<<<< HEAD
         {% endfor %}
+=======
+        <div class="accordion-item" >
+          <h2  class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Past Events
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="row mb-4">
+                  {% for event in events %}
+                  <div class="col-md-6 d-flex align-items-stretch">
+                    <div
+                      class="card m-3"
+                      style="background-image: url('{% static event.imageURL %}')"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <div class="card-body" style="padding-bottom:10px">
+                        <h5 class="card-title">
+                          <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+                        </h5>
+                        <!--p class="card-text">
+                              {{ event.short_description }}
+                            </p-->
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>    
+          </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>
+>>>>>>> b2944c203a0d906bbbbe9fc867ce14286ac2ecbf
       </div>
     </div>
   </section>
@@ -171,7 +223,7 @@
         <p>{{ index.vertical_heading }}</p>
       </div>
 
-      <div style="display:flex; justify-content: center; align-items: center;" class="row no-gutters clearfix"> 
+      <div data-aos="fade-up" style="display:flex; justify-content: center; align-items: center;" class="row no-gutters clearfix"> 
         {% for vertical in verticals %}
         <div class="col-lg-3 col-md-4 col-xs-6">
           <div class="supporter-logo">
@@ -249,7 +301,7 @@
       {% for startup in startups %}
       <div class="col-lg-4 col-md-6 filter-app">
           <div class="card mb-4" style="display: flex; flex-direction: row; height: 7rem;">
-            <div style="max-width:25%;display: flex; align-items: center; border-right: 1px solid #d3d3d3;"><img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}" style="object-fit: contain;"></div>
+            <div style="max-width:25%;display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color);"><img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}" style="width: 90%;"></div>
             <div class="card-body">
               <h5 class="card-title">{{ startup.title }}</h5>
               <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>

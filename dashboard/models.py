@@ -98,6 +98,7 @@ class Startup(models.Model):
             url = ''
         return url
 
+
 class Testimonial(models.Model):
     title=models.CharField(null=True,blank=True,max_length=400)
     image=models.ImageField(upload_to='testimonial',null=True,blank=True)

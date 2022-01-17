@@ -159,54 +159,6 @@
         </div>
         {% endfor %}
       </div>
-      <div class="section-title" data-aos="fade-up">
-        <h3>Current Events</h3>
-      </div>
-      <div class="row mb-4">
-        {% for event in events %}
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div
-            class="card m-3"
-            style="background-image: url('{% static event.imageURL %}')"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="card-body" style="padding-bottom:10px">
-              <h5 class="card-title">
-                <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-              </h5>
-              <!--p class="card-text">
-                    {{ event.short_description }}
-                  </p-->
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-      <div class="section-title" data-aos="fade-up">
-        <h3>Future Events</h3>
-      </div>
-      <div class="row mb-4">
-        {% for event in events %}
-        <div class="col-md-6 d-flex align-items-stretch">
-          <div
-            class="card m-3"
-            style="background-image: url('{% static event.imageURL %}')"
-            data-aos="fade-up"
-            data-aos-delay="100"
-          >
-            <div class="card-body" style="padding-bottom:10px">
-              <h5 class="card-title">
-                <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-              </h5>
-              <!--p class="card-text">
-                    {{ event.short_description }}
-                  </p-->
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
     </div>
   </section>
   <!-- End More Services Section -->

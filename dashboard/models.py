@@ -89,7 +89,8 @@ class Startup(models.Model):
     image=models.ImageField(upload_to='startup',null=True,blank=True)
     name=models.CharField(max_length=300,null=True,blank=True)
     about=models.TextField(null=True,blank=True)
-
+    site_url=models.URLField(null=True,blank=True)
+    linkedin_url=models.URLField(null=True,blank=True)
     @property
     def imageURL(self):
         try:

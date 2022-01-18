@@ -299,10 +299,11 @@
       {% for startup in startups %}
       <div class="col-lg-4 col-md-6 filter-app">
           <div class="card mb-4" style="display: flex; flex-direction: row; height: 7rem;">
-            <div style="max-width:25%;display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color);"><img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}" style="width: 90%;"></div>
+            <div style="max-width:25%;display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color);">
+              <img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}" style="width: 90%;"></div>
             <div class="card-body">
-              <h5 class="card-title">{{ startup.title }}</h5>
-              <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>
+              <a href="{{ startup.site_url }}" target="_blank"><h5 class="card-title">{{ startup.title }}</h5></a>
+              <a href="{{ startup.linkedin_url }}" target="_blank"><h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3></a>
               <!-- <p class="card-text">{{ startup.about }}</p> -->
             </div>
           </div>

@@ -69,7 +69,7 @@
             alt=""/>
         </div>
         <div class="about-content">
-          <h3 data-aos="fade-up"><br />What is Entrepreneurship Developement Cell?</h3>
+          <h3 data-aos="fade-up"><br />About Entrepreneurship Developement Cell</h3>
           <p data-aos="fade-up" class="fst-italic">{{ index.about_us_1 }}</p>
         </div>
       </div>
@@ -139,38 +139,7 @@
       </div>
       
       <div data-aos="fade-up" class="accordion" id="accordionExample">
-      <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Ongoing Events
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="row mb-4">
-                  {% for event in ongoing_events %}
-                  <div class="col-md-6 d-flex align-items-stretch">
-                    <div
-                      class="card m-3"
-                      style="background-image: url('{% static event.imageURL %}')"
-                      data-aos="fade-up"
-                      data-aos-delay="100"
-                    >
-                      <div class="card-body" style="padding-bottom:10px">
-                        <h5 class="card-title">
-                          <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-                        </h5>
-                        <!--p class="card-text">
-                              {{ event.short_description }}
-                            </p-->
-                      </div>
-                    </div>
-                  </div>
-                  {% endfor %}
-                </div>
-          </div>
-          </div>
-        </div>
+      
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
             <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -203,14 +172,46 @@
           </div>
           </div>
         </div>
+      <div class="accordion-item">
+        <h2  class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            Ongoing Events
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div class="accordion-body">
+            <div class="row mb-4">
+                  {% for event in ongoing_events %}
+                  <div class="col-md-6 d-flex align-items-stretch">
+                    <div
+                      class="card m-3"
+                      style="background-image: url('{% static event.imageURL %}')"
+                      data-aos="fade-up"
+                      data-aos-delay="100"
+                    >
+                      <div class="card-body" style="padding-bottom:10px">
+                        <h5 class="card-title">
+                          <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+                        </h5>
+                        <!--p class="card-text">
+                              {{ event.short_description }}
+                            </p-->
+                      </div>
+                    </div>
+                  </div>
+                  {% endfor %}
+                </div>
+          </div>
+          </div>
+        </div>
 
         <div class="accordion-item" >
-          <h2  class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          <h2  class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Past Events
             </button>
           </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="row mb-4">
                   {% for event in past_events %}

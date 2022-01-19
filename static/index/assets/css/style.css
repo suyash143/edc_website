@@ -491,7 +491,7 @@ section {
   padding-bottom: 30px;
 }
 .section-title h2 {
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
@@ -510,8 +510,31 @@ section {
 .section-title h2::after {
   margin: 0 0 10px 15px;
 }
+
 .section-title p {
   margin: 15px 0 0 0;
+}
+
+@media(max-width:480px)
+{
+
+  .section-title h2 {
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    color: var(--heading-color);
+  }
+
+
+  .section-title h2::before, .section-title h2::after{
+    margin: 0px 15px 5px 0px;
+  }
+
+  .section-title h2::after{
+    margin: 0px 0px 5px 15px;
+  }
+
 }
 
 /*--------------------------------------------------------------
@@ -908,8 +931,21 @@ about-container{
   border-radius: 0.35rem;
 }
 
+@media(max-width:480px)
+{
+.startups h2{
+  font-size: 1rem;
+}
 
+.section-title h2::before, .section-title h2::after {
+  content: "";
+  width: 50px;
+  height: 2px;
+  background: var(--red);
+  display: inline-block;
+}
 
+}
 
 /*--------------------------------------------------------------
 # Portfolio

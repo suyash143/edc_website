@@ -491,7 +491,7 @@ section {
   padding-bottom: 30px;
 }
 .section-title h2 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: bold;
   text-transform: uppercase;
   position: relative;
@@ -515,11 +515,11 @@ section {
   margin: 15px 0 0 0;
 }
 
-@media(max-width:480px)
+@media(max-width:520px)
 {
 
   .section-title h2 {
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
@@ -931,20 +931,12 @@ about-container{
   border-radius: 0.35rem;
 }
 
-@media(max-width:480px)
-{
-.startups h2{
-  font-size: 1rem;
-}
-
 .section-title h2::before, .section-title h2::after {
   content: "";
   width: 50px;
   height: 2px;
   background: var(--red);
   display: inline-block;
-}
-
 }
 
 /*--------------------------------------------------------------
@@ -1210,11 +1202,16 @@ about-container{
 /* Teamcarousel next,prev button styling */
 
 .slick-next:before, .slick-prev:before{
-  color: var(--red)!important
+  color: var(--red)!important;
 }
 @media(max-width:600px){
-  .slick-next:before, .slick-prev:before{
-    color: transparent!important
+  .slick-prev:before{
+    position: relative;
+    right: -.8rem;
+  }
+  .slick-next:before{
+    position: relative;
+    left: -.8rem;
   }
 }
 

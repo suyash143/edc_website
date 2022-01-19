@@ -1,5 +1,5 @@
-{% extends 'index_main.html' %} 
-{% load static %} 
+{% extends 'index_main.html' %}
+{% load static %}
 {% block content %}
 
 <!-- ======= Loader ======= -->
@@ -9,26 +9,15 @@
 <section id="hero" class="d-flex align-items-center">
   <div class="container">
     <div class="row">
-      <div
-        class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center"
-      >
+      <div class="col-lg-6 pt-5 pt-lg-0 order-2 order-lg-1 d-flex flex-column justify-content-center">
         <h1 data-aos="fade-up">{{ index.heading_bold }}</h1>
         <h2 data-aos="fade-up" data-aos-delay="400">{{ index.heading_sub }}</h2>
         <div data-aos="fade-up" data-aos-delay="800">
           <a href="#about" class="btn-get-started scrollto">Get Started</a>
         </div>
       </div>
-      <div
-        class="col-lg-6 order-1 order-lg-2 hero-img"
-        data-aos="fade-left"
-        data-aos-delay="200"
-      >
-        <img
-          class="img-fluid animated"
-          id="edc-img"
-          src=""
-          alt=""
-        />
+      <div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="fade-left" data-aos-delay="200">
+        <img class="img-fluid animated" id="edc-img" src="" alt="" />
       </div>
     </div>
   </div>
@@ -40,17 +29,13 @@
   <section id="clients" class="clients section-bg">
     <div class="container">
       <div class="row">
-        {% for obj in company %}
-        <div class="col-lg-2 col-md-4 col-6">
-          <img
-            src="{% static obj.imageURL%}"
-            class="img-fluid"
-            alt="{{ obj.name }}"
-            data-aos="zoom-in"
-          />
+        <div id="clients-carousel" class="clients-carousel">
+          {% for obj in company %}
+          <div class="col-lg-2 col-md-4 col-6">
+            <img src="{% static obj.imageURL%}" class="img-fluid" alt="{{ obj.name }}" data-aos="zoom-in" />
+          </div>
+          {% endfor %}
         </div>
-
-        {% endfor %}
       </div>
     </div>
   </section>
@@ -61,12 +46,7 @@
     <div class="about-container container">
       <div class="about-sub-container">
         <div class="about-img">
-          <img
-            data-aos="fade-up"
-            style="height: auto; max-width: 280px"
-            id="success-img"
-            src=""
-            alt=""/>
+          <img data-aos="fade-up" style="height: auto; max-width: 280px" id="success-img" src="" alt="" />
         </div>
         <div class="about-content">
           <h3 data-aos="fade-up"><br />About Entrepreneurship Developement Cell</h3>
@@ -137,111 +117,105 @@
         <h2>Events</h2>
         <p>{{ index.event_heading }}</p>
       </div>
-      
+
       <div data-aos="fade-up" class="accordion" id="accordionExample">
-      
+
         <div class="accordion-item">
           <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+              aria-expanded="true" aria-controls="collapseOne">
               Upcoming Events
             </button>
           </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
+            data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="row mb-4">
-                  {% for event in future_events %}
-                  <div class="col-md-6 d-flex align-items-stretch">
-                    <div
-                      class="card m-3"
-                      style="background-image: url('{% static event.imageURL %}')"
-                      data-aos="fade-up"
-                      data-aos-delay="100"
-                    >
-                      <div class="card-body" style="padding-bottom:10px">
-                        <h5 class="card-title">
-                          <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-                        </h5>
-                        <!--p class="card-text">
+                {% for event in future_events %}
+                <div class="col-md-6 d-flex align-items-stretch">
+                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card-body" style="padding-bottom:10px">
+                      <h5 class="card-title">
+                        <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+                      </h5>
+                      <!--p class="card-text">
                               {{ event.short_description }}
                             </p-->
-                      </div>
                     </div>
                   </div>
-                  {% endfor %}
-                </div>    
-          </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
-      <div class="accordion-item">
-        <h2  class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Ongoing Events
-          </button>
-        </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
-          <div class="accordion-body">
-            <div class="row mb-4">
-                  {% for event in ongoing_events %}
-                  <div class="col-md-6 d-flex align-items-stretch">
-                    <div
-                      class="card m-3"
-                      style="background-image: url('{% static event.imageURL %}')"
-                      data-aos="fade-up"
-                      data-aos-delay="100"
-                    >
-                      <div class="card-body" style="padding-bottom:10px">
-                        <h5 class="card-title">
-                          <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-                        </h5>
-                        <!--p class="card-text">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Ongoing Events
+            </button>
+          </h2>
+          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+            data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <div class="row mb-4">
+                {% for event in ongoing_events %}
+                <div class="col-md-6 d-flex align-items-stretch">
+                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card-body" style="padding-bottom:10px">
+                      <h5 class="card-title">
+                        <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+                      </h5>
+                      <!--p class="card-text">
                               {{ event.short_description }}
                             </p-->
-                      </div>
                     </div>
                   </div>
-                  {% endfor %}
                 </div>
-          </div>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="accordion-item" >
-          <h2  class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <div class="accordion-item">
+          <h2 class="accordion-header" id="headingThree">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
               Past Events
             </button>
           </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
+            data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="row mb-4">
-                  {% for event in past_events %}
-                  <div class="col-md-6 d-flex align-items-stretch">
-                    <div
-                      class="card m-3"
-                      style="background-image: url('{% static event.imageURL %}')"
-                      data-aos="fade-up"
-                      data-aos-delay="100"
-                    >
-                      <div class="card-body" style="padding-bottom:10px">
-                        <h5 class="card-title">
-                          <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-                        </h5>
-                        <!--p class="card-text">
+                {% for event in past_events %}
+                <div class="col-md-6 d-flex align-items-stretch">
+                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
+                    data-aos-delay="100">
+                    <div class="card-body" style="padding-bottom:10px">
+                      <h5 class="card-title">
+                        <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
+                      </h5>
+                      <!--p class="card-text">
                               {{ event.short_description }}
                             </p-->
-                      </div>
                     </div>
                   </div>
-                  {% endfor %}
-                </div>    
-          </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
           </div>
         </div>
       </div>
-      
-      </div>
 
-      </div>
+    </div>
+
+    </div>
     </div>
   </section>
   <!-- End More Services Section -->
@@ -254,15 +228,12 @@
         <p>{{ index.vertical_heading }}</p>
       </div>
 
-      <div data-aos="fade-up" style="display:flex; justify-content: center; align-items: center;" class="row no-gutters clearfix"> 
+      <div data-aos="fade-up" style="display:flex; justify-content: center; align-items: center;"
+        class="row no-gutters clearfix">
         {% for vertical in verticals %}
         <div class="col-lg-3 col-md-4 col-xs-6">
           <div class="supporter-logo">
-            <img
-              src="{% static vertical.imageURL %}"
-              class="img-fluid"
-              alt="{{ vertical.title }}"
-            />
+            <img src="{% static vertical.imageURL %}" class="img-fluid" alt="{{ vertical.title }}" />
           </div>
         </div>
 
@@ -280,23 +251,15 @@
         <p>{{ index.testimonial_heading }}</p>
       </div>
 
-      <div
-        class="testimonials-slider swiper"
-        data-aos="fade-up"
-        data-aos-delay="100"
-      >
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
         <div class="swiper-wrapper">
-    <!-- End testimonial item -->
+          <!-- End testimonial item -->
 
           {% for testimonial in testimonials %}
           <div class="swiper-slide">
             <div class="testimonial-wrap">
               <div class="testimonial-item">
-                <img
-                  src="{% static testimonial.imageURL %}"
-                  class="testimonial-img"
-                  alt="{{ testimonial.name }}"
-                />
+                <img src="{% static testimonial.imageURL %}" class="testimonial-img" alt="{{ testimonial.name }}" />
                 <h3>{{ testimonial.name }}</h3>
                 <h4>{{ testimonial.post }}</h4>
                 <p>
@@ -316,37 +279,46 @@
   </section>
   <!-- End Testimonials Section -->
 
-<!-- ======= Startups Section ======= -->
-<section id="startups" class="startups">
-  <div class="container">
-    <div class="section-title" data-aos="fade-up">
-      <h2>Startups by our Alumni</h2>
-      <p>{{ index.startup_heading }}</p>
-    </div>
+  <!-- ======= Startups Section ======= -->
+  <section id="startups" class="startups">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span>
+          <h2>Startups</h2>
+        </span>
+        <p>{{ index.startup_heading }}</p>
+      </div>
 
-    <div class="row" data-aos="fade-up" data-aos-delay="200">
-      <div class="col-lg-12 d-flex justify-content-center"></div>
-    </div>
+      <div class="row" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-12 d-flex justify-content-center"></div>
+      </div>
 
-    <div class="row" data-aos="fade-up" data-aos-delay="400" style="display: flex; justify-content: center;">
-      {% for startup in startups %}
-      <div class="col-lg-4 col-md-6 filter-app">
+      <div class="row" data-aos="fade-up" data-aos-delay="400" style="display: flex; justify-content: center;">
+        {% for startup in startups %}
+        <div class="col-lg-4 col-md-6 filter-app">
           <div class="card mb-4" style="display: flex; flex-direction: row; height: 7rem;">
-            <div style="max-width:25%;display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color);">
-              <img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}" style="width: 90%;"></div>
+            <div
+              style="max-width:25%;display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color);">
+              <img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}"
+                style="width: 90%;">
+            </div>
             <div class="card-body">
-              <a href="{{ startup.site_url }}" target="_blank"><h5 class="card-title">{{ startup.title }}</h5></a>
-              <a href="{{ startup.linkedin_url }}" target="_blank"><h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3></a>
+              <a href="{{ startup.site_url }}" target="_blank">
+                <h5 class="card-title">{{ startup.title }}</h5>
+              </a>
+              <a href="{{ startup.linkedin_url }}" target="_blank">
+                <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>
+              </a>
               <!-- <p class="card-text">{{ startup.about }}</p> -->
             </div>
           </div>
+        </div>
+        {% endfor %}
       </div>
-      {% endfor %}
+
     </div>
-    
-  </div>
-</section>
-<!-- End Startups Section -->
+  </section>
+  <!-- End Startups Section -->
 
   <section id="portfolio" class="portfolio">
     <div class="container">
@@ -359,36 +331,20 @@
         <div class="col-lg-12 d-flex justify-content-center"></div>
       </div>
 
-      <div
-        class="row portfolio-container"
-        data-aos="fade-up"
-        data-aos-delay="400"
-      >
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
         {% for images in gallery %}
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
-            <img
-              src="{% static images.imageURL %}"
-              style="object-fit: contain"
-              class="img-fluid"
-              alt=""
-            />
+            <img src="{% static images.imageURL %}" style="object-fit: contain" class="img-fluid" alt="" />
             <div class="portfolio-info">
-              <h4><a style="color: white; " href="{% url 'events' pk=images.event.pk %}">{{ images.event.title }}</a></h4>
+              <h4><a style="color: white; " href="{% url 'events' pk=images.event.pk %}">{{ images.event.title }}</a>
+              </h4>
 
               <div class="portfolio-links">
-                <a
-                  href="{% static images.imageURL %}"
-                  data-gallery="portfolioGallery"
-                  class="portfolio-lightbox"
-                  title="{{ images.event.title }}"
-                  ><i class="bx bx-plus"></i
-                ></a>
-                <a
-                  href="{% url 'events' pk=images.event.pk %}"
-                  title="{{ images.event.title }}"
-                  ><i class="bx bx-link"></i
-                ></a>
+                <a href="{% static images.imageURL %}" data-gallery="portfolioGallery" class="portfolio-lightbox"
+                  title="{{ images.event.title }}"><i class="bx bx-plus"></i></a>
+                <a href="{% url 'events' pk=images.event.pk %}" title="{{ images.event.title }}"><i
+                    class="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -410,39 +366,23 @@
       <div class="container">
         <div class="row slider">
           {% for member in team %}
-                            <div
-                              class="col-md-12"
-                            >
-                              <div
-                                class="member mx-2"
-                                data-aos="fade-up"
-                                data-aos-delay="100"
-                              >
-                                <div class="member-img">
-                                  <img
-                                    src="{% static member.imageURL %}"
-                                    class="img-fluid"
-                                    alt="{{ member.name }}"
-                                  />
-                                  <div class="social">
-                                    <a href="{{ member.facebook_url }}"
-                                      ><i class="bi bi-facebook"></i
-                                    ></a>
-                                    <a href="{{ member.instagram_url }}"
-                                      ><i class="bi bi-instagram"></i
-                                    ></a>
-                                    <a href="{{ member.linkedin_url }}"
-                                      ><i class="bi bi-linkedin"></i
-                                    ></a>
-                                  </div>
-                                </div>
-                                <div class="member-info">
-                                  <h4>{{ member.name }}</h4>
-                                  <span>{{ member.post }}</span>
-                                </div>
-                              </div>
-                            </div>
-                            {% endfor %}
+          <div class="col-md-12">
+            <div class="member mx-2" data-aos="fade-up" data-aos-delay="100">
+              <div class="member-img">
+                <img src="{% static member.imageURL %}" class="img-fluid" alt="{{ member.name }}" />
+                <div class="social">
+                  <a href="{{ member.facebook_url }}"><i class="bi bi-facebook"></i></a>
+                  <a href="{{ member.instagram_url }}"><i class="bi bi-instagram"></i></a>
+                  <a href="{{ member.linkedin_url }}"><i class="bi bi-linkedin"></i></a>
+                </div>
+              </div>
+              <div class="member-info">
+                <h4>{{ member.name }}</h4>
+                <span>{{ member.post }}</span>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
         </div>
       </div>
     </div>
@@ -463,91 +403,50 @@
                   <div id="form-message-success" class="mb-4">
                     Your message was sent, thank you!
                   </div>
-                  <form
-                    method="POST"
-                    id="contactForm"
+                  <form method="POST" id="contactForm"
                     onsubmit="document.getElementById('submit_button').disabled=true;alert('Your Response Has been recorded, You will receive a conformation email shortly')"
-                    name="contactForm"
-                    class="contactForm"
-                  >
+                    name="contactForm" class="contactForm">
                     {% csrf_token %}
                     <div class="row">
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="label" for="name">Full Name</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="name"
-                            id="name"
-                            placeholder="Name"
-                          />
+                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" />
                         </div>
                       </div>
                       <div class="col-md-6">
                         <div class="form-group">
-                          <label class="label" for="email"
-                            >Contact Number</label
-                          >
-                          <input
-                            type="number"
+                          <label class="label" for="email">Contact Number</label>
+                          <input type="number"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            class="form-control"
-                            name="number"
-                            id="number"
-                            placeholder="Contact Number"
-                            maxlength="10"
-                          />
+                            class="form-control" name="number" id="number" placeholder="Contact Number"
+                            maxlength="10" />
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
-                          <label class="label" for="email"
-                            >Email Address</label
-                          >
-                          <input
-                            type="email"
-                            class="form-control"
-                            name="email"
-                            id="email"
-                            placeholder="Email address"
-                          />
+                          <label class="label" for="email">Email Address</label>
+                          <input type="email" class="form-control" name="email" id="email"
+                            placeholder="Email address" />
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="subject">Subject</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            name="subject"
-                            id="subject"
-                            placeholder="Subject"
-                          />
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" />
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="#">Message</label>
-                          <textarea
-                            name="message"
-                            class="form-control"
-                            id="message"
-                            cols="30"
-                            rows="4"
-                            placeholder="Message"
-                          ></textarea>
+                          <textarea name="message" class="form-control" id="message" cols="30" rows="4"
+                            placeholder="Message"></textarea>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <br>
-                          <input
-                            type="submit"
-                            id="submit_button"
-                            value="Send Message"
-                            class="btn btn-primary"
-                          />
+                          <input type="submit" id="submit_button" value="Send Message" class="btn btn-primary" />
                           <div class="submitting"></div>
                         </div>
                       </div>
@@ -556,15 +455,16 @@
                 </div>
               </div>
               <div class="col-md-5 d-flex align-items-stretch">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.4916603324777!2d75.94096541491544!3d22.821292585055414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e0!3m2!1sen!2sin!4v1641879910671!5m2!1sen!2sin" width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3677.4916603324777!2d75.94096541491544!3d22.821292585055414!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39631cf455b4cec3%3A0x426141aa8141f7a5!2sAcropolis%20Institute%20Of%20Technology%20And%20Research%20-%20AITR!5e0!3m2!1sen!2sin!4v1641879910671!5m2!1sen!2sin"
+                  width="100%" height="auto" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                  tabindex="0"></iframe>
               </div>
             </div>
             <div class="row">
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
-                  <div
-                    class="icon d-flex align-items-center justify-content-center"
-                  >
+                  <div class="icon d-flex align-items-center justify-content-center">
                     <span class="fa fa-map-marker"></span>
                   </div>
                   <div class="text">
@@ -574,37 +474,31 @@
               </div>
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
-                  <div
-                    class="icon d-flex align-items-center justify-content-center"
-                  >
+                  <div class="icon d-flex align-items-center justify-content-center">
                     <span class="fa fa-phone"></span>
                   </div>
                   <div class="text">
-                      <p><a href="tel://{{ index.number }}">{{ index.number }}</a></p>
+                    <p><a href="tel://{{ index.number }}">{{ index.number }}</a></p>
                   </div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
-                  <div
-                    class="icon d-flex align-items-center justify-content-center"
-                  >
+                  <div class="icon d-flex align-items-center justify-content-center">
                     <span class="bi bi-envelope"></span>
                   </div>
                   <div class="text">
-                      <a href="mailto:{{ index.email }}">{{ index.email }}</a>
+                    <a href="mailto:{{ index.email }}">{{ index.email }}</a>
                   </div>
                 </div>
               </div>
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
-                  <div
-                    class="icon d-flex align-items-center justify-content-center"
-                  >
+                  <div class="icon d-flex align-items-center justify-content-center">
                     <span class="fa fa-globe"></span>
                   </div>
                   <div class="text">
-                  <a href="https://aitr.ac.in/sidebar/entrepreneurship-cell/">aitr.ac.in/EDC</a></p>
+                    <a href="https://aitr.ac.in/sidebar/entrepreneurship-cell/">aitr.ac.in/EDC</a></p>
                   </div>
                 </div>
               </div>

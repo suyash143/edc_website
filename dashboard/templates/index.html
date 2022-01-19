@@ -148,7 +148,7 @@
           <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="row mb-4">
-                  {% for event in events %}
+                  {% for event in future_events %}
                   <div class="col-md-6 d-flex align-items-stretch">
                     <div
                       class="card m-3"
@@ -181,7 +181,7 @@
           <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
             <div class="accordion-body">
               <div class="row mb-4">
-                  {% for event in events %}
+                  {% for event in past_events %}
                   <div class="col-md-6 d-flex align-items-stretch">
                     <div
                       class="card m-3"

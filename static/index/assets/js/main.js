@@ -298,6 +298,7 @@ $('.slider').slick({
 let darkMode = localStorage.getItem('darkMode'); 
 let edcImg = document.querySelector("#edc-img");
 let successImg = document.querySelector("#success-img");
+let logoImg=document.querySelector("#logoimg")
 
 
 const darkModeToggle = document.querySelector('#darkToggle');
@@ -308,6 +309,7 @@ const enableDarkMode = () => {
   darkModeToggle.classList.add('bi-sun-fill');
   edcImg.setAttribute("src", "static/index/img/rocket edc-01_grey.png");
   successImg.setAttribute("src", "static/index/img/SuccessBlock_grey.png");
+  logoImg.setAttribute("src", "static/index/img/EDC logo-08 (2).png");
   localStorage.setItem('darkMode', 'enabled');
 }
 
@@ -317,6 +319,7 @@ const disableDarkMode = () => {
   darkModeToggle.classList.add('bi-moon-fill');
   edcImg.setAttribute("src", "static/index/img/rocket edc-01.png");
   successImg.setAttribute("src", "static/index/img/SuccessBlock.png");
+  logoImg.setAttribute("src", "static/index/img/EDC LOGO-01 (3) (1).png");
   localStorage.setItem('darkMode', null);
 }
  

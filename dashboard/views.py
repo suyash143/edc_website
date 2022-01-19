@@ -24,9 +24,9 @@ from django.db import transaction
 
 
 def index(request):
-    future_events = models.Event.objects.filter(completed=False)
-    past_events = models.Event.objects.filter(completed=True)
-    events = models.Event.objects.all()
+    future_events = models.Event.objects.filter(completed=False,ongoing=False)
+    past_events = models.Event.objects.filter(completed=True,ongoing=False)
+    ongoing_events = models.Event.objects.filter(completed=False,ongoing=True)
     index = models.Index.objects.all().latest('pk')
     skill = models.Skill.objects.all()
     verticals = models.Vertical.objects.all()
@@ -81,7 +81,7 @@ def index(request):
 
     return render(request, 'index.html', {'future_events': future_events,'past_events': past_events, 'index': index, 'skill': skill, 'verticals': verticals,
                                           'testimonials': testimonials,'startups': startups, 'gallery': gallery,
-                                          'team': team,'company':company})
+                                          'team': team,'company':company,'ongoing_events':ongoing_events})
 
 
 def events(request, **kwargs):

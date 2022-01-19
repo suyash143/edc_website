@@ -37,7 +37,18 @@ class Event(models.Model):
     last_date=models.DateField(null=True,blank=True)
     cover_image=models.ImageField(upload_to='event',null=True,blank=True)
     cover_image_2=models.ImageField(upload_to='event',null=True,blank=True)
+    ongoing=models.BooleanField(null=True,blank=True)
     completed=models.BooleanField(blank=True,null=True)
+
+    def save(self, *args, **kwargs):
+        print('hey')
+        if self.ongoing:
+            print('detected')
+            if self.completed:
+                print("cahnged")
+                self.completed = False
+
+        super(Event, self).save(*args, **kwargs)
 
     def __str__(self):
         return f'{self.title} {self.created}'

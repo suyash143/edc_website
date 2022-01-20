@@ -422,6 +422,7 @@ h1, h2, h3, h4, h5, h6 {
 @media (max-width: 991px) {
   #hero {
     height: 100vh;
+    padding-bottom: 0;
   }
   #hero .animated {
     -webkit-animation: none;
@@ -545,6 +546,13 @@ section {
   padding: 10px 0;
   text-align: center;
 }
+
+.slick-track{
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
 .clients .col-lg-2 {
   display: flex;
   align-items: center;
@@ -565,11 +573,11 @@ section {
     width: 40%;
   }
 }
-@media (max-width: 575px) {
+/* @media (max-width: 575px) {
   .clients img {
     width: 30%;
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # About Us

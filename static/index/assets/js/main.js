@@ -306,6 +306,16 @@ $('.clients-carousel').slick({
         slidesToShow: 3,
         slidesToScroll: 1,
         autoplay: true,
+        autoplaySpeed: 2000,
+        infinite: true
+      }
+    },
+    {
+      breakpoint: 768,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
         autoplaySpeed: 1800,
         infinite: true
       }

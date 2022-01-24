@@ -2,9 +2,6 @@
 {% load static %}
 {% block content %}
 
-<!-- ======= Loader ======= -->
-<div id="loader"></div>
-
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
   <div class="container">
@@ -29,10 +26,10 @@
   <section id="clients" class="clients section-bg">
     <div class="container">
       <div class="row">
-        <div id="clients-carousel" class="clients-carousel">
+        <div id="clients-carousel" class="clients-carousel" data-aos="fade-up">
           {% for obj in company %}
           <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static obj.imageURL%}" class="img-fluid" alt="{{ obj.name }}" data-aos="zoom-in" />
+            <img src="{% static obj.imageURL%}" class="img-fluid" alt="{{ obj.name }}" />
           </div>
           {% endfor %}
         </div>
@@ -109,116 +106,6 @@
     </div>
   </section>
   <!-- End Services Section -->
-
-  <!-- ======= More Services Section ======= -->
-  <section id="events" class="more-services">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Events</h2>
-        <p>{{ index.event_heading }}</p>
-      </div>
-
-      <div data-aos="fade-up" class="accordion" id="accordionExample">
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-              aria-expanded="true" aria-controls="collapseOne">
-              Upcoming Events
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="row mb-4">
-                {% for event in future_events %}
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="card-body" style="padding-bottom:10px">
-                      <h5 class="card-title">
-                        <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-                      </h5>
-                      <!--p class="card-text">
-                              {{ event.short_description }}
-                            </p-->
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Ongoing Events
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="row mb-4">
-                {% for event in ongoing_events %}
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="card-body" style="padding-bottom:10px">
-                      <h5 class="card-title">
-                        <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-                      </h5>
-                      <!--p class="card-text">
-                              {{ event.short_description }}
-                            </p-->
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
-              data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Past Events
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
-            data-bs-parent="#accordionExample">
-            <div class="accordion-body">
-              <div class="row mb-4">
-                {% for event in past_events %}
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
-                    data-aos-delay="100">
-                    <div class="card-body" style="padding-bottom:10px">
-                      <h5 class="card-title">
-                        <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
-                      </h5>
-                      <!--p class="card-text">
-                              {{ event.short_description }}
-                            </p-->
-                    </div>
-                  </div>
-                </div>
-                {% endfor %}
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    </div>
-    </div>
-  </section>
-  <!-- End More Services Section -->
 
   <!-- ======= Verticals Section ======= -->
   <section id="supporters" class="section-with-bg wow fadeInUp">
@@ -302,7 +189,7 @@
               <img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}"
                 style="width: 90%;">
             </div>
-            <div class="card-body">
+            <div class="card-body startup-card">
               <a href="{{ startup.site_url }}" target="_blank">
                 <h5 class="card-title">{{ startup.title }}</h5>
               </a>
@@ -411,7 +298,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="label" for="name">Full Name</label>
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" />
+                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" required/>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -420,33 +307,33 @@
                           <input type="number"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                             class="form-control" name="number" id="number" placeholder="Contact Number"
-                            maxlength="10" />
+                            maxlength="10" required/>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="email">Email Address</label>
                           <input type="email" class="form-control" name="email" id="email"
-                            placeholder="Email address" />
+                            placeholder="Email address" required/>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="subject">Subject</label>
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" />
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required/>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="#">Message</label>
                           <textarea name="message" class="form-control" id="message" cols="30" rows="4"
-                            placeholder="Message"></textarea>
+                            placeholder="Message" required></textarea>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <br>
-                          <input type="submit" id="submit_button" value="Send Message" class="btn btn-primary" />
+                          <input type="submit" id="submit_button" value="Send Message" class="btn btn-primary" required/>
                           <div class="submitting"></div>
                         </div>
                       </div>

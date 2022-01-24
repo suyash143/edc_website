@@ -140,7 +140,7 @@ h1, h2, h3, h4, h5, h6 {
 #header {
   z-index: 997;
   transition: all 0.5s;
-  padding: 22px 0;
+  padding: 22px 0 0 0;
   background: var(--bg-color);
 }
 #header.header-scrolled {
@@ -634,22 +634,16 @@ section {
   text-decoration: none;
 }
 
-about-container{
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 5rem;
+.about-content{
+  margin: 0 0 0 3rem;
 }
+
 .about-sub-container{
   display: flex;
   align-items: center;
   justify-content: space-between;
   max-width: 1300px;
   /* margin: 0 5rem; */
-}
-
-.about-img{
-  margin: 0 3rem 0 0;
 }
 
 @media (max-width: 990px){
@@ -663,6 +657,9 @@ about-container{
 @media (max-width: 776px){
   .about-img img{
     width: 9rem;
+  }
+  .about-content{
+    margin: 0;
   }
 }
 
@@ -1573,7 +1570,7 @@ html {
 
 .footer__addr {
   margin-right: 1.25em;
-  margin-bottom: 2em;
+  /* margin-bottom: 2em; */
 }
 
 .footer__logo {
@@ -1584,7 +1581,6 @@ html {
 }
 
 .footer__addr h2 {
-  margin-top: 1.3em;
   font-size: 15px;
   font-weight: 400;
 }
@@ -1627,7 +1623,15 @@ html {
 
 .footer li {
   line-height: 2em;
+  margin-right: 1.5rem;
 }
+
+@media(min-width: 1024px){
+  .footer li {
+    display: inline-block;
+  }
+}
+
 
 .footer a {
   text-decoration: none;

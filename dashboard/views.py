@@ -87,8 +87,9 @@ def index(request):
 def events(request, **kwargs):
     print(kwargs)
     event = models.Event.objects.get(pk=kwargs.get('pk'))
+    index = models.Index.objects.all().latest('pk')
 
-    return render(request, 'event_detail.html', {'event': event})
+    return render(request, 'event_detail.html', {'event': event, 'index': index})
 
 
 def login(request):

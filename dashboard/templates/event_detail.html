@@ -33,10 +33,10 @@
                 <div class="swiper-slide">
 
                   <img src="{% static event.imageURL %}" alt="{{ event.title }}" >
+                    {% if event.cover_image_2 %}
                   <img src="{% static event.imageURL_2 %}" alt="{{ event.title }}" >
+                    {% endif %}
                 </div>
-
-
 
               </div>
               <div class="swiper-pagination"></div>

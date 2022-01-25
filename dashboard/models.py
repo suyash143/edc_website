@@ -41,11 +41,8 @@ class Event(models.Model):
     completed=models.BooleanField(blank=True,null=True)
 
     def save(self, *args, **kwargs):
-        print('hey')
         if self.ongoing:
-            print('detected')
             if self.completed:
-                print("cahnged")
                 self.completed = False
 
         super(Event, self).save(*args, **kwargs)
@@ -76,6 +73,16 @@ class Index(models.Model):
     about_us_heading=models.TextField(null=True,blank=True)
     about_us_1=models.TextField(null=True,blank=True)
     about_us_2=models.TextField(null=True,blank=True)
+    skillset_heading=models.TextField(null=True,blank=True)
+    skillset_description=models.TextField(null=True,blank=True)
+    skillset_1_heading=models.TextField(null=True,blank=True)
+    skillset_1_description = models.TextField(null=True, blank=True)
+    skillset_2_heading = models.TextField(null=True, blank=True)
+    skillset_2_description = models.TextField(null=True, blank=True)
+    skillset_3_heading = models.TextField(null=True, blank=True)
+    skillset_3_description = models.TextField(null=True, blank=True)
+    skillset_4_heading = models.TextField(null=True, blank=True)
+    skillset_4_description = models.TextField(null=True, blank=True)
     event_heading = models.TextField(null=True, blank=True)
     vertical_heading = models.TextField(null=True, blank=True)
     startup_heading=models.TextField(null=True,blank=True)
@@ -109,6 +116,9 @@ class Startup(models.Model):
         except:
             url = ''
         return url
+
+    def __str__(self):
+        return str(self.title)
 
 
 class Testimonial(models.Model):

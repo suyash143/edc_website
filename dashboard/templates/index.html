@@ -58,16 +58,16 @@
   <section id="services" class="services">
     <div class="container">
       <div class="section-title" data-aos="fade-up">
-        <h2>Skill set</h2>
-        <p>Nurture your skills with us</p>
+        <h2>{{ index.skillset_heading }}</h2>
+        <p>{{ index.skillset_description }}</p>
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="100">
             <div class="icon"><i class="bx bxl-dribbble"></i></div>
-            <h4 class="title"><a href="">Communication Skills</a></h4>
+            <h4 class="title"><a href="">{{ index.skillset_1_heading }}</a></h4>
             <p class="description">
-              Teaching the students how to communicate properly by enhancing
+              {{ index.skillset_1_description }}
             </p>
           </div>
         </div>
@@ -75,10 +75,9 @@
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
             <div class="icon"><i class="bx bx-file"></i></div>
-            <h4 class="title"><a href="">Professionalism</a></h4>
+            <h4 class="title"><a href="">{{ index.skillset_2_heading }}</a></h4>
             <p class="description">
-              Creating a professional atmosphere and making them expose to this
-              hence developing their personality
+              {{ index.skillset_2_description }}
             </p>
           </div>
         </div>
@@ -86,9 +85,9 @@
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
             <div class="icon"><i class="bx bx-tachometer"></i></div>
-            <h4 class="title"><a href="">Networking</a></h4>
+            <h4 class="title"><a href="">{{ index.skillset_3_heading }}</a></h4>
             <p class="description">
-              Professionally building their network with other professionals
+            {{ index.skillset_3_description }}
             </p>
           </div>
         </div>
@@ -96,9 +95,9 @@
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
           <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
             <div class="icon"><i class="bx bx-world"></i></div>
-            <h4 class="title"><a href="">Overall Skill</a></h4>
+            <h4 class="title"><a href="">{{ index.skillset_4_heading }}</a></h4>
             <p class="description">
-              By practical exposure to the real life situations
+         {{ index.skillset_4_description }}
             </p>
           </div>
         </div>
@@ -190,9 +189,13 @@
                 style="width: 90%;">
             </div>
             <div class="card-body startup-card">
+                {% if startup.site_url %}
               <a href="{{ startup.site_url }}" target="_blank">
                 <h5 class="card-title">{{ startup.title }}</h5>
               </a>
+                    {% else %}
+                     <h5 class="card-title">{{ startup.title }}</h5>
+                {% endif %}
               <a href="{{ startup.linkedin_url }}" target="_blank">
                 <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>
               </a>

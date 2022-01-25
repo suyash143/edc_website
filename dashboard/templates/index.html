@@ -2,9 +2,6 @@
 {% load static %}
 {% block content %}
 
-<!-- ======= Loader ======= -->
-<div id="loader"></div>
-
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
   <div class="container">
@@ -29,10 +26,10 @@
   <section id="clients" class="clients section-bg">
     <div class="container">
       <div class="row">
-        <div id="clients-carousel" class="clients-carousel">
+        <div id="clients-carousel" class="clients-carousel" data-aos="fade-up">
           {% for obj in company %}
           <div class="col-lg-2 col-md-4 col-6">
-            <img src="{% static obj.imageURL%}" class="img-fluid" alt="{{ obj.name }}" data-aos="zoom-in" />
+            <img src="{% static obj.imageURL%}" class="img-fluid" alt="{{ obj.name }}" />
           </div>
           {% endfor %}
         </div>
@@ -110,7 +107,107 @@
   </section>
   <!-- End Services Section -->
 
-  <!-- ======= More Services Section ======= -->
+  <!-- ======= Verticals Section ======= -->
+  <section id="supporters" class="section-with-bg wow fadeInUp">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Verticals</h2>
+        <p>{{ index.vertical_heading }}</p>
+      </div>
+
+      <div data-aos="fade-up" style="display:flex; justify-content: center; align-items: center;"
+        class="row no-gutters clearfix">
+        {% for vertical in verticals %}
+        <div class="col-lg-3 col-md-4 col-xs-6">
+          <div class="supporter-logo">
+            <img src="{% static vertical.imageURL %}" class="img-fluid" alt="{{ vertical.title }}" />
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  <!-- End Features Section -->
+
+  <!-- ======= Testimonials Section ======= -->
+  <section id="testimonials" class="testimonials section-bg">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <h2>Testimonials</h2>
+        <p>{{ index.testimonial_heading }}</p>
+      </div>
+
+      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
+        <div class="swiper-wrapper">
+          <!-- End testimonial item -->
+
+          {% for testimonial in testimonials %}
+          <div class="swiper-slide">
+            <div class="testimonial-wrap">
+              <div class="testimonial-item">
+                <img src="{% static testimonial.imageURL %}" class="testimonial-img" alt="{{ testimonial.name }}" />
+                <h3>{{ testimonial.name }}</h3>
+                <h4>{{ testimonial.post }}</h4>
+                <p>
+                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+                  {{ testimonial.quote }}
+                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+                </p>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <!-- End testimonial item -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section>
+  <!-- End Testimonials Section -->
+
+  <!-- ======= Startups Section ======= -->
+  <section id="startups" class="startups">
+    <div class="container">
+      <div class="section-title" data-aos="fade-up">
+        <span>
+          <h2>Startups</h2>
+        </span>
+        <p>{{ index.startup_heading }}</p>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="200">
+        <div class="col-lg-12 d-flex justify-content-center"></div>
+      </div>
+
+      <div class="row" data-aos="fade-up" data-aos-delay="400" style="display: flex; justify-content: center;">
+        {% for startup in startups %}
+        <div class="col-lg-4 col-md-6 filter-app">
+          <div class="card mb-4" style="display: flex; flex-direction: row; height: 7rem;">
+            <div
+              style="max-width:25%;display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color);">
+              <img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}"
+                style="width: 90%;">
+            </div>
+            <div class="card-body startup-card">
+              <a href="{{ startup.site_url }}" target="_blank">
+                <h5 class="card-title">{{ startup.title }}</h5>
+              </a>
+              <a href="{{ startup.linkedin_url }}" target="_blank">
+                <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>
+              </a>
+              <!-- <p class="card-text">{{ startup.about }}</p> -->
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+
+    </div>
+  </section>
+  <!-- End Startups Section -->
+
+  <!-- ======= Events Section ======= -->
   <section id="events" class="more-services">
     <div class="container">
       <div class="section-title" data-aos="fade-up">
@@ -218,107 +315,7 @@
     </div>
     </div>
   </section>
-  <!-- End More Services Section -->
-
-  <!-- ======= Verticals Section ======= -->
-  <section id="supporters" class="section-with-bg wow fadeInUp">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Verticals</h2>
-        <p>{{ index.vertical_heading }}</p>
-      </div>
-
-      <div data-aos="fade-up" style="display:flex; justify-content: center; align-items: center;"
-        class="row no-gutters clearfix">
-        {% for vertical in verticals %}
-        <div class="col-lg-3 col-md-4 col-xs-6">
-          <div class="supporter-logo">
-            <img src="{% static vertical.imageURL %}" class="img-fluid" alt="{{ vertical.title }}" />
-          </div>
-        </div>
-
-        {% endfor %}
-      </div>
-    </div>
-  </section>
-  <!-- End Features Section -->
-
-  <!-- ======= Testimonials Section ======= -->
-  <section id="testimonials" class="testimonials section-bg">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <h2>Testimonials</h2>
-        <p>{{ index.testimonial_heading }}</p>
-      </div>
-
-      <div class="testimonials-slider swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-          <!-- End testimonial item -->
-
-          {% for testimonial in testimonials %}
-          <div class="swiper-slide">
-            <div class="testimonial-wrap">
-              <div class="testimonial-item">
-                <img src="{% static testimonial.imageURL %}" class="testimonial-img" alt="{{ testimonial.name }}" />
-                <h3>{{ testimonial.name }}</h3>
-                <h4>{{ testimonial.post }}</h4>
-                <p>
-                  <i class="bx bxs-quote-alt-left quote-icon-left"></i>
-                  {{ testimonial.quote }}
-                  <i class="bx bxs-quote-alt-right quote-icon-right"></i>
-                </p>
-              </div>
-            </div>
-          </div>
-          {% endfor %}
-          <!-- End testimonial item -->
-        </div>
-        <div class="swiper-pagination"></div>
-      </div>
-    </div>
-  </section>
-  <!-- End Testimonials Section -->
-
-  <!-- ======= Startups Section ======= -->
-  <section id="startups" class="startups">
-    <div class="container">
-      <div class="section-title" data-aos="fade-up">
-        <span>
-          <h2>Startups</h2>
-        </span>
-        <p>{{ index.startup_heading }}</p>
-      </div>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-12 d-flex justify-content-center"></div>
-      </div>
-
-      <div class="row" data-aos="fade-up" data-aos-delay="400" style="display: flex; justify-content: center;">
-        {% for startup in startups %}
-        <div class="col-lg-4 col-md-6 filter-app">
-          <div class="card mb-4" style="display: flex; flex-direction: row; height: 7rem;">
-            <div
-              style="max-width:25%;display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--border-color);">
-              <img src="{% static startup.imageURL %}" class="card-img-top img-fluid" alt="{{ startup.title }}"
-                style="width: 90%;">
-            </div>
-            <div class="card-body">
-              <a href="{{ startup.site_url }}" target="_blank">
-                <h5 class="card-title">{{ startup.title }}</h5>
-              </a>
-              <a href="{{ startup.linkedin_url }}" target="_blank">
-                <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>
-              </a>
-              <!-- <p class="card-text">{{ startup.about }}</p> -->
-            </div>
-          </div>
-        </div>
-        {% endfor %}
-      </div>
-
-    </div>
-  </section>
-  <!-- End Startups Section -->
+  <!-- End Events Section -->
 
   <section id="portfolio" class="portfolio">
     <div class="container">
@@ -411,7 +408,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="label" for="name">Full Name</label>
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" />
+                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" required/>
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -420,33 +417,33 @@
                           <input type="number"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                             class="form-control" name="number" id="number" placeholder="Contact Number"
-                            maxlength="10" />
+                            maxlength="10" required/>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="email">Email Address</label>
                           <input type="email" class="form-control" name="email" id="email"
-                            placeholder="Email address" />
+                            placeholder="Email address" required/>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="subject">Subject</label>
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" />
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required/>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="#">Message</label>
                           <textarea name="message" class="form-control" id="message" cols="30" rows="4"
-                            placeholder="Message"></textarea>
+                            placeholder="Message" required></textarea>
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <br>
-                          <input type="submit" id="submit_button" value="Send Message" class="btn btn-primary" />
+                          <input type="submit" id="submit_button" value="Send Message" class="btn btn-primary" required/>
                           <div class="submitting"></div>
                         </div>
                       </div>

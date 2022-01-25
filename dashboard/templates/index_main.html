@@ -1,121 +1,130 @@
 <!DOCTYPE html>
 {% load static %}
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <title>EDC Acropolis</title>
-    <meta content="" name="description" />
-    <meta content="" name="keywords" />
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-    <!-- Favicons -->
-    <link href="{% static 'index/img/favicon.ico'%}" rel="icon" />
-    <link href="{% static 'index/img/favicon.ico'%}" rel="apple-touch-icon" />
+  <title>EDC Acropolis</title>
+  <meta content="" name="description" />
+  <meta content="" name="keywords" />
 
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+  <!-- Favicons -->
+  <link href="{% static 'index/img/favicon.ico'%}" rel="icon" />
+  <link href="{% static 'index/img/favicon.ico'%}" rel="apple-touch-icon" />
 
-    <!-- Vendor CSS Files -->
-    <link href="{% static 'index/assets/vendor/aos/aos.css'%}" rel="stylesheet" />
-    <link href="{% static 'index/assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet"/>
-    <link href="{% static 'index/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet"/>
-    <link href="{% static 'index/assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet" />
-    <link href="{% static 'index/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet"/>
-    <link href="{% static 'index/assets/vendor/remixicon/remixicon.css'%}" rel="stylesheet" />
-    <link href="{% static 'index/assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet" />
 
-    <!-- Template Main CSS File -->
-    <link href="{% static 'index/assets/css/style.css'%}" rel="stylesheet" />
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'index/assets/vendor/aos/aos.css'%}" rel="stylesheet" />
+  <link href="{% static 'index/assets/vendor/bootstrap/css/bootstrap.min.css'%}" rel="stylesheet" />
+  <link href="{% static 'index/assets/vendor/bootstrap-icons/bootstrap-icons.css'%}" rel="stylesheet" />
+  <link href="{% static 'index/assets/vendor/boxicons/css/boxicons.min.css'%}" rel="stylesheet" />
+  <link href="{% static 'index/assets/vendor/glightbox/css/glightbox.min.css'%}" rel="stylesheet" />
+  <link href="{% static 'index/assets/vendor/remixicon/remixicon.css'%}" rel="stylesheet" />
+  <link href="{% static 'index/assets/vendor/swiper/swiper-bundle.min.css'%}" rel="stylesheet" />
 
-    <!-- Carousel CSS Dependencies -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Template Main CSS File -->
+  <link href="{% static 'index/assets/css/style.css'%}" rel="stylesheet" />
 
-{#      CONTACT US FORM CSS#}
-<link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
+  <!-- Carousel CSS Dependencies -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    integrity="sha512-yHknP1/AwR+yx26cB1y0cjvQUMvEa2PFzt1c9LlS4pRQ5NOTZFWbhBig+X9G9eYW/8m0/4OXNx8pxJ6z57x0dw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"
+    integrity="sha512-17EgCFERpgZKcm0j0fEq1YCJuyAWdz9KUtv1EjVuaOz8pDnh/0nZxmU6BBXwaaxqoi9PQXnRWqlcDB027hgv9A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  {# CONTACT US FORM CSS#}
+  <link href='https://fonts.googleapis.com/css?family=Roboto:400,100,300,700' rel='stylesheet' type='text/css'>
 
-	<link rel="stylesheet" href="{% static 'index/contact/css/style.css' %}">
-{#      END CONTACT US #}
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-  </head>
+  <link rel="stylesheet" href="{% static 'index/contact/css/style.css' %}">
+  {# END CONTACT US #}
 
-  <body onload="stopLoading()">
-    <!-- ======= Header ======= -->
-    <header id="header" class="fixed-top d-flex align-items-center">
-      <div class="container d-flex align-items-center justify-content-between">
-        <div class="logo">
-          <!-- Uncomment below if you prefer to use an image logo -->
-           <a href="{% url 'index' %}"><img id="logoimg" class="img-fluid animated"></a>
-        </div>
+</head>
 
-        <nav id="navbar" class="navbar">
-            {% if request.path is request.get_full_path %}
-          <ul>
-            <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="#about">About</a></li>
-            <li><a class="nav-link scrollto" href="#services">Services</a></li>
-            <li>
-              <a class="nav-link scrollto" href="#events">Events</a>
-            </li>
-            <li><a class="nav-link scrollto" href="#team">Team</a></li>
-            <li>
-              <a class="getstarted scrollto" href="#contact">Contact</a>
-            </li>
+<!-- ======= Loader ======= -->
+<div id="loader"></div>
 
-          </ul>
-                {% else %}
-                <ul>
-            <li><a class="nav-link scrollto active" href="{% url 'index' %}#hero">Home</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'index' %}#about">About</a></li>
-            <li><a class="nav-link scrollto" href="{% url 'index' %}#services">Services</a></li>
-            <li>
-              <a class="nav-link scrollto" href="{% url 'index' %}#events">Events</a>
-            </li>
-            <li><a class="nav-link scrollto" href="{% url 'index' %}#team">Team</a></li>
-            <li>
-              <a class="getstarted scrollto" href="{% url 'index' %}#contact">Contact</a>
-            </li>
-          </ul>
-            {% endif %}
-          <i class="bi bi-list mobile-nav-toggle"></i>
-          <i id="darkToggle" class="bi bi-moon-fill"></i>
-        </nav>
-        <!-- .navbar -->
+<body onload="document.getElementById('loader').style.display = 'none';">
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <div class="logo">
+        <!-- Uncomment below if you prefer to use an image logo -->
+        <a href="{% url 'index' %}"><img id="logoimg" src="{% static 'index/img/EDC_Logo.png' %}"
+            class="img-fluid animated"></a>
       </div>
-    </header>
-    <!-- End Header -->
-{% block content %}
+
+      <nav id="navbar" class="navbar">
+        {% if request.path is request.get_full_path %}
+        <ul>
+          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#about">About</a></li>
+          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li>
+            <a class="nav-link scrollto" href="#events">Events</a>
+          </li>
+          <li><a class="nav-link scrollto" href="#team">Team</a></li>
+          <li>
+            <a class="getstarted scrollto" href="#contact">Contact</a>
+          </li>
+
+        </ul>
+        {% else %}
+        <ul>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#about">About</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#services">Services</a></li>
+          <li>
+            <a class="nav-link scrollto" href="{% url 'index' %}#events">Events</a>
+          </li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}#team">Team</a></li>
+          <li>
+            <a class="getstarted scrollto" href="{% url 'index' %}#contact">Contact</a>
+          </li>
+        </ul>
+        {% endif %}
+        <i class="bi bi-list mobile-nav-toggle"></i>
+        <i id="darkToggle" class="bi bi-moon-fill"></i>
+      </nav>
+      <!-- .navbar -->
+    </div>
+  </header>
+  <!-- End Header -->
+  {% block content %}
 
   {% endblock content %}
 
   <footer class="footer">
     <div class="footer__addr">
-
-
       <h2>Contact</h2>
-
       <address>
         {{ index.address }}<br>
-
         <a class="footer__btn" href="mailto:{{ index.email }}">Reach us</a>
       </address>
     </div>
 
     <ul class="footer__nav">
-      
+
       <li class="nav__item">
         <h2 class="nav__title">Social Media</h2>
 
         <ul class="nav__ul">
           <li>
-            <a href="https://www.instagram.com/edc_acropolis/" target="_blank"><i class="bi bi-instagram"></i>&nbsp;Instagram</a>
+            <a href="https://www.instagram.com/edc_acropolis/" target="_blank"><i
+                class="bi bi-instagram"></i>&nbsp;Instagram</a>
           </li>
 
           <li>
-            <a href="https://www.facebook.com/EDCAcropolis" target="_blank"><i class="bi bi-facebook"></i>&nbsp;Facebook</a>
+            <a href="https://www.facebook.com/EDCAcropolis" target="_blank"><i
+                class="bi bi-facebook"></i>&nbsp;Facebook</a>
           </li>
 
           <li>
@@ -123,94 +132,70 @@
           </li>
 
           <li>
-            <a href="https://www.linkedin.com/in/edc-acropolis/" target="_blank"><i class="bi bi-linkedin"></i>&nbsp;LinkedIn</a>
+            <a href="https://www.linkedin.com/in/edc-acropolis/" target="_blank"><i
+                class="bi bi-linkedin"></i>&nbsp;LinkedIn</a>
           </li>
 
           <li>
-            <a href="https://www.youtube.com/c/EDCAcropolis" target="_blank"><i class="bi bi-youtube"></i>&nbsp;YouTube</a>
+            <a href="https://www.youtube.com/c/EDCAcropolis" target="_blank"><i
+                class="bi bi-youtube"></i>&nbsp;YouTube</a>
           </li>
-        </ul>
-      </li>
-
-      <li class="nav__item">
-        <h2 class="nav__title">Events</h2>
-
-        <ul class="nav__ul">
-          <li>
-            <a href="#">Gallery</a>
-          </li>
-
-          <li>
-            <a href="#">Collaborations</a>
-          </li>
-
-          <li>
-            <a href="#">Sponsorship</a>
-          </li>
-        </ul>
-      </li>
-
-      <li class="nav__item">
-        <h2 class="nav__title">Services</h2>
-
-        <ul class="nav__ul">
-          <li>
-            <a href="#">Counseling</a>
-          </li>
-          <li>
-            <a href="#">Incubations</a>
-          </li>
-
-          <li>
-            <a href="#">Accelerator</a>
-          </li>
-
         </ul>
       </li>
     </ul>
-
     <div class="legal">
       <p>&copy; 2021 EDC. All rights reserved.</p>
-
-
-    </div>
+     </div>
   </footer>
 
 
   <!-- javascript -->
 
 
-      </section>
-      <!-- End Contact Section -->
-    </main>
-    <!-- End #main -->
+  </section>
+  <!-- End Contact Section -->
+  </main>
+  <!-- End #main -->
 
 
-    <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
-      <i class="bi bi-arrow-up-short"></i>
-    </a>
-    <!-- Vendor JS Files -->
-    <script src="{% static 'index/assets/vendor/purecounter/purecounter.js'%}"></script>
-    <script src="{% static 'index/assets/vendor/aos/aos.js'%}"></script>
-    <script src="{% static 'index/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
-    <script src="{% static 'index/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
-    <script src="{% static 'index/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
-    <script src="{% static 'index/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
-    <script src="{% static 'index/assets/vendor/php-email-form/validate.js'%}"></script>
+  <a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+    <i class="bi bi-arrow-up-short"></i>
+  </a>
+  <!-- Vendor JS Files -->
+  <script src="{% static 'index/assets/vendor/purecounter/purecounter.js'%}"></script>
+  <script src="{% static 'index/assets/vendor/aos/aos.js'%}"></script>
+  <script src="{% static 'index/assets/vendor/bootstrap/js/bootstrap.bundle.min.js'%}"></script>
+  <script src="{% static 'index/assets/vendor/glightbox/js/glightbox.min.js'%}"></script>
+  <script src="{% static 'index/assets/vendor/isotope-layout/isotope.pkgd.min.js'%}"></script>
+  <script src="{% static 'index/assets/vendor/swiper/swiper-bundle.min.js'%}"></script>
+  <script src="{% static 'index/assets/vendor/php-email-form/validate.js'%}"></script>
 
-    <!-- Carousel JS Dependencies -->
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <!-- Template Main JS File -->
-    <script src="{% static 'index/assets/js/main.js'%}"></script>
+  <!-- Carousel JS Dependencies -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"
+    integrity="sha512-XtmMtDEcNz2j7ekrtHvOVR4iwwaD6o/FUJe6+Zq+HgcCsk3kj4uSQQR8weQ2QVj1o0Pk6PwYLohm206ZzNfubg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <!-- Loader Script -->
-    <script>
-      setInterval(function stopLoading(){
-        document.getElementById("loader").style.display = 'none';
-      })
-    </script>
+  <!-- Template Main JS File -->
+  <script src="{% static 'index/assets/js/main.js'%}"></script>
 
-  </body>
+  <!-- Dark Mode JS Variables File -->
+  <script>
+    let edcImage="{% static 'index/img/rocket edc-01.png' %}", 
+        edcImageDark="{% static 'index/img/rocket edc-01_grey.png' %}", 
+        successImage= "{% static 'index/img/SuccessBlock.png' %}", 
+        successImageDark= "{% static 'index/img/SuccessBlock_grey.png' %}", 
+        logoImage= "{% static 'index/img/EDC_Logo.png' %}", 
+        logoImageDark= "{% static 'index/img/EDC_Logo_white.png' %}";
+  </script>
+
+  <!-- Dark Mode JS File -->
+  <script src="{% static 'index/assets/js/dark_mode.js'%}"></script>
+  <!-- Dark Mode Images JS File -->
+  {% if request.path is request.get_full_path %}
+  <script src="{% static 'index/assets/js/dark_images.js'%}"></script>
+  {% endif %}
+</body>
 
 </html>

@@ -96,6 +96,8 @@ class Index(models.Model):
     number = models.IntegerField(null=True,blank=True)
 
 
+
+
 class Skill(models.Model):
     title=models.TextField(null=True,blank=True)
     description=models.TextField(null=True,blank=True)
@@ -128,6 +130,9 @@ class Testimonial(models.Model):
     post=models.CharField(max_length=300,null=True,blank=True)
     quote=models.TextField(null=True,blank=True)
 
+    def __str__(self):
+        return str(self.name)
+
     @property
     def imageURL(self):
         try:
@@ -142,6 +147,9 @@ class Gallery(models.Model):
     year=models.IntegerField(null=True,blank=True)
     event=models.ForeignKey(Event,on_delete=models.SET_NULL,null=True,blank=True)
     image = models.ImageField(upload_to='gallery', null=True, blank=True)
+
+    def __str__(self):
+        return str(self.title)
 
     @property
     def imageURL(self):
@@ -162,6 +170,8 @@ class Team(models.Model):
     number=models.PositiveIntegerField(null=True,blank=True)
 
 
+    def __str__(self):
+        return str(self.name)
 
     @property
     def imageURL(self):
@@ -180,6 +190,10 @@ class Contact(models.Model):
     message=models.TextField(null=True,blank=True)
     created=models.DateTimeField(null=True,blank=True)
     status=models.CharField(max_length=300,null=True,blank=True)
+
+
+    def __str__(self):
+        return str(f"{self.name} {self.created}")
 
 
 class Company(models.Model):

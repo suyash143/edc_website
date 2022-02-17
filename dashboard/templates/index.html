@@ -87,7 +87,7 @@
             <div class="icon"><i class="bx bx-tachometer"></i></div>
             <h4 class="title"><a href="">{{ index.skillset_3_heading }}</a></h4>
             <p class="description">
-            {{ index.skillset_3_description }}
+              {{ index.skillset_3_description }}
             </p>
           </div>
         </div>
@@ -97,7 +97,7 @@
             <div class="icon"><i class="bx bx-world"></i></div>
             <h4 class="title"><a href="">{{ index.skillset_4_heading }}</a></h4>
             <p class="description">
-         {{ index.skillset_4_description }}
+              {{ index.skillset_4_description }}
             </p>
           </div>
         </div>
@@ -189,13 +189,13 @@
                 style="width: 90%;">
             </div>
             <div class="card-body startup-card">
-                {% if startup.site_url %}
+              {% if startup.site_url %}
               <a href="{{ startup.site_url }}" target="_blank">
                 <h5 class="card-title">{{ startup.title }}</h5>
               </a>
-                    {% else %}
-                     <h5 class="card-title">{{ startup.title }}</h5>
-                {% endif %}
+              {% else %}
+              <h5 class="card-title">{{ startup.title }}</h5>
+              {% endif %}
               <a href="{{ startup.linkedin_url }}" target="_blank">
                 <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>
               </a>
@@ -363,11 +363,11 @@
         <p>{{ index.team_heading }}</p>
       </div>
 
-      <div class="container">
-        <div class="row slider">
+      <div class="container d-md-flex align-items-center">
+        <div class="row team-row d-flex justify-content-center">
           {% for member in team %}
-          <div class="col-md-12">
-            <div class="member mx-2" data-aos="fade-up" data-aos-delay="100">
+          {% if forloop.counter <= 4 %} <div class="col-md-3">
+            <div class="member mx-2 card" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
                 <img src="{% static member.imageURL %}" class="img-fluid" alt="{{ member.name }}" />
                 <div class="social">
@@ -382,17 +382,25 @@
                 <span>{{ member.title }}</span>
               </div>
             </div>
-          </div>
-          {% endfor %}
         </div>
+        {% endif %}
+        {% endfor %}
       </div>
+      <a href="{% url 'team'%}">
+        <div class="dbox" data-aos="fade-in">
+          <div class="icon d-flex align-items-center justify-content-center" style="width: 40px; height: 40px;">
+            <span class="bi bi-three-dots fs-3 fw-bold"></span>
+          </div>
+        </div>
+      </a>
+    </div>
     </div>
   </section>
   <!-- End Team Section -->
 
   <!-- ======= Contact Section ======= -->
   <section id="contact" class="">
-    <div class="container">
+    <div class="container" data-aos="fade-up">
       <div class="row justify-content-center">
         <div class="col-md-12">
           <div class="wrapper">
@@ -412,7 +420,7 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="label" for="name">Full Name</label>
-                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" required/>
+                          <input type="text" class="form-control" name="name" id="name" placeholder="Name" required />
                         </div>
                       </div>
                       <div class="col-md-6">
@@ -420,21 +428,22 @@
                           <label class="label" for="email">Contact Number</label>
                           <input type="number"
                             oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            class="form-control" name="number" id="number" placeholder="Contact Number"
-                            maxlength="10" required/>
+                            class="form-control" name="number" id="number" placeholder="Contact Number" maxlength="10"
+                            required />
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="email">Email Address</label>
-                          <input type="email" class="form-control" name="email" id="email"
-                            placeholder="Email address" required/>
+                          <input type="email" class="form-control" name="email" id="email" placeholder="Email address"
+                            required />
                         </div>
                       </div>
                       <div class="col-md-12">
                         <div class="form-group">
                           <label class="label" for="subject">Subject</label>
-                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required/>
+                          <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject"
+                            required />
                         </div>
                       </div>
                       <div class="col-md-12">
@@ -447,7 +456,8 @@
                       <div class="col-md-12">
                         <div class="form-group">
                           <br>
-                          <input type="submit" id="submit_button" value="Send Message" class="btn btn-primary" required/>
+                          <input type="submit" id="submit_button" value="Send Message" class="btn btn-primary"
+                            required />
                           <div class="submitting"></div>
                         </div>
                       </div>
@@ -466,7 +476,7 @@
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
                   <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="fa fa-map-marker"></span>
+                    <span class="bi bi-geo-alt-fill"></span>
                   </div>
                   <div class="text">
 
@@ -478,7 +488,7 @@
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
                   <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="fa fa-phone"></span>
+                    <span class="bi bi-telephone-fill"></span>
                   </div>
                   <div class="text">
                     <p><a href="tel://{{ index.number }}">+91 {{ index.number }}</a></p>
@@ -488,7 +498,7 @@
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
                   <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="bi bi-envelope"></span>
+                    <span class="bi bi-envelope-fill"></span>
                   </div>
                   <div class="text">
                     <a href="mailto:{{ index.email }}">{{ index.email }}</a>
@@ -498,7 +508,7 @@
               <div class="col-md-3">
                 <div class="dbox w-100 text-center">
                   <div class="icon d-flex align-items-center justify-content-center">
-                    <span class="fa fa-globe"></span>
+                    <span class="bi bi-globe"></span>
                   </div>
                   <div class="text">
                     <a href="https://aitr.ac.in/sidebar/entrepreneurship-cell/">aitr.ac.in/EDC</a></p>

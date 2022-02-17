@@ -256,42 +256,6 @@
 
 })()
 
-// JQuery Script for Team Carousel
-$('.slider').slick({
-  slidesToShow: 4,
-  slidesToScroll: 1,
-  autoplay: false,
-  dots: false,
-  infinite:false,
-  responsive: [
-    {
-      breakpoint: 1024,
-      settings: {
-        autoplay: false,
-        slidesToShow: 3,
-        slidesToScroll: 1,
-      }
-    },
-    {
-      breakpoint: 600,
-      settings: {
-        autoplay: false,
-        slidesToShow: 2,
-        slidesToScroll: 1,
-      }
-    },
-    {
-      breakpoint: 480,
-      settings: {
-        autoplay: false,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-
-      }
-    }
-  ]
-});
-
 // Client Carousel
 $('.clients-carousel').slick({
   slidesToShow: 6,

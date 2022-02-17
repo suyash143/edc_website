@@ -91,6 +91,13 @@ def events(request, **kwargs):
 
     return render(request, 'event_detail.html', {'event': event, 'index': index})
 
+def team(request, **kwargs):
+    print(kwargs)
+    team = models.Team.objects.all()
+    index = models.Index.objects.all().latest('pk')
+
+    return render(request, 'team.html', {'team': team,'index': index})
+
 
 def login(request):
     if request.method == 'POST':

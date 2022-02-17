@@ -560,7 +560,7 @@ section {
 }
 .clients img {
   width: 50%;
-  transition: all 0.1s;
+  transition: all 0.4s ease-in-out;
   display: inline-block;
   padding: 10px 0;
 }
@@ -1107,6 +1107,7 @@ section {
 /*--------------------------------------------------------------
 # Team
 --------------------------------------------------------------*/
+
 .team .member {
   margin-bottom: 20px;
   overflow: hidden;
@@ -1174,6 +1175,7 @@ section {
 .team .member:hover .social {
   opacity: 1;
 }
+
 /* Accordion style */
 .accordion-button:not(.collapsed) {
   color: var(--red);
@@ -1340,14 +1342,14 @@ section {
 /*--------------------------------------------------------------
 # Breadcrumbs
 --------------------------------------------------------------*/
-.breadcrumbs {
+.breadcrumbs, .team {
   padding: 15px 0;
   background: var(--bg-color);
   min-height: 40px;
   margin-top: 86px;
 }
 @media (max-width: 992px) {
-  .breadcrumbs {
+  .breadcrumbs, .team {
     margin-top: 72px;
   }
 }

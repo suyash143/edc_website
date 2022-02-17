@@ -221,9 +221,55 @@
   /**
    * Initiate portfolio lightbox 
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
+   const tobii = new Tobii({
+    // default selector
+    selector: '.lightbox',
+    // shows image captions
+    captions: true,
+    captionsSelector: 'img',
+    captionAttribute: 'alt',
+    captionText: null, // returns the caption text for the current element
+    // 'auto' = auto hides navigation controls on mobile devices
+    nav: 'auto',
+    // custom navigation controls
+    navText: [
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14 18l-6-6 6-6"/></svg>',
+      '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M10 6l6 6-6 6"/></svg>'
+    ],
+    navLabel: [
+      'Previous image',
+      'Next image'
+    ],
+    // shows close button
+    close: true,
+    closeText: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M6 6l12 12M6 18L18 6"/></svg>',
+    closeLabel: 'Close lightbox',
+    // image loading indicator
+    loadingIndicatorLabel: 'Image loading',
+    // shows image counter
+    counter: true,
+    
+    // enables keyboard interactions
+    keyboard: true,
+    // shows a zoom image on the images
+    zoom: false,
+    zoomText: '<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M21 16v5h-5"/><path d="M8 21H3v-5"/><path d="M16 3h5v5"/><path d="M3 8V3h5"/></svg>',
+    // click/tap outside to close the lightbox
+    docClose: true,
+    // allows to close the lightbox with swipe event
+    swipeClose: true,
+    // hides scrollbar when the lightbox is activated
+    hideScrollbar: true,
+    // enables drag and touch swipe events
+    draggable: true,
+    // touch and mouse dragging threshold in pixels
+    threshold: 100,
+    // modal mode
+    modal: false,
+    // theme class
+    theme: 'tobii--theme-default'
+    
+});
 
   /**
    * Portfolio details slider

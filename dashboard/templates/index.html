@@ -232,7 +232,7 @@
             <div class="accordion-body">
               <div class="row mb-4">
                 {% for event in future_events %}
-                <div class="col-md-6 d-flex align-items-stretch">
+                <div class="col-md-6 d-flex align-items-stretch mh">
                   <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
                     data-aos-delay="100">
                     <div class="card-body" style="padding-bottom:10px">
@@ -327,27 +327,14 @@
         <p>{{ index.gallery_heading }}</p>
       </div>
 
-      <div class="row" data-aos="fade-up" data-aos-delay="200">
-        <div class="col-lg-12 d-flex justify-content-center"></div>
-      </div>
-
-      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="400">
+      <div class="row" data-aos="fade-up" data-aos-delay="400">
         {% for images in gallery %}
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="{% static images.imageURL %}" style="object-fit: contain" class="img-fluid" alt="" />
-            <div class="portfolio-info">
-              <h4><a style="color: white; " href="{% url 'events' pk=images.event.pk %}">{{ images.event.title }}</a>
-              </h4>
-
-              <div class="portfolio-links">
-                <a href="{% static images.imageURL %}" data-gallery="portfolioGallery" class="portfolio-lightbox"
-                  title="{{ images.event.title }}"><i class="bx bx-plus"></i></a>
-                <a href="{% url 'events' pk=images.event.pk %}" title="{{ images.event.title }}"><i
-                    class="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
+        <div class="col-lg-4 col-md-6 portfolio-item">
+          <!-- <div class="card portfolio-wrap"> -->
+          <a href="{% static images.imageURL %}" class="lightbox portfolio-wrap card" data-group="gallery">
+            <img class="img-fluid" src="{% static images.imageURL %}" style="object-fit: contain"
+              alt="{{ images.event.title }}" />
+          </a>
         </div>
         {% endfor %}
       </div>

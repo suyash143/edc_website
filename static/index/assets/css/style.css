@@ -11,8 +11,9 @@
 
 :root{
   --red : #C0202F;
-  --bg-color : #fff; /*fff*/
-  --text-color: #444444; /*444444*/
+  --grey: #999;
+  --bg-color : #fff;
+  --text-color: #444444;
   --heading-color: #222222;
   --section-bg: #f7fbfe;
   --contact-bg: #e8edf0;
@@ -20,7 +21,7 @@
   --card-bg: var(--bg-color);
   --box-shadow: rgba(68, 88, 144, 0.12);
   --accordion-button-bg: var(--bg-color);
-  --accordion-button-not-bg: #f5e1e3;
+  --accordion-button-not-bg: var(--red);
   --reachus-border: transparent;
 }
 
@@ -33,16 +34,16 @@ body {
 
 .darkmode{
   --red : #C0202F;
-  --bg-color : #2b2b2b; /*fff*/
-  --text-color: #818181; /*444444*/
-  --heading-color: #b9b9b9;/*#222222*/
-  --section-bg: #2e2e2e;
-  --contact-bg: #505253c0;
-  --border-color: #373737;
-  --card-bg: #383838;
-  --box-shadow: rgba(71, 77, 95, 0.12);
-  --accordion-button-bg: var(--bg-color);
-  --accordion-button-not-bg: #b3989b;
+  --bg-color : #1a1a1a;
+  --text-color: #b6b6b6;
+  --heading-color: var(--text-color);
+  --section-bg: #1d1d1d;
+  --contact-bg: var(--section-bg);
+  --border-color: var(--section-bg);
+  --card-bg:  var(--section-bg);
+  --box-shadow: var(--section-bg);
+  --accordion-button-bg: var(--section-bg);
+  --accordion-button-not-bg: var(--red);
   --reachus-border: var(--text-color);
 }
 
@@ -59,6 +60,10 @@ body {
   margin: 1rem;
   cursor: pointer;
   transition: transform .5s ease-out;
+}
+
+#darkToggle:visited, #darkToggle:active{
+  color: var(--text-color );
 }
 
 #darkToggle:hover{
@@ -165,7 +170,7 @@ h1, h2, h3, h4, h5, h6 {
   max-height: 40px;
 }
 .fst-italic{
-  text-align: justify;
+  /* text-align: justify; */
 }
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -712,7 +717,7 @@ section {
 .services .icon i {
   font-size: 36px;
   line-height: 1;
-  color: var(--bg-color);
+  color: #fff;
 }
 .services .title {
   font-weight: 700;
@@ -819,10 +824,10 @@ section {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  background-color: var(--card-bg);
   border: 1px solid var(--border-color);
   margin-bottom: .5rem;
   overflow: hidden;
-  background: var(--bg-color);
   height: 160px;
 }
 
@@ -876,7 +881,7 @@ section {
 }
 .testimonials .testimonial-item h4 {
   font-size: 14px;
-  color: #999;
+  color: var(--grey);
   margin: 0;
 }
 .testimonials .testimonial-item .quote-icon-left, .testimonials .testimonial-item .quote-icon-right {
@@ -1170,8 +1175,8 @@ section {
 
 /* Accordion style */
 .accordion-button:not(.collapsed) {
-  color: var(--red);
-  background-color: #f5e1e3;
+  color: var(--bg-color);
+  background-color: var(--accordion-button-not-bg);
   box-shadow: inset 0 -1px 0 rgb(0 0 0 / 13%);
 }
 .accordion-button:focus {
@@ -1186,7 +1191,7 @@ section {
 }
 
 .accordion-item{
-  background-color: var(--card-bg);
+  background-color: var(--section-bg);
 }
 
 .accordion-button{
@@ -1453,7 +1458,7 @@ section {
 }
 .contact-form .first-container .info-container div:first-of-type p{
   max-width:260px;
-  color:#999;
+  color:var(--grey);
 }
 .contact-form .second-container{
   padding:30px;
@@ -1499,7 +1504,7 @@ section {
 }
 .contact-form .second-container form .form-group input::placeholder,
 .contact-form .second-container form .form-group .textarea::placeholder{
-  color:#999;
+  color:var(--grey);
 }
 .contact-form .second-container form .form-group .textarea{
   width:100%;
@@ -1586,7 +1591,7 @@ html {
 
 .footer address {
   font-style: normal;
-  color: #999;
+  color: var(--grey);
 }
 
 .footer__btn {
@@ -1641,8 +1646,8 @@ html {
   margin-right: 1.25em;
 }
 
-.nav__ul a {
-  color: #999;
+.nav__ul a, .footer address a {
+  color: var(--grey);
 }
 
 .nav__ul--extra {
@@ -1653,7 +1658,7 @@ html {
 .legal {
   display: flex;
   flex-wrap: wrap;
-  color: #999;
+  color: var(--grey);
 }
 
 .legal__links {

@@ -320,7 +320,7 @@
   </section>
   <!-- End Events Section -->
 
-  <section id="portfolio" class="portfolio">
+  <section id="portfolio" class="portfolio section-bg">
     <div class="container">
       <div class="section-title" data-aos="fade-up">
         <h2>Gallery</h2>
@@ -330,7 +330,6 @@
       <div class="row" data-aos="fade-up" data-aos-delay="400">
         {% for images in gallery %}
         <div class="col-lg-4 col-md-6 portfolio-item">
-          <!-- <div class="card portfolio-wrap"> -->
           <a href="{% static images.imageURL %}" class="lightbox portfolio-wrap card" data-group="gallery">
             <img class="img-fluid" src="{% static images.imageURL %}" style="object-fit: contain"
               alt="{{ images.event.title }}" />

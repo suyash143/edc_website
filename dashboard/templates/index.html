@@ -196,10 +196,14 @@
               {% else %}
               <h5 class="card-title">{{ startup.title }}</h5>
               {% endif %}
-              <a href="{{ startup.linkedin_url }}" target="_blank">
-                <h3 style="font-size: 80%;">by&nbsp;{{ startup.name }}</h3>
+              <a href="{{ startup.linkedin_url_1 }}" target="_blank">
+                <h3 style="font-size: 80%;">by&nbsp;{{ startup.founder_name }}</h3>
               </a>
-              <!-- <p class="card-text">{{ startup.about }}</p> -->
+            {% if startup.founder_name2 %}
+              <a href="{{ startup.linkedin_url_2 }}" target="_blank">
+                <h3 style="font-size: 80%;">{{ startup.founder_name2 }}</h3>
+              </a>
+            {% endif %}
             </div>
           </div>
         </div>

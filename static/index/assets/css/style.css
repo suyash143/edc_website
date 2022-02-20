@@ -758,7 +758,7 @@ section {
   background-position: center center;
   margin-bottom: 20px;
 }
-.more-services .card-body {
+.more-services .card-b {
   z-index: 10;
   background: var(--bg-color);
   padding: 15px 30px;
@@ -788,7 +788,7 @@ section {
 .more-services .read-more a:hover {
   text-decoration: underline;
 }
-.more-services .card:hover .card-body {
+.more-services .card:hover .card-b {
   background: var(--red);
 }
 .more-services .card:hover .read-more a, .more-services .card:hover .card-title, .more-services .card:hover .card-title a, .more-services .card:hover .card-text {

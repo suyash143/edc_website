@@ -232,16 +232,16 @@
             <div class="accordion-body">
               <div class="row mb-4">
                 {% for event in future_events %}
-                <div class="col-md-6 d-flex align-items-stretch mh">
-                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
+                <div class="col-md-6 d-flex" style="height: 20rem;">
+                  <div class="card m-3 d-flex justify-content-end" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
                     data-aos-delay="100">
-                    <div class="card-body" style="padding-bottom:10px">
+                    <div class="card-b d-flex justify-content-center" style="flex: auto auto auto;">
                       <h5 class="card-title">
                         <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
                       </h5>
-                      <!--p class="card-text">
-                              {{ event.short_description }}
-                            </p-->
+                      <!-- <p class="card-text">
+                        {{ event.short_description }}
+                      </p> -->
                     </div>
                   </div>
                 </div>
@@ -262,16 +262,16 @@
             <div class="accordion-body">
               <div class="row mb-4">
                 {% for event in ongoing_events %}
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
+                <div class="col-md-6 d-flex" style="height: 20rem;">
+                  <div class="card m-3 d-flex justify-content-end" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
                     data-aos-delay="100">
-                    <div class="card-body" style="padding-bottom:10px">
+                    <div class="card-b d-flex justify-content-center" style="flex: auto auto auto;">
                       <h5 class="card-title">
                         <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
                       </h5>
-                      <!--p class="card-text">
-                              {{ event.short_description }}
-                            </p-->
+                      <!-- <p class="card-text">
+                        {{ event.short_description }}
+                      </p> -->
                     </div>
                   </div>
                 </div>
@@ -293,16 +293,16 @@
             <div class="accordion-body">
               <div class="row mb-4">
                 {% for event in past_events %}
-                <div class="col-md-6 d-flex align-items-stretch">
-                  <div class="card m-3" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
+                <div class="col-md-6 d-flex" style="height: 20rem;">
+                  <div class="card m-3 d-flex justify-content-end" style="background-image: url('{% static event.imageURL %}')" data-aos="fade-up"
                     data-aos-delay="100">
-                    <div class="card-body" style="padding-bottom:10px">
+                    <div class="card-b d-flex justify-content-center" style="flex: auto auto auto;">
                       <h5 class="card-title">
                         <a target="_blank" href="{% url 'events' pk=event.pk %}">{{ event.title }}</a>
                       </h5>
-                      <!--p class="card-text">
-                              {{ event.short_description }}
-                            </p-->
+                      <!-- <p class="card-text">
+                        {{ event.short_description }}
+                      </p> -->
                     </div>
                   </div>
                 </div>

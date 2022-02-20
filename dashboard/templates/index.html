@@ -344,9 +344,9 @@
           <a href="{% static images.imageURL %}" class="lightbox portfolio-wrap card" data-group="gallery">
             <img class="img-fluid" src="{% static images.imageURL %}" style="object-fit: contain"
               alt="{{ images.event.title }}" />
-              <a href="{% url 'events' pk=images.event.pk %}" target="_blank">
-                <i class="bi bi-link-45deg event-link-icon"></i>
-              </a>
+            <a href="{% url 'events' pk=images.event.pk %}" target="_blank">
+              <i class="bi bi-link-45deg event-link-icon"></i>
+            </a>
           </a>
           <a href="{% url 'events' pk=images.event.pk %}" target="_blank">
             <p class="event-link">{{ images.event.title }}</p>
@@ -365,7 +365,7 @@
         <div class="col-md-12">
           <div class="wrapper">
             <div class="row no-gutters mb-5">
-              <div class="col-md-7">
+              <div class="col-md-7 mb-4">
                 <div class="contact-wrap card w-100 p-md-5 p-4">
                   <h3 class="mb-4">Contact Us</h3>
                   <div id="form-message-warning" class="mb-4"></div>
@@ -386,10 +386,8 @@
                       <div class="col-md-6">
                         <div class="form-group">
                           <label class="label" for="email">Contact Number</label>
-                          <input type="number"
-                            oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                            class="form-control" name="number" id="number" placeholder="Contact Number" maxlength="10"
-                            required />
+                          <input type="tel" class="form-control" name="number" id="number" placeholder="Contact Number"
+                            maxlength="10" required />
                         </div>
                       </div>
                       <div class="col-md-12">

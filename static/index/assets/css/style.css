@@ -1104,7 +1104,7 @@ section {
   top: 5px;
   right: 15px;
   z-index: 100;
-  color: var(--white-text-color);
+  color: var(--white-text-color); 
   transition: display 1s ease-in-out;
   transition: color 0.1s ease-in-out;
 }

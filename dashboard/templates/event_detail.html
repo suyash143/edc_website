@@ -29,14 +29,18 @@
             <div class="portfolio-details-slider swiper">
               <div class="swiper-wrapper align-items-center">
 
-
                 <div class="swiper-slide">
-
                   <img src="{% static event.imageURL %}" alt="{{ event.title }}" >
-                    {% if event.cover_image_2 %}
-                  <img src="{% static event.imageURL_2 %}" alt="{{ event.title }}" >
-                    {% endif %}
+
                 </div>
+                  {% if event.cover_image_2 %}
+              <div class="swiper-slide">
+
+
+                  <img src="{% static event.imageURL_2 %}" alt="{{ event.title }}" >
+
+                </div>
+ {% endif %}
 
               </div>
               <div class="swiper-pagination"></div>

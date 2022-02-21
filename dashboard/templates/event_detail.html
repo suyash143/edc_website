@@ -47,10 +47,14 @@
             <div class="portfolio-info">
               <h3>Event Information</h3>
               <ul>
+                  {% if event.vertical %}
                 <li><strong>Event Vertical</strong>: {{ event.vertical }}</li>
-                <li><strong>Event Date</strong>: {{ event.date }}</li>
-                <li><strong>Registration link</strong>: <a href="{{ event.registration_link }}">{{ event.registration_link|truncatechars:25 }}</a></li>
-                <li><strong>Last Date</strong>: {{ event.last_date }}</li>
+                  {% endif %}
+                <li><strong>Event Date</strong>:{% if event.date %} {{ event.date }}{% else %} Coming Soon{% endif %}</li>
+                <li><strong>Registration link</strong>:{% if event.registration_link %} <a href="{{ event.registration_link }}">{{ event.registration_link|truncatechars:25 }}</a>{% else %} Coming Soon{% endif %}</li>
+                {% if event.last_date %}
+                  <li><strong>Last Date</strong>: {{ event.last_date }}</li>
+              {% endif %}
               </ul>
             </div>
             <div class="portfolio-description">

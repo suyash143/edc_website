@@ -38,7 +38,6 @@ body {
 }
 
 .darkmode {
-  --red: #c0202f;
   --bg-color: #1a1a1a;
   --text-color: #b6b6b6;
   --heading-color: var(--text-color);
@@ -548,7 +547,6 @@ section {
 .section-title h2::after {
   margin: 0 0 10px 15px;
 }
-
 .section-title p {
   margin: 15px 0 0 0;
 }
@@ -559,16 +557,26 @@ section {
     font-weight: bold;
     text-transform: uppercase;
     position: relative;
-    color: var(--heading-color);
+    color: var(--white-text-color);
+    background-color: var(--red);
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    width: fit-content;
+    margin: 0 auto;
   }
-
   .section-title h2::before,
   .section-title h2::after {
-    margin: 0px 15px 5px 0px;
+    content: "";
+    width: 0;
+    height: 0;
+    background: var(--red);
+    display: none;
   }
-
+  .section-title h2::before {
+    margin: 0;
+  }
   .section-title h2::after {
-    margin: 0px 0px 5px 15px;
+    margin: 0;
   }
 }
 
@@ -741,6 +749,7 @@ section {
   background: var(--red);
   transition: all 0.3s ease-in-out;
 }
+
 .services .icon i {
   font-size: 36px;
   line-height: 1;
@@ -759,9 +768,9 @@ section {
   line-height: 28px;
   margin-bottom: 0;
 }
-.services .icon-box:hover .title a,
+.services .icon-box:hover .title,
 .services .icon-box:hover .description {
-  color: var(--white-text-color);
+  color: var(--white-text-color) !important;
 }
 .services .icon-box:hover .icon {
   background: var(--bg-color);
@@ -786,10 +795,10 @@ section {
   background-position: center center;
   margin-bottom: 20px;
 }
-@media (max-width:786px){
+@media (max-width: 768px) {
   .more-services .card {
     background-size: contain;
-    height: fit-content;
+    height: min-content;
   }
 }
 .more-services .card-b {
@@ -838,6 +847,12 @@ section {
 
 #supporters {
   padding: 60px 0;
+}
+
+@media (max-width: 768px) {
+  #supporters {
+    padding: 0 0 60px 0;
+  }
 }
 
 #supporters .supporters-wrap {
@@ -978,15 +993,6 @@ section {
   border-radius: 0.35rem;
 }
 
-.section-title h2::before,
-.section-title h2::after {
-  content: "";
-  width: 50px;
-  height: 2px;
-  background: var(--red);
-  display: inline-block;
-}
-
 /*--------------------------------------------------------------
 # Portfolio
 --------------------------------------------------------------*/
@@ -1118,7 +1124,7 @@ section {
   top: 5px;
   right: 15px;
   z-index: 100;
-  color: var(--white-text-color); 
+  color: var(--white-text-color);
   transition: display 1s ease-in-out;
   transition: color 0.1s ease-in-out;
 }

@@ -789,6 +789,7 @@ section {
 @media (max-width:786px){
   .more-services .card {
     background-size: contain;
+    height: fit-content;
   }
 }
 .more-services .card-b {

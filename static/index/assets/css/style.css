@@ -854,6 +854,7 @@ section {
   align-items: center;
   background-color: var(--logo-card-bg);
   border: 1px solid var(--border-color);
+  border-radius: 15px;
   margin-top: calc(1.5rem * 0.5);
   margin-bottom: calc(1.5rem * 0.5);
   overflow: hidden;

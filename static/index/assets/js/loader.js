@@ -1,1 +1,1 @@
-window.onload=()=>setTimeout(()=>{document.getElementById('loader').style.display = 'none'}git );
+window.onload=()=>setTimeout(()=>{document.getElementById('loader').style.display = 'none'});

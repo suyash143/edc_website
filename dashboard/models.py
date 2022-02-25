@@ -109,10 +109,13 @@ class Startup(models.Model):
     image=models.ImageField(upload_to='startup',null=True,blank=True)
     founder_name=models.CharField(max_length=300,null=True,blank=True)
     founder_name2=models.CharField(max_length=300,null=True,blank=True)
+    founder_name3=models.CharField(max_length=300,null=True,blank=True)
     about=models.TextField(null=True,blank=True)
     site_url=models.URLField(null=True,blank=True)
     linkedin_url_1=models.URLField(null=True,blank=True)
     linkedin_url_2 = models.URLField(null=True, blank=True)
+    linkedin_url_3 = models.URLField(null=True, blank=True)
+
     @property
     def imageURL(self):
         try:

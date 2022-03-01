@@ -209,6 +209,12 @@ textarea.form-control {
   background: var(--contact-bg);
 }
 
+@media (max-width:768px) {
+  .contact-wrap {
+    margin-bottom: 1rem;
+  }
+}
+
 .dbox {
   width: 100%;
   margin-bottom: 25px;

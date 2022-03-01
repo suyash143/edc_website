@@ -109,9 +109,9 @@ h6 {
   width: 100%;
   height: 100vh;
   background: var(--bg-color)
-    url("https://flevix.com/wp-content/uploads/2020/01/Preloader.gif") no-repeat
+    url("../../img/edc_loader.png") no-repeat
     center;
-  background-size: 50%;
+  background-size: 10%;
   z-index: 999;
 }
 

@@ -2,6 +2,32 @@
 {% load static %}
 {% block content %}
 
+<!-- ======= Modal ======= -->
+{% if featured.enable %}
+<div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" data-bs-backdrop="static"
+  aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content section-bg">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">{{ featured.title }}</h5>
+        <button type="button" class="btn-close text-white" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body d-flex flex-column">
+        <img class="img-fluid align-self-center" src="{%static featured.imageURL%}" alt="">
+        <p>{{ featured.description }}</p>
+        {% if featured.link %}
+        <a href="{{ featured.link }}"
+          target="_blank">
+          <button class="btn btn-primary p-1">Read More</button>
+        </a>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+<!-- ======= End Modal ======= -->
+
 <!-- ======= Hero Section ======= -->
 <section id="hero" class="d-flex align-items-center">
   <div class="container">
@@ -121,11 +147,12 @@
         style="display:flex; justify-content: center; align-items: center;" class="row no-gutters clearfix">
         {% for vertical in verticals %}
         <div class="col-lg-3 col-md-4 col-xs-6 pl-0">
-          <div class="supporter-logo card">
+          <div class="supporter-logo card icon-box aos-init aos-animate" data-aos="fade-up" data-aos-delay="0"
+            data-aos-duration="500">
             <img src="{% static vertical.imageURL %}" class="img-fluid" alt="{{ vertical.title }}" />
+            <div class="vertical-descripition">{{ vertical.description }}</div>
           </div>
         </div>
-
         {% endfor %}
       </div>
     </div>
@@ -205,10 +232,10 @@
                   <h3 style="font-size: 80%; display: inline;">by&nbsp;{{ startup.founder_name }}</h3>
                 </a>
                 {% if startup.founder_name2 %}
-              , <a href="{{ startup.linkedin_url_2 }}" target="_blank">
-                <h3 style="font-size: 80%; display: inline;">{{ startup.founder_name2 }}</h3>
-              </a>
-              {% endif %}
+                , <a href="{{ startup.linkedin_url_2 }}" target="_blank">
+                  <h3 style="font-size: 80%; display: inline;">{{ startup.founder_name2 }}</h3>
+                </a>
+                {% endif %}
               </span>
               {% if startup.founder_name3 %}
               <a href="{{ startup.linkedin_url_3 }}" target="_blank">
@@ -484,4 +511,6 @@
           </div>
         </div>
 </main>
+
+
 {% endblock content %}

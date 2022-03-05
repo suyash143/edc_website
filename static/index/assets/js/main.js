@@ -4,6 +4,20 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+
+// Loader JS
+window.onload = () =>
+setTimeout(() => {
+  document.getElementById("loader").style.display = "none";
+  try{
+      const modal = new bootstrap.Modal(document.getElementById("modal"), {});
+      modal.show();
+    }
+    catch{
+
+    }
+  });
+
 (function() {
   "use strict";
 

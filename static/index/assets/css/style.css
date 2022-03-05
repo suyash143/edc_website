@@ -43,9 +43,9 @@ body {
   --heading-color: var(--text-color);
   --section-bg: #242424;
   --contact-bg: var(--section-bg);
-  --border-color: var(--section-bg);
-  --card-bg: #5a5858;
-  --logo-card-bg:rgb(247, 247, 247); /*var(--section-bg)*/
+  --border-color: var(--bg-color);
+  --card-bg: var(--section-bg);
+  --logo-card-bg:*rgb(247, 247, 247); /*var(--section-bg)*/ 
   --client-bg: var(--logo-card-bg);
   --box-shadow: var(--section-bg);
   --accordion-button-bg: var(--section-bg);
@@ -75,6 +75,23 @@ body {
 
 #darkToggle:hover {
   color: var(--red);
+}
+
+.modal{
+  color: var(--text-color);
+}
+
+.modal-header{
+  background-color: var(--red);
+  border-bottom: none;
+}
+
+.modal-header .modal-title, .btn-cls{
+  color: var(--white-text-color);
+}
+
+.modal-body img{
+  margin-bottom: 1rem;
 }
 
 a {
@@ -709,7 +726,7 @@ section {
 /*--------------------------------------------------------------
 # Skills part
 --------------------------------------------------------------*/
-.services .icon-box {
+.icon-box {
   padding: 30px;
   position: relative;
   overflow: hidden;
@@ -719,7 +736,7 @@ section {
   border-radius: 8px;
   z-index: 1;
 }
-.services .icon-box::before {
+.icon-box::before {
   content: "";
   position: absolute;
   background: var(--red);
@@ -731,7 +748,7 @@ section {
   transition: all 0.3s;
   z-index: -1;
 }
-.services .icon-box:hover::before {
+.icon-box:hover::before {
   background: var(--red);
   right: 0;
   top: 0;
@@ -880,15 +897,42 @@ section {
   margin-bottom: calc(1.5rem * 0.5);
   overflow: hidden;
   height: 160px;
+  color: var(--white-text-color);
+
 }
 
-#supporters .supporter-logo:hover img {
-  -webkit-transform: scale(1.2);
-  transform: scale(1.2);
+#supporters .supporter-logo:hover img{
+  display: none;
+  transition: all 0.3s ease-in-out;
 }
 
-#supporters img {
-  transition: all 0.4s ease-in-out;
+#supporters .supporter-logo .vertical-descripition{
+  display: none;
+}
+#supporters .supporter-logo:hover .vertical-descripition{
+  display: block;
+  transition: all 1s ease-in-out;
+}
+
+#supporters .icon-box::before {
+  content: "";
+  position: absolute;
+  background: var(--logo-card-bg);
+  right: -60px;
+  top: -40px;
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+  transition: all 0.3s;
+  z-index: -1;
+}
+#supporters .icon-box:hover::before {
+  background: var(--red);
+  right: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 0px;
 }
 
 /* Supporter-logo media query */

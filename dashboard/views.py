@@ -34,7 +34,8 @@ def index(request):
     startups = models.Startup.objects.all()
     gallery = models.Gallery.objects.all()
     team = models.Team.objects.all()
-    company=models.Company.objects.all()
+    company = models.Company.objects.all()
+    featured = models.Featured.objects.all().latest('pk')
     if request.method == "POST":
         name = request.POST.get('name')
         subject = request.POST.get('subject')
@@ -81,7 +82,7 @@ def index(request):
 
     return render(request, 'index.html', {'future_events': future_events,'past_events': past_events, 'index': index, 'skill': skill, 'verticals': verticals,
                                           'testimonials': testimonials,'startups': startups, 'gallery': gallery,
-                                          'team': team,'company':company,'ongoing_events':ongoing_events})
+                                          'team': team,'company':company,'ongoing_events':ongoing_events, 'featured':featured})
 
 
 def events(request, **kwargs):

@@ -45,7 +45,7 @@ body {
   --contact-bg: var(--section-bg);
   --border-color: var(--bg-color);
   --card-bg: var(--section-bg);
-  --logo-card-bg:*rgb(247, 247, 247); /*var(--section-bg)*/ 
+  --logo-card-bg:rgb(247, 247, 247); /*var(--section-bg)*/ 
   --client-bg: var(--logo-card-bg);
   --box-shadow: var(--section-bg);
   --accordion-button-bg: var(--section-bg);

@@ -1,3 +1,5 @@
+from cgitb import enable
+from os import link
 from django.db import models
 
 
@@ -9,9 +11,27 @@ class LinkStorage(models.Model):
     converted_link=models.URLField(null=True,blank=True,max_length=400)
     count=models.IntegerField(null=True,blank=True,default=0)
 
+class Featured(models.Model):
+    enable = models.BooleanField(default=False, blank=False)
+    title=models.CharField(max_length=400,null=False,blank=False)
+    link=models.URLField(null=True,blank=True,max_length=400)
+    description=models.TextField(null=True,blank=True)
+    image=models.ImageField(upload_to='featured',null=True,blank=True)
+
+    def __str__(self):
+        return str(self.title)
+
+    @property
+    def imageURL(self):
+        try:
+            url = self.image.url
+        except:
+            url = ''
+        return url
 
 class Vertical(models.Model):
     title=models.CharField(max_length=400,null=True,blank=True)
+    description=models.TextField(null=True,blank=True)
     image=models.ImageField(upload_to='vertical',null=True,blank=True)
 
     def __str__(self):

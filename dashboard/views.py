@@ -35,7 +35,10 @@ def index(request):
     gallery = models.Gallery.objects.all()
     team = models.Team.objects.all()
     company = models.Company.objects.all()
-    featured = models.Featured.objects.all().latest('pk')
+    try:
+        featured = models.Featured.objects.get(enable=True)
+    except:
+        featured=None
     if request.method == "POST":
         name = request.POST.get('name')
         subject = request.POST.get('subject')

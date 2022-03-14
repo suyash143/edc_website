@@ -18,6 +18,18 @@ class Featured(models.Model):
     description=models.TextField(null=True,blank=True)
     image=models.ImageField(upload_to='featured',null=True,blank=True)
 
+    def save(self,*args,**kwargs):
+        if self.enable:
+            # select all other active items
+            qs = type(self).objects.filter(enable=True)
+            # except self (if self already exists)
+            if self.pk:
+                qs = qs.exclude(pk=self.pk)
+            # and deactive them
+            qs.update(enable=False)
+
+        super(Featured, self).save(*args, **kwargs)
+
     def __str__(self):
         return str(self.title)
 

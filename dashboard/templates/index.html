@@ -3,7 +3,7 @@
 {% block content %}
 
 <!-- ======= Modal ======= -->
-{% if featured.enable %}
+{% if featured %}
 <div class="modal fade" id="modal" tabindex="-1" aria-labelledby="modalLabel" data-bs-backdrop="static"
   aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered modal-lg">
@@ -16,7 +16,11 @@
         <img class="img-fluid align-self-center" src="{%static featured.imageURL%}" alt="">
         <p>{{ featured.description }}</p>
         {% if featured.link %}
+<<<<<<< HEAD
         <a href="{{ featured.link }}"
+=======
+        <a href="{{   featured.link }}"
+>>>>>>> 249ffba508bb04dce8b906c28dce94b28ea499f5
           target="_blank">
           <button class="btn btn-primary p-1">Read More</button>
         </a>

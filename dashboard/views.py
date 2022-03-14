@@ -180,3 +180,4 @@ def l(request, **kwargs):
         return HttpResponse('sorry Bad request')
 
     return redirect(f'{object.link}')
+

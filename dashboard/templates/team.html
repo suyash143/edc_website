@@ -19,9 +19,16 @@
                             <div class="member-img">
                                 <img src="{% static member.imageURL %}" class="img-fluid" alt="{{ member.name }}" />
                                 <div class="social">
+                                    {% if member.facebook_url %}
                                     <a href="{{ member.facebook_url }}"><i class="bi bi-facebook"></i></a>
+                                    {% endif %}
+                                    {% if member.instagram_url %}
                                     <a href="{{ member.instagram_url }}"><i class="bi bi-instagram"></i></a>
+
+                                    {% endif %}
+                                {% if member.linkedin_url %}
                                     <a href="{{ member.linkedin_url }}"><i class="bi bi-linkedin"></i></a>
+                                {% endif %}
                                 </div>
                             </div>
                             <div class="member-info">

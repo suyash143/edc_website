@@ -730,7 +730,7 @@ section {
   padding: 30px;
   position: relative;
   overflow: hidden;
-  background: var(--section-bg);
+  /* background: var(--section-bg); */
   box-shadow: 0 0 29px 0 var(--box-shadow);
   transition: all 0.3s ease-in-out;
   border-radius: 8px;

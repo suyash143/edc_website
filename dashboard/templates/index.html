@@ -16,7 +16,7 @@
         <img class="img-fluid align-self-center" src="{%static featured.imageURL%}" alt="">
         <p>{{ featured.description }}</p>
         {% if featured.link %}
-        <a href="{{   featured.link }}"
+        <a href="{{ featured.link }}"
           target="_blank">
           <button class="btn btn-primary p-1">Read More</button>
         </a>
@@ -76,7 +76,7 @@
         <div class="about-content">
           <h3 data-aos="fade-up" data-aos-delay="0" data-aos-duration="500"><br />About Entrepreneurship Developement
             Cell</h3>
-          <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" class="fst-italic">{{ index.about_us_1 }}</p>
+          <p data-aos="fade-up" data-aos-delay="0" data-aos-duration="500" class="">{{ index.about_us_1 }}</p>
         </div>
       </div>
     </div>
@@ -92,7 +92,7 @@
       </div>
       <div class="row">
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
+          <div class="icon-box card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
             <div class="icon"><i class="bi bi-people"></i></div>
             <h4 class="title">{{ index.skillset_1_heading }}</h4>
             <p class="description">
@@ -102,7 +102,7 @@
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
+          <div class="icon-box card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
             <div class="icon"><i class="bi bi-flag"></i></div>
             <h4 class="title">{{ index.skillset_2_heading }}</h4>
             <p class="description">
@@ -112,7 +112,7 @@
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
+          <div class="icon-box card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
             <div class="icon"><i class="bi bi-gear"></i></div>
             <h4 class="title">{{ index.skillset_3_heading }}</h4>
             <p class="description">
@@ -122,7 +122,7 @@
         </div>
 
         <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
-          <div class="icon-box" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
+          <div class="icon-box card" data-aos="fade-up" data-aos-delay="0" data-aos-duration="500">
             <div class="icon"><i class="bi bi-chat"></i></div>
             <h4 class="title">{{ index.skillset_4_heading }}</h4>
             <p class="description">
